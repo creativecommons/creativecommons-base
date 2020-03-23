@@ -162,8 +162,7 @@ class site {
 		// Front-end styles
 		wp_enqueue_style( 'Gfonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Source+Sans+Pro:400,400i,600" rel="stylesheet'); //TO-DO local webfonts
         //TO-DO add CC Akzidens
-		wp_enqueue_style( 'cc_vocabulary', THEME_CSS .'/cc-vocabulary.css', self::theme_ver );	
-        wp_enqueue_style( 'cc_blank_style', THEME_CSS .'/style.css', self::theme_ver );
+        wp_enqueue_style( 'cc_blank_style', THEME_CSS .'/styles.css', self::theme_ver );
 		wp_enqueue_style( 'dashicons' );
 	}
 
