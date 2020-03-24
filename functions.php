@@ -2,7 +2,7 @@
 /**
 * Functions: list
 * @version 1.0
-* @package wp-cc-blank-theme
+* @package wp-cc-base-theme
 */
 
 /* Theme Constants (to speed up some common things) ------*/
@@ -25,6 +25,7 @@ define('THEME_JS', THEME_URI. '/assets/js');
 	// include TEMPLATEPATH . '/inc/search.php';
 	// include TEMPLATEPATH . '/inc/settings.php';
 	// include TEMPLATEPATH . '/inc/filters.php';
+	include TEMPLATEPATH . '/inc/walkers.php';
 
 //Custom Post type files
 //include TEMPLATEPATH . '/inc/custom-post-type/queulat-cc-chapters-cpt-plugin/cc-chapters-cpt-plugin.php';
@@ -140,12 +141,12 @@ class site {
 
 	public function register_menus_locations(){
         $theme_base_menus = array(
-            'main-menu' => 'Main menu',
-            'main-menu-mobile' => 'Main menu mobile',
-			'footer' => 'Footer menu'
+            'main-navigation' => 'Main navigation',
+            'main-menu-mobile' => 'Main navigation mobile',
+			'footer-navigation' => 'Footer navigation'
         );
         $theme_base_menus = apply_filters('cc_theme_base_menus',$theme_base_menus);
-		register_nav_menus();
+		register_nav_menus($theme_base_menus);
 	}
 
 	public function get_post_thumbnail_url( $postid = null, $size = 'landscape-medium' ){
@@ -162,7 +163,7 @@ class site {
 		// Front-end styles
 		wp_enqueue_style( 'Gfonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Source+Sans+Pro:400,400i,600" rel="stylesheet'); //TO-DO local webfonts
         //TO-DO add CC Akzidens
-        wp_enqueue_style( 'cc_blank_style', THEME_CSS .'/styles.css', self::theme_ver );
+        wp_enqueue_style( 'cc_base_style', THEME_CSS .'/styles.css', self::theme_ver );
 		wp_enqueue_style( 'dashicons' );
 	}
 
@@ -175,12 +176,12 @@ class site {
 		// front-end scripts
 		wp_enqueue_script( 'jquery' , true);
 		wp_enqueue_script( 'dependencies', THEME_JS .'/dependencies.js', array('jquery'), self::theme_ver, true );
-		wp_enqueue_script( 'cc_blank_script', THEME_JS .'/script.js', array('jquery'), self::theme_ver, true );
+		wp_enqueue_script( 'cc_base_script', THEME_JS .'/script.js', array('jquery'), self::theme_ver, true );
 		//attach data to script.js
 		$ajax_data = array(
 			'url' => admin_url( 'admin-ajax.php' )
 		);
-		wp_localize_script( 'cc_blank_script', 'Ajax', $ajax_data );
+		wp_localize_script( 'cc_base_script', 'Ajax', $ajax_data );
 	}
 }
 
