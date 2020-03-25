@@ -2,7 +2,7 @@
 /**
 * Functions: list
 * @version 1.0
-* @package wp-cc-base-theme
+* @package wp-theme-base
 */
 
 /* Theme Constants (to speed up some common things) ------*/
@@ -18,13 +18,13 @@ define('THEME_JS', THEME_URI. '/assets/js');
 	calling related files
 */
 	// include TEMPLATEPATH . '/inc/site.php';
-	// include TEMPLATEPATH . '/inc/render.php';
 	// include TEMPLATEPATH . '/inc/widgets.php';
-	// include TEMPLATEPATH . '/inc/helpers.php';
 	// include TEMPLATEPATH . '/inc/metaboxes.php';
 	// include TEMPLATEPATH . '/inc/search.php';
 	// include TEMPLATEPATH . '/inc/settings.php';
-	// include TEMPLATEPATH . '/inc/filters.php';
+	include TEMPLATEPATH . '/inc/filters.php';
+	include TEMPLATEPATH . '/inc/components.php';
+	include TEMPLATEPATH . '/inc/helpers.php';
 	include TEMPLATEPATH . '/inc/walkers.php';
 
 //Custom Post type files
@@ -134,18 +134,19 @@ class site {
 	 * @return void
 	 */
 	public function setup_theme(){
-		add_theme_support('post-formats', array('gallery', 'image', 'video'));
+		$available_post_formats = apply_filters( 'cc_theme_base_post_formats', array('gallery', 'image', 'video') );
+		add_theme_support('post-formats', $available_post_formats );
 		add_theme_support('post-thumbnails');
 		add_theme_support('menus');
 	}
 
 	public function register_menus_locations(){
-        $theme_base_menus = array(
-            'main-navigation' => 'Main navigation',
-            'main-menu-mobile' => 'Main navigation mobile',
+		$theme_base_menus = array(
+			'main-navigation' => 'Main navigation',
+			'main-menu-mobile' => 'Main navigation mobile',
 			'footer-navigation' => 'Footer navigation'
-        );
-        $theme_base_menus = apply_filters('cc_theme_base_menus',$theme_base_menus);
+		);
+		$theme_base_menus = apply_filters('cc_theme_base_menus',$theme_base_menus);
 		register_nav_menus($theme_base_menus);
 	}
 
@@ -161,9 +162,8 @@ class site {
 
 	public function enqueue_styles(){
 		// Front-end styles
-		wp_enqueue_style( 'Gfonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Source+Sans+Pro:400,400i,600" rel="stylesheet'); //TO-DO local webfonts
-        //TO-DO add CC Akzidens
-        wp_enqueue_style( 'cc_base_style', THEME_CSS .'/styles.css', self::theme_ver );
+		wp_enqueue_style( 'Gfonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Source+Sans+Pro:400,400i,600" rel="stylesheet');
+    wp_enqueue_style( 'cc_base_style', THEME_CSS .'/styles.css', self::theme_ver );
 		wp_enqueue_style( 'dashicons' );
 	}
 
@@ -175,8 +175,8 @@ class site {
 	function enqueue_scripts(){
 		// front-end scripts
 		wp_enqueue_script( 'jquery' , true);
-		wp_enqueue_script( 'dependencies', THEME_JS .'/dependencies.js', array('jquery'), self::theme_ver, true );
 		wp_enqueue_script( 'cc_base_script', THEME_JS .'/script.js', array('jquery'), self::theme_ver, true );
+		
 		//attach data to script.js
 		$ajax_data = array(
 			'url' => admin_url( 'admin-ajax.php' )
