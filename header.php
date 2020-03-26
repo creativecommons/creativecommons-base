@@ -9,9 +9,9 @@
 <?php 
 	//get site global settings (settings.php)
 	global $_set;
-    if ( !empty($_set) ) {
-        $settings = $_set->settings;
-    }
+  if ( !empty($_set) ) {
+    $settings = $_set->settings;
+  }
  ?>
 <body <?php body_class(); ?>>
 <?php do_action( 'cc_theme_before_header' ); ?>
@@ -38,14 +38,14 @@
       </div>
     <?php
         wp_nav_menu( array(
-            'theme_location'    => 'main-navigation',
-            'depth'             => 2,
-            'container'         => false,
-            'items_wrap'     => '<div id="%1$s" class="navbar-end">%3$s</div>',
-            'menu_class'        => 'navbar-menu',
-            'menu_id'           => 'primary-menu',
-            'after'             => "</div>",
-            'walker'            => new Navwalker())
+          'theme_location'    => 'main-navigation',
+          'depth'             => 2,
+          'container'         => false,
+          'items_wrap'        => '<div id="%1$s" class="navbar-end">%3$s</div>',
+          'menu_class'        => 'navbar-menu',
+          'menu_id'           => 'primary-menu',
+          'after'             => "</div>",
+          'walker'            => new Navwalker())
         );
         ?>
     </nav>

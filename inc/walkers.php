@@ -42,4 +42,3 @@ class Navwalker extends Walker_Nav_Menu {
     $output .= "</div>";
   }
 }
-?>

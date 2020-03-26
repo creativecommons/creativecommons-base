@@ -41,6 +41,6 @@ class modules {
       $out .= '</div>';
     $out .= '</article>';
 
-    return $out
+    return $out;
   }
 }
