@@ -1,0 +1,19 @@
+//Import Vocabulary 
+@import "../../node_modules/@creativecommons/vocabulary/scss/color.scss";
+@import "../../node_modules/@creativecommons/vocabulary/scss/spacing.scss";
+@import "../../node_modules/@creativecommons/vocabulary/scss/typography.scss";
+
+@import "../../node_modules/@creativecommons/vocabulary/scss/button.scss";
+@import "../../node_modules/@creativecommons/vocabulary/scss/form.scss";
+@import "../../node_modules/@creativecommons/vocabulary/scss/card.scss";
+@import "../../node_modules/@creativecommons/vocabulary/scss/table.scss";
+
+@import "../../node_modules/@creativecommons/vocabulary/scss/header.scss";
+@import "../../node_modules/@creativecommons/vocabulary/scss/footer.scss";
+
+@import "../../node_modules/@creativecommons/vocabulary/scss/layout.scss";
+
+@import 'mixins';
+@import 'base';
+@import 'modules';
+@import 'layout';

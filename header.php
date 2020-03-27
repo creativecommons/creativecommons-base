@@ -9,65 +9,47 @@
 <?php 
 	//get site global settings (settings.php)
 	global $_set;
-	$settings = $_set->settings;
+  if ( !empty($_set) ) {
+    $settings = $_set->settings;
+  }
  ?>
 <body <?php body_class(); ?>>
-<!-- MENU MOBILE -->
-<header class="mobile-header show-for-small-only">
-        <div class="grid-container">
-            <div class="grid-x align-justify">
-                <div class="cell small-5">
-                    <a href="<?php echo site_url(); ?>" class="logo"><h1><?php bloginfo( 'name' ) ?></h1></a>
-                </div>
-                <div class="cell small-3 mobile-buttons">
-                    <a href="#" class="open-mobile-menu"><span class="dashicons dashicons-menu"></span></a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div class="menu-mobile-container hide">
-        <a class="close" href="#">
-            <button class="close-button" aria-label="Close alert" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </a>
-        <nav class="mobile-navigation">
-        <?php 
-            $args = array(
-                'theme_location' => 'main-menu-mobile',
-                'container' => '',
-                'depth' => 2,
-                'items_wrap' => '<ul id = "%1$s" class = "menu vertical %2$s">%3$s</ul>'
-            );
-
-            wp_nav_menu($args);
-            ?>
-        </nav>
-    </div>
 <?php do_action( 'cc_theme_before_header' ); ?>
-<header class="main-header inner-space__tiny">
-    <?php do_action( 'cc_theme_before_header_content' ); ?>
-    <div class="grid-container">
-        <div class="grid-x grid-padding-x navigation hide-for-small-only">
-            <div class="cell large-3 columns logo">
-                <a href="<?php bloginfo('url') ?>"><h1 class="site-title"><?php bloginfo('name') ?></h1><span class="tagline"><?php bloginfo( 'description' ) ?></span></a>
-            </div>
-            <div class="cell large-9 columns nav align-self-middle">
-                <nav class="main-navigation">
-                        <?php 
-                        $args = array(
-                            'theme_location' => 'main-menu',
-                            'container' => '',
-                            'fallback_cb' => false,
-                            'items_wrap' => '<ul id = "%1$s" class = "menu %2$s">%3$s</ul>'
-                            );
 
-                        wp_nav_menu( $args );
-                        ?>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <?php do_action( 'cc_theme_after_header_content' ); ?>
+<header class="main-header">
+  <?php do_action( 'cc_theme_before_header_content' ); ?>
+  <div class="container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="<?php bloginfo('url') ?>" class="has-text-black">
+          <svg
+            class="logo"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidyMid meet"
+            viewBox="0 0 304 73">
+            <use  xlink:href="<?php echo get_bloginfo('template_directory').'/assets/img/logos/cc/logomark.svg#creativecommons'?>"></use>
+          </svg>
+        </a>
+        <a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    <?php
+        wp_nav_menu( array(
+          'theme_location'    => 'main-navigation',
+          'depth'             => 2,
+          'container'         => false,
+          'items_wrap'        => '<div id="%1$s" class="navbar-end">%3$s</div>',
+          'menu_class'        => 'navbar-menu',
+          'menu_id'           => 'primary-menu',
+          'after'             => "</div>",
+          'walker'            => new Navwalker())
+        );
+        ?>
+    </nav>
+  </div>
+  <?php do_action( 'cc_theme_after_header_content' ); ?>
 </header>
 <?php do_action( 'cc_theme_after_header' ); ?>
