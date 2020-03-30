@@ -65,3 +65,6 @@ Action after the footer element
 
 #### cc_theme_after_footer_content
 Action inside <footer> element but after the footer content
+
+# Contribute
+Contributions are highly appreciated. Please see [`CONTRIBUTING.md`](CONTRIBUTING.md).
