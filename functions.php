@@ -96,7 +96,7 @@ class Site {
 	public $show_welcome = true;
 
 	const id        = __CLASS__;
-	const theme_ver = '20191001';
+	const theme_ver = '2020.04.1';
 	private function __construct() {
 		$this->actions_manager();
 

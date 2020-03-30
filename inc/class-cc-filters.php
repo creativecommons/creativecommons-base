@@ -8,7 +8,7 @@
  *
  * @package WordPress
  * @subpackage wp-theme-base
- * @since 2020.04.01
+ * @since 2020.04.1
  */
 
 /**
@@ -16,13 +16,13 @@
  *
  * A set of useful Filters & actions.
  *
- *  @since 2020.04.01
+ *  @since 2020.04.1
  */
 class CC_Filters {
 	/**
 	 * Add class to WordPress default navigation layout to match with Vocabulary
 	 *
-	 * @since 2020.04.01
+	 * @since 2020.04.1
 	 * @param array $atts : attributes.
 	 * @param array $item : item.
 	 * @param array $args : arguments.

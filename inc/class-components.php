@@ -9,7 +9,7 @@
  *
  * @package WordPress
  * @subpackage wp-theme-base
- * @since 2020.04.01
+ * @since 2020.04.1
  */
 
 /**
@@ -17,7 +17,7 @@
  *
  * Class to handle CC Vocabulary components
  *
- *  @since 2020.04.01
+ *  @since 2020.04.1
  */
 class Components {
 	/**

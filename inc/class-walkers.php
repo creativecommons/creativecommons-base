@@ -3,6 +3,7 @@
  * Bulma-Navwalker
  *
  * @package wp-theme-base
+ * @since 2020.04.1
  */
 
 /**
