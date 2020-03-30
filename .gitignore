@@ -1,0 +1,20 @@
+# Ignore composer files and folders
+vendor/
+vendor/*
+composer.phar
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+.DS_Store
+
+# ignore all files that start with ~
+~*
+
+#ignore node dependency folder
+node_modules/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
