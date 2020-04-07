@@ -1,0 +1,30 @@
+.home {
+	.main-content {
+		padding: 0;	
+	}
+}
+.page, .single {
+	.main-content {
+		padding-top: $space-bigger;
+		padding-bottom: $space-bigger;
+		.entry-content {
+			padding-top: $space-large;
+			padding-bottom: $space-larger;
+		}
+	}
+}
+
+.text-format {
+	p {
+		margin-bottom: $space-normal;
+	}
+}
+
+.terms-list {
+	h6 {
+		margin-bottom: $space-small;
+	}
+	.button {
+		margin-right: $space-normal;
+	}
+} 

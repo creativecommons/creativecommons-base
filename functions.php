@@ -18,15 +18,15 @@ define( 'THEME_JS', THEME_URI . '/assets/js' );
 /**
 * Calling related files
 */
-  // include TEMPLATEPATH . '/inc/site.php';
   // include TEMPLATEPATH . '/inc/widgets.php';
-  // include TEMPLATEPATH . '/inc/metaboxes.php';
   // include TEMPLATEPATH . '/inc/search.php';
   // include TEMPLATEPATH . '/inc/settings.php';
-  require TEMPLATEPATH . '/inc/filters.php';
-  require TEMPLATEPATH . '/inc/components.php';
+  include TEMPLATEPATH . '/inc/metaboxes.php';
+  include TEMPLATEPATH . '/inc/class-cc-site.php';
+  require TEMPLATEPATH . '/inc/class-cc-filters.php';
+  require TEMPLATEPATH . '/inc/class-components.php';
+  require TEMPLATEPATH . '/inc/class-walkers.php';
   require TEMPLATEPATH . '/inc/helpers.php';
-  require TEMPLATEPATH . '/inc/walkers.php';
 
 
 /**
@@ -40,7 +40,7 @@ add_theme_support( 'post-thumbnails' );
 // Define custom thumbnail sizes
 add_image_size( 'squared', 300, 300, true );
 add_image_size( 'landscape-medium', 740, 416, true );
-add_image_size( 'landscape-featured', 2000, 700, true );
+add_image_size( 'landscape-featured', 1000, 500, true );
 
 /**
 *  THEME SIDEBARS
@@ -146,6 +146,7 @@ class Site {
 		add_theme_support( 'post-formats', $available_post_formats );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
+		add_theme_support( 'responsive-embeds' );
 	}
 
 	public function register_menus_locations() {
@@ -194,6 +195,7 @@ class Site {
 	function enqueue_scripts() {
 		// front-end scripts
 		wp_enqueue_script( 'jquery', true );
+		wp_enqueue_script( 'glideSlide', THEME_JS . '/glide.min.js', '', self::theme_ver, true );
 		wp_enqueue_script( 'cc_base_script', THEME_JS . '/script.js', array( 'jquery' ), self::theme_ver, true );
 
 		// attach data to script.js

@@ -27,7 +27,7 @@ if ( ! empty( $_set ) ) {
 			xmlns="http://www.w3.org/2000/svg"
 			preserveAspectRatio="xMidyMid meet"
 			viewBox="0 0 304 73">
-			<use  xlink:href="<?php echo get_bloginfo( 'template_directory' ) . '/assets/img/logos/cc/logomark.svg#creativecommons'; ?>"></use>
+			<use href="<?php echo get_bloginfo( 'template_directory' ) . '/assets/img/logos/cc/logomark.svg#logomark'; ?>"></use>
 		  </svg>
 		</a>
 		<a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="false">

@@ -4,3 +4,15 @@
   }
   min-height: 50vh;
 }
+
+.single-header, .page-header {
+	padding-top: $space-large;
+	padding-bottom: $space-large;
+	background-color: $color-lighter-gray;
+	.entry-image {
+		margin-bottom: $space-normal;
+		img {
+			width: 100%;
+		}
+	}
+}

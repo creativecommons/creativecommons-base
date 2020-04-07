@@ -58,4 +58,24 @@ class Components {
 
 		return $out;
 	}
+	/**
+	 * Genereic button and its variants
+	 *
+	 * @param string  $text : Button text.
+	 * @param string  $url : Button url.
+	 * @param string  $size : Button size big|small|tiny|tag.
+	 * @param string  $color : Button color is_primary|donate|is_success|is_info|is_warning|is_danger.
+	 * @param boolean $new_tab : open the button in new tab.
+	 * @return string component layout
+	 */
+	public static function button( $text, $url, $size, $color, $new_tab = false ) {
+		$size_class = ( !empty( $size ) ) ? $size : '';
+		$color_class = ( !empty( $color ) ) ? $color : '';
+		$open_new_tab = ( $new_tab ) ? ' target="_blank"' : '';
+		$out = '';
+		if ( !empty( $text ) && !empty( $url ) ) {
+			$out .= '<a href="' . $url . '" class="button ' . $size_class . $color_class . '"' . $open_new_tab . '>' . $text . '</a>';
+		}
+		return $out;
+	}
 }
