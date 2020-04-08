@@ -30,7 +30,8 @@ module.exports = {
       filename: '../../assets/css/styles.css'
     }),
     new CopyPlugin([
-      { from: './node_modules/@creativecommons/vocabulary/assets', to: '../../assets/img' }
+      { from: './node_modules/@creativecommons/vocabulary/assets', to: '../../assets/img' },
+      { from: './node_modules/@glidejs/glide/dist/glide.min.js', to: '../../assets/js' }
     ]),
   ]
 }

@@ -7,15 +7,21 @@
 				<a href="https://creativecommons.org" class="main-logo margin-bottom-bigger">
 					<span class="has-text-white">
 						<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidyMid meet" viewBox="0 0 304 73">
-							<use  xlink:href="<?php echo get_bloginfo( 'template_directory' ) . '/assets/img/logos/cc/logomark.svg#creativecommons'; ?>"></use>
+							<use  xlink:href="<?php echo get_bloginfo( 'template_directory' ) . '/assets/img/logos/cc/logomark.svg#logomark'; ?>"></use>
 						</svg>
 					</span>
 				</a>
 				<p>
 					<address class="margin-bottom-normal"> Creative Commons <br> PO Box 1866, Mountain View CA 94042</address>
-					<a href="mailto:info@creativecommons.org" class="mail">info@creativecommons.org</a>
+					<a href="mailto:info@creativecommons.org" class="mail">info@creativecommons.org</a><br />
 					<a href="tel://+1-415-429-6753" class="phone">+1-415-429-6753</a>
 				</p>
+				<div class="social-media">
+					<a href="https://www.instagram.com/creativecommons" target="_blank" class="social instagram"><i class="icon instagram"></i></a>
+					<a href="https://www.twitter.com/creativecommons" target="_blank" class="social twitter"><i class="icon twitter"></i></a>
+					<a href="https://www.facebook.com/creativecommons" target="_blank" class="social facebook"><i class="icon facebook"></i></a>
+					<a href="https://www.linkedin.com/company/creative-commons/" target="_blank" class="social linkedin"><i class="icon linkedin"></i></a>
+				</div>
 			</div>
 			<div class="column is-half">
 				<nav class="footer-navigation">
@@ -44,9 +50,7 @@
 					<h5>Our work relies on you!</h5>
 					<p>Help us keep the internet free and open.</p>
 					<a class="button small donate">
-						<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidyMid meet" viewBox="0 0 100 75">
-							<use  xlink:href="<?php echo get_bloginfo( 'template_directory' ) . '/assets/img/logos/cc/letterheart.svg#creativecommons'; ?>"></use>
-						</svg>
+						<i class="icon cc-letterheart"></i>
 						Donate now
 					</a>
 				</aside>

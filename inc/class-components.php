@@ -34,28 +34,48 @@ class Components {
 	public static function card_post( $post_id, $show_image = true, $is_video = false, $has_button = true, $has_content = true, $direction = 'horizontal' ) {
 		$out .= '<article class="card entry-post ' . $direction . '">';
 		if ( has_post_thumbnail( $post_id ) && $show_image ) {
-			$out .= '<header class="card-image">';
-				$out .= '<figure class="image is-4by3">';
+			$out         .= '<header class="card-image">';
+				$out     .= '<figure class="image is-4by3">';
 					$out .= get_the_post_thumbnail( $post_id, 'landscape-medium' );
-				$out .= '</figure>';
-			$out .= '</header>';
+				$out     .= '</figure>';
+			$out         .= '</header>';
 		}
 		$button_class = ( $has_button ) ? ' with-button' : '';
-		$out .= '<div class="card-content ' . $button_class . '">';
-			$out .= '<h4 class="card-title"><a href="' . get_permalink( $post_id ) . '">' . get_the_title( $post_id ) . '</a></h4>';
-				if ( ! $is_video ) {
-					$out .= '<span class="subtitle"> ' . get_the_date( 'd F Y', $post_id ) . ' </span>';
-				}
-				if ( $has_content ) {
-					$the_post = get_post( $post_id );
-					$out .= '<div class="content">';
-						$out .= do_excerpt( $the_post );
-					$out .= '</div>';
-				}
+		$out         .= '<div class="card-content ' . $button_class . '">';
+			$out     .= '<h4 class="card-title"><a href="' . get_permalink( $post_id ) . '">' . get_the_title( $post_id ) . '</a></h4>';
+		if ( ! $is_video ) {
+			$out .= '<span class="subtitle"> ' . get_the_date( 'd F Y', $post_id ) . ' </span>';
+		}
+		if ( $has_content ) {
+			$the_post = get_post( $post_id );
+			$out     .= '<div class="content">';
+				$out .= do_excerpt( $the_post );
+			$out     .= '</div>';
+		}
 				$out .= '<a href="#" class="button is-primary">Read more</a>';
-			$out .= '</div>';
-		$out .= '</article>';
+			$out     .= '</div>';
+		$out         .= '</article>';
 
+		return $out;
+	}
+	/**
+	 * Genereic button and its variants
+	 *
+	 * @param string  $text : Button text.
+	 * @param string  $url : Button url.
+	 * @param string  $size : Button size big|small|tiny|tag.
+	 * @param string  $color : Button color is_primary|donate|is_success|is_info|is_warning|is_danger.
+	 * @param boolean $new_tab : open the button in new tab.
+	 * @return string component layout
+	 */
+	public static function button( $text, $url, $size, $color, $new_tab = false ) {
+		$size_class   = ( ! empty( $size ) ) ? $size : '';
+		$color_class  = ( ! empty( $color ) ) ? $color : '';
+		$open_new_tab = ( $new_tab ) ? ' target="_blank"' : '';
+		$out          = '';
+		if ( ! empty( $text ) && ! empty( $url ) ) {
+			$out .= '<a href="' . $url . '" class="button ' . $size_class . $color_class . '"' . $open_new_tab . '>' . $text . '</a>';
+		}
 		return $out;
 	}
 }

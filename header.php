@@ -17,25 +17,25 @@ if ( ! empty( $_set ) ) {
 <?php do_action( 'cc_theme_before_header' ); ?>
 
 <header class="main-header">
-  <?php do_action( 'cc_theme_before_header_content' ); ?>
-  <div class="container">
-	<nav class="navbar">
-	  <div class="navbar-brand">
-		<a href="<?php bloginfo( 'url' ); ?>" class="has-text-black">
-		  <svg
-			class="logo"
-			xmlns="http://www.w3.org/2000/svg"
-			preserveAspectRatio="xMidyMid meet"
-			viewBox="0 0 304 73">
-			<use  xlink:href="<?php echo get_bloginfo( 'template_directory' ) . '/assets/img/logos/cc/logomark.svg#creativecommons'; ?>"></use>
-		  </svg>
-		</a>
-		<a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="false">
-		  <span aria-hidden="true"></span>
-		  <span aria-hidden="true"></span>
-		  <span aria-hidden="true"></span>
-		</a>
-	  </div>
+	<?php do_action( 'cc_theme_before_header_content' ); ?>
+	<div class="container">
+		<nav class="navbar">
+			<div class="navbar-brand">
+			<a href="<?php bloginfo( 'url' ); ?>" class="has-text-black">
+				<svg
+					class="logo"
+					xmlns="http://www.w3.org/2000/svg"
+					preserveAspectRatio="xMidyMid meet"
+					viewBox="0 0 304 73">
+					<use href="<?php echo get_bloginfo( 'template_directory' ) . '/assets/img/logos/cc/logomark.svg#logomark'; ?>"></use>
+				</svg>
+			</a>
+			<a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="false">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			</a>
+		</div>
 	<?php
 		wp_nav_menu(
 			array(
@@ -50,8 +50,8 @@ if ( ! empty( $_set ) ) {
 			)
 		);
 		?>
-	</nav>
-  </div>
-  <?php do_action( 'cc_theme_after_header_content' ); ?>
+		</nav>
+	</div>
+	<?php do_action( 'cc_theme_after_header_content' ); ?>
 </header>
 <?php do_action( 'cc_theme_after_header' ); ?>
