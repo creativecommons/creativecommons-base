@@ -15,9 +15,9 @@
 	<div class="column is-one-fifth">
 		<div class="share-entry margin-vertical-normal">
 			<h6>Share</h6>
-			<a href="<?php echo CC_Site::social_share( 'facebook', get_the_ID() ) ?>" class="share facebook"><i class="icon facebook colored"></i></a>
-			<a href="<?php echo CC_Site::social_share( 'twitter', get_the_ID() ) ?>" class="share twitter"><i class="icon twitter colored"></i></a>
-			<a href="<?php echo CC_Site::social_share( 'linkedin', get_the_ID() ) ?>" class="share linkedin"><i class="icon linkedin colored"></i></a>
+			<a href="<?php echo CC_Site::social_share( 'facebook', get_the_ID() ); ?>" class="share facebook"><i class="icon facebook colored"></i></a>
+			<a href="<?php echo CC_Site::social_share( 'twitter', get_the_ID() ); ?>" class="share twitter"><i class="icon twitter colored"></i></a>
+			<a href="<?php echo CC_Site::social_share( 'linkedin', get_the_ID() ); ?>" class="share linkedin"><i class="icon linkedin colored"></i></a>
 		</div>
 	</div>
 </div>

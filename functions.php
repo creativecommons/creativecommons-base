@@ -21,8 +21,8 @@ define( 'THEME_JS', THEME_URI . '/assets/js' );
   // include TEMPLATEPATH . '/inc/widgets.php';
   // include TEMPLATEPATH . '/inc/search.php';
   // include TEMPLATEPATH . '/inc/settings.php';
-  include TEMPLATEPATH . '/inc/metaboxes.php';
-  include TEMPLATEPATH . '/inc/class-cc-site.php';
+  require TEMPLATEPATH . '/inc/metaboxes.php';
+  require TEMPLATEPATH . '/inc/class-cc-site.php';
   require TEMPLATEPATH . '/inc/class-cc-filters.php';
   require TEMPLATEPATH . '/inc/class-components.php';
   require TEMPLATEPATH . '/inc/class-walkers.php';
@@ -48,13 +48,13 @@ add_image_size( 'landscape-featured', 1000, 500, true );
 */
 $mandatory_sidebars = array(
 
-	'Single' => array(
+	'Single'      => array(
 		'name' => 'single',
 	),
-	'Page'   => array(
+	'Page'        => array(
 		'name' => 'page',
 	),
-	'Page Footer'   => array(
+	'Page Footer' => array(
 		'name' => 'page-footer',
 	),
 );
