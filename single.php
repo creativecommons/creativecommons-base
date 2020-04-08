@@ -7,7 +7,7 @@
 	<header class="single-header">
 		<div class="container">
 			<div class="columns is-centered">
-				<div class="column is-three-quarters">
+				<div class="column is-8">
 					<?php
 					if ( ! empty( $post_format ) ) {
 						get_template_part( 'inc/partials/post_formats/content', $post_format );
@@ -21,9 +21,9 @@
 	</header>
 	<div class="container">
 		<div class="columns is-centered">
-			<div class="column is-three-quarters">
+			<div class="column is-8">
 				<section class="entry-content">
-					<div class="text-format">
+					<div class="text-format body-big">
 						<?php the_content(); ?>
 					</div>
 					<footer class="entry-footer">
