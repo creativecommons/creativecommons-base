@@ -17,10 +17,10 @@
 					<a href="tel://+1-415-429-6753" class="phone">+1-415-429-6753</a>
 				</p>
 				<div class="social-media">
-					<a href="#" class="social instagram"><i class="icon instagram"></i></a>
-					<a href="#" class="social twitter"><i class="icon twitter"></i></a>
-					<a href="#" class="social facebook"><i class="icon facebook"></i></a>
-					<a href="#" class="social linkedin"><i class="icon linkedin"></i></a>
+					<a href="https://www.instagram.com/creativecommons" target="_blank" class="social instagram"><i class="icon instagram"></i></a>
+					<a href="https://www.twitter.com/creativecommons" target="_blank" class="social twitter"><i class="icon twitter"></i></a>
+					<a href="https://www.facebook.com/creativecommons" target="_blank" class="social facebook"><i class="icon facebook"></i></a>
+					<a href="https://www.linkedin.com/company/creative-commons/" target="_blank" class="social linkedin"><i class="icon linkedin"></i></a>
 				</div>
 			</div>
 			<div class="column is-half">
