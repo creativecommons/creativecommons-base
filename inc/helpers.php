@@ -9,7 +9,7 @@
  *
  * @package WordPress
  * @subpackage wp-theme-base
- * @since 2020.04.01
+ * @since 2020.04.1
  */
 
 /**
@@ -124,13 +124,13 @@ function smart_substr( $str, $char, $hellip = true ) {
  */
 class Videos {
 	/**
-	 *  Extract and return video id from youtbe & vimeo videos
-	 *
-	 *  @param string $url : Video url ( whether youtube or vimeo ).
-   *  @param string $width : Video embed width (100% by default).
-   *  @param int    $height : Video embed height (450px by default).
-   *  @return string formated embed layout.
-	 */
+		* Extract and return video id from youtbe & vimeo videos
+		*
+		*	@param string $url : Video url ( whether youtube or vimeo ).
+		*	@param string $width : Video embed width (100% by default).
+		*	@param int    $height : Video embed height (450px by default).
+		*	@return string formated embed layout.
+	*/
 	public static function get_video_embed( $url, $width = '100%', $height = 450 ) {
 		if ( strstr( $url, 'youtube' ) ) {
 			$parse_url = parse_url( $url );

@@ -9,10 +9,40 @@
 	padding-top: $space-large;
 	padding-bottom: $space-large;
 	background-color: $color-lighter-gray;
+	.entry-date {
+		color: $color-dark-gray;
+		font-style: italic;
+	}
 	.entry-image {
 		margin-bottom: $space-normal;
 		img {
 			width: 100%;
+		}
+	}
+}
+.social-media {
+	padding-top: $space-normal;
+	a {
+		margin-right: $space-small;
+		color: $color-white;
+		text-decoration: none;
+		.icon {
+			font-size: 1.8rem;
+		}
+		&:hover {
+			text-decoration: none;
+		}
+	}  
+}
+.entry-footer {
+	.leveled {
+		justify-content: space-between;
+		.share-entry {
+			.share {
+				.icon {
+					font-size: 2rem;
+				}
+			}
 		}
 	}
 }

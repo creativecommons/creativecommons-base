@@ -20,6 +20,9 @@
 					<div class="text-format">
 						<?php the_content(); ?>
 					</div>
+					<footer class="entry-footer">
+						<?php get_template_part('inc/partials/entry/page','footer') ?>
+					</footer>
 				</section>
 			</div>
 		</div>

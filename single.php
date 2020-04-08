@@ -22,25 +22,16 @@
 	<div class="container">
 		<div class="columns is-centered">
 			<div class="column is-three-quarters">
-				
 				<section class="entry-content">
 					<div class="text-format">
 						<?php the_content(); ?>
 					</div>
-					<div class="entry-meta">
-						<hr>
-						<div class="terms-list the-categories margin-vertical-normal">
-							<h6>Categories</h6>
-							<?php echo CC_Site::show_categories( get_the_ID() ); ?>
-						</div>
-						<div class="terms-list the-tags margin-vertical-normal">
-							<h6>Tags</h6>
-							<?php echo CC_Site::show_tags( get_the_ID() ); ?>
-							</div>
-					</div>
+					<footer class="entry-footer">
+						<?php get_template_part('inc/partials/entry/entry','footer') ?>
+					</footer>
 				</section>
 			</div>
 		</div>
 	</div>
 </section>
-<?php get_footer() ?>
+<?php get_footer(); ?>

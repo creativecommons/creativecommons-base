@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"editor.insertSpaces": false,
-		"editor.detectIndentation": false
+		"editor.detectIndentation": false,
+		"phpcs.standard": "WordPress"
 	}
 }

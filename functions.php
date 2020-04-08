@@ -54,6 +54,9 @@ $mandatory_sidebars = array(
 	'Page'   => array(
 		'name' => 'page',
 	),
+	'Page Footer'   => array(
+		'name' => 'page-footer',
+	),
 );
 /**
  * Mandatory sidebars
