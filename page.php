@@ -7,7 +7,7 @@
 	<header class="page-header">
 		<div class="container">
 			<div class="columns is-centered">
-				<div class="column is-three-quarters">
+				<div class="column is-8">
 					<?php get_template_part( 'inc/partials/post_formats/content', 'default' ); ?>
 				</div>
 			</div>
@@ -15,7 +15,7 @@
 	</header>
 	<div class="container">
 		<div class="columns is-centered">
-			<div class="column is-three-quarters">
+			<div class="column is-8">
 				<section class="entry-content">
 					<div class="text-format">
 						<?php the_content(); ?>

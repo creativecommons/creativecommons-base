@@ -1,8 +1,18 @@
 .featured-content {
-  &.turquoise-background {
-    background-color: $color-dark-turquoise;
-  }
+	display: flex;
+	align-items: flex-end;
   min-height: 50vh;
+	color: $color-white;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-blend-mode: multiply;
+	background-position: center;
+	.wrap-content {
+		.heading-b {
+			margin-bottom: $space-big;
+			color: $color-white;
+		}
+	}
 }
 
 .single-header, .page-header {

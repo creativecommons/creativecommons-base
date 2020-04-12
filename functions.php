@@ -20,7 +20,7 @@ define( 'THEME_JS', THEME_URI . '/assets/js' );
 */
   // include TEMPLATEPATH . '/inc/widgets.php';
   // include TEMPLATEPATH . '/inc/search.php';
-  // include TEMPLATEPATH . '/inc/settings.php';
+  include TEMPLATEPATH . '/inc/settings.php';
   require TEMPLATEPATH . '/inc/metaboxes.php';
   require TEMPLATEPATH . '/inc/class-cc-site.php';
   require TEMPLATEPATH . '/inc/class-cc-filters.php';
@@ -47,7 +47,9 @@ add_image_size( 'landscape-featured', 1000, 500, true );
 *  Default sidebars availables
 */
 $mandatory_sidebars = array(
-
+	'Homepage announcement'      => array(
+		'name' => 'home-announcement',
+	),
 	'Single'      => array(
 		'name' => 'single',
 	),
