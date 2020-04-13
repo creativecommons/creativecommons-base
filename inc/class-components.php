@@ -268,7 +268,7 @@ class Components {
 			$out .= '<a href="'.esc_url( $url ).'" class="notification-container">';
 			if ( ( $type == 'content' ) && ( !empty( $img_id ) ) ) {
 				$out .= '<span class="content-image">';
-					$out .= wp_get_attachment_image( $img_id, 'landscape-medium' );
+					$out .= wp_get_attachment_image( $img_id, 'landscape-small' );
 				$out .= '</span>';
 			}
 			if ( $type == 'content' ) {

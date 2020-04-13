@@ -39,6 +39,7 @@ add_theme_support( 'post-thumbnails' );
 
 // Define custom thumbnail sizes
 add_image_size( 'squared', 300, 300, true );
+add_image_size( 'landscape-small', 264, 150, true );
 add_image_size( 'landscape-medium', 740, 416, true );
 add_image_size( 'landscape-featured', 1000, 500, true );
 
@@ -47,8 +48,8 @@ add_image_size( 'landscape-featured', 1000, 500, true );
 *  Default sidebars availables
 */
 $mandatory_sidebars = array(
-	'Homepage announcement'      => array(
-		'name' => 'home-announcement',
+	'Homepage Notification'      => array(
+		'name' => 'home-notification',
 	),
 	'Homepage widgets'      => array(
 		'name' => 'homepage-sidebar',
@@ -133,6 +134,7 @@ class Site {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'admin_enqueue_scripts', array($this, 'admin_enqueue_scripts') );
 		add_action( 'init', array( $this, 'init_functions' ) );
 		add_action( 'init', array( $this, 'register_menus_locations' ) );
 	}
@@ -196,8 +198,12 @@ class Site {
 	}
 
 	function admin_enqueue_scripts() {
-
 		// admin scripts
+		global $pagenow;
+		if ( is_admin() && ($pagenow == 'widgets.php' ) ) {
+		 	wp_enqueue_media();
+		 	wp_enqueue_script( 'script-admin', THEME_JS . '/admin_scripts.js', array('jquery'), self::theme_ver );
+		 }
 	}
 
 	function enqueue_scripts() {

@@ -7,6 +7,9 @@
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
 	background-position: center;
+	&.has-notification-enabled {
+		padding-bottom: $space-larger;
+	}
 	.wrap-content {
 		.heading-b {
 			margin-bottom: $space-big;

@@ -2,7 +2,7 @@
 	global $_set;
   $settings = $_set->settings;
 	$is_feature_enabled = $settings['enable_featured'];
-	$is_announcement_enabled = ( $settings['enabled_announcement'] ) ? ' has-featured-enabled' : '';
+	$is_announcement_enabled = ( $settings['enabled_announcement'] ) ? ' has-notification-enabled' : '';
 	$featured_image = ( !empty( $settings[ 'featured_image' ] ) ) ? 'style="background-image: url('.wp_get_attachment_url( $settings['featured_image'], 'landscape-featured' ).');"' : false;
 	$featured_background_color = ( !empty( $settings[ 'featured_background_color' ] ) ) ? 'has-background-'.$settings['featured_background_color'] : '';
 ?>

@@ -11,7 +11,7 @@
 				get_template_part( 'inc/partials/home/home', 'featured' );
 			}
 			if ( $is_announcement_enabled ) {
-				get_template_part( 'inc/partials/home/home', 'announcement' );
+				get_template_part( 'inc/partials/home/home', 'notification' );
 			}
 
 			get_template_part('inc/partials/home/home','content');

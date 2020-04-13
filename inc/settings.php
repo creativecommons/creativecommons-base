@@ -141,8 +141,8 @@ class ThemeSettings {
 								Input_Checkbox::class,
 								[
 										'name' => 'enabled_announcement',
-										'label' => 'Enable announcement sidebar?',
-										'value' => (!empty($data['enabled_announcement'])) ? $data['enabld_announcement'] : '',
+										'label' => 'Enable notification sidebar?',
+										'value' => (!empty($data['enabled_announcement'])) ? $data['enabled_announcement'] : '',
 										'options' =>[
 											'1' => 'Yes'
 										]
