@@ -27,7 +27,7 @@ class CC_Filters {
 	 * @param array $item : item.
 	 * @param array $args : arguments.
 	 */
-	public function cc_add_class_to_anchor_menu( $atts, $item, $args ) {
+	public static function cc_add_class_to_anchor_menu( $atts, $item, $args ) {
 		if ( $args->theme_location == 'footer-navigation' ) {
 			$atts['class'] = 'menu-item';
 		}

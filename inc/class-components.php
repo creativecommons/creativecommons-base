@@ -176,7 +176,7 @@ class Components {
 				if ( $url ) {
 					$out .= '<a href="'.esc_url($url).'">';
 				}
-				get_the_title( $post_id )
+				$out .= get_the_title( $post_id );
 				if ( $url ) {
 					$out .= '</a>';
 				}
@@ -200,15 +200,18 @@ class Components {
 	 * @param boolean $has_content : should we show an except of the entry?.
 	 * @param boolean $has_border : should we show the border format of the card.
 	 * @param boolean $has_link : should we show the bottom link?.
+	 * @param boolean $extra_class : extra class to component if it's needed.
 	 * @return string component layout
 	 */
-	public static function card_link( $post_id = null, $use_post_data = false, $background_color, $title = null, $description = null, $link_text = null, $url = null, $has_content = true, $has_border = false, $has_link = true ) {
+	public static function card_link( $post_id = null, $use_post_data = false, $background_color, $title = null, $description = null, $link_text = null, $url = null, $has_content = true, $has_border = false, $has_link = true, $extra_class = false ) {
 		$the_title = ( $use_post_data ) ? get_the_title($post_id) : $title;
 		$the_url = ( $use_post_data ) ? get_permalink( $post_id ) : $url;
-		$the_link_text = ( $use_post_data ) ? 'Read more' : $link_text;
+		$the_link_text = ( $use_post_data ) ? 'Read more' : esc_attr( $link_text );
 		$border_class = ( !$has_border ) ? ' no-border' : '';
-		$out .= '<article class="card entry-post link '.$border_class.'">';
-			$out .= '<a href="'.$the_url.'" class="has-background-'.$background_color.'">';
+		$color_class = ( !$has_border ) ? 'class="has-background-'.$background_color.'"' : '';
+		$class = ( !empty( $extra_class ) ) ? ' '.$extra_class : '';
+		$out .= '<article class="card entry-post link '.$border_class.$class.'">';
+			$out .= '<a href="'.$the_url.'" '.$color_class.'>';
 				$out .= '<span class="card-content has-bottom-link">';
 					$out .= '<h2 class="card-title">'.$the_title.'</h2>';
 					if ( $has_content ) {
@@ -218,7 +221,7 @@ class Components {
 						} else {
 							$the_content = $description;
 						}
-					$out .= '<span class="content">'.$the_content.'</span>';
+					$out .= '<span class="content">'.esc_attr($description).'</span>';
 				}
 				if ( $has_link ) {
 					$out .= '<span class="link-arrow">'.$the_link_text.'</span>';
@@ -248,6 +251,40 @@ class Components {
 		if ( ! empty( $text ) && ! empty( $url ) ) {
 			$out .= '<a href="' . $url . '" class="button ' . $size_class .' '. $color_class . '"' . $open_new_tab . '>' . $icon.$text . '</a>';
 		}
+		return $out;
+	}
+	/**
+	 * Notification
+	 *
+	 * @param string  $type : Type of notification content|warning
+	 * @param string  $url : Notification url.
+	 * @param string  $title : Notification title.
+	 * @param string  $content : Notification content.
+	 * @param int     $img_id : Entry Id for image
+	 * @return string component layout
+	 */
+	public static function notification($type = 'warning', $url, $title, $content, $img_id = null ) {
+		$out .= '<div class="notification '.$type.'">';
+			$out .= '<a href="'.esc_url( $url ).'" class="notification-container">';
+			if ( ( $type == 'content' ) && ( !empty( $img_id ) ) ) {
+				$out .= '<span class="content-image">';
+					$out .= wp_get_attachment_image( $img_id, 'landscape-medium' );
+				$out .= '</span>';
+			}
+			if ( $type == 'content' ) {
+				$out .= '<span class="content-wrap">';
+			}
+				$out .= '<h4 class="b-header">'. esc_attr( $title ).'</h4>';
+				$out .= '<span class="notification-content">'.esc_attr( $content ).'</span>';
+				$out .= '<span class="icon-container">';
+					$out .= '<i class="icon chevron-right"></i>';
+				$out .= '</span>';
+				if ( $type == 'content' ) {
+					$out .= '</span>';	
+				}
+			$out .= '</a>';
+		$out .= '</div>';
+
 		return $out;
 	}
 }
