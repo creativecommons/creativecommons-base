@@ -1,6 +1,6 @@
 .home {
 	.main-content {
-		padding: 0;	
+		padding-top: 0;	
 	}
 }
 .page, .single {
@@ -14,6 +14,9 @@
 	}
 }
 
+.push-up {
+	margin-top: -4rem;
+}
 .text-format {
 	p {
 		margin-bottom: $space-normal;
@@ -27,4 +30,4 @@
 	.button {
 		margin-right: $space-normal;
 	}
-} 
+}
