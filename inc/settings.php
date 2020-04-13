@@ -14,40 +14,40 @@ class ThemeSettings {
 	private $flash;
 	public $settings;
 	public function __construct() {
-			 $this->init();
-			$this->flash    = array(
-				'updated' => __( 'Settings saved', 'cc-theme-base' ),
-				'error'   => __( 'There was a problem saving your settings', 'cc-theme-base' ),
-			);
-			$this->settings = get_option( 'site_theme_settings' );
+		$this->init();
+		$this->flash    = array(
+			'updated' => __( 'Settings saved', 'cc-theme-base' ),
+			'error'   => __( 'There was a problem saving your settings', 'cc-theme-base' ),
+		);
+		$this->settings = get_option( 'site_theme_settings' );
 	}
 	public function init() {
-			add_action( 'admin_menu', array( $this, 'addAdminMenu' ) );
-			add_action( 'admin_init', array( $this, 'saveSettings' ) );
+		add_action( 'admin_menu', array( $this, 'addAdminMenu' ) );
+		add_action( 'admin_init', array( $this, 'saveSettings' ) );
 	}
 	public function addAdminMenu() {
-			add_submenu_page( 'index.php', _x( 'Custom settings', 'site settings title', 'cc-theme-base' ), _x( 'Custom settings', 'site settings menu', 'cc-theme-base' ), 'edit_theme_options', 'cc-theme-base-site-settings', array( $this, 'adminMenuScreen' ) );
+		add_submenu_page( 'index.php', _x( 'Custom settings', 'site settings title', 'cc-theme-base' ), _x( 'Custom settings', 'site settings menu', 'cc-theme-base' ), 'edit_theme_options', 'cc-theme-base-site-settings', array( $this, 'adminMenuScreen' ) );
 	}
 	public function get_terms() {
-			$reports = front::get_reports();
-			$return  = array( '' => 'Choose' );
+		$reports = front::get_reports();
+		$return  = array( '' => 'Choose' );
 		foreach ( $reports as $report ) {
-				$return[ $report->ID ] = $report->post_title;
+			$return[ $report->ID ] = $report->post_title;
 		}
-			return $return;
+		return $return;
 	}
 	public function adminMenuScreen() {
-			 wp_enqueue_media();
-			echo '<div class="wrap">';
-			screen_icon( 'index' );
-			echo '<h2>' . _x( 'Custom Settings', 'site settings title', 'cc-theme-base' ) . '</h2>';
+		wp_enqueue_media();
+		echo '<div class="wrap">';
+		screen_icon( 'index' );
+		echo '<h2>' . _x( 'Custom Settings', 'site settings title', 'cc-theme-base' ) . '</h2>';
 		if ( ! empty( $_GET['msg'] ) && isset( $this->flash[ $_GET['msg'] ] ) ) :
-				echo '<div class="updated">';
+			echo '<div class="updated">';
 			echo '<p>' . $this->flash[ $_GET['msg'] ] . '</p>';
 			echo '</div>';
-			endif;
-			$data = get_option( 'site_theme_settings' );
-			echo '<h4>Front page settings</h4>';
+		endif;
+		$data = get_option( 'site_theme_settings' );
+		echo '<h4>Front page settings</h4>';
 			$form = Node_Factory::make(
 				Form::class,
 				[
@@ -182,7 +182,6 @@ class ThemeSettings {
 		echo $form;
 	}
 	public function saveSettings() {
-		// echo '<pre>'; print_r($_POST); echo '</pre>';
 		if ( empty( $_POST['action'] ) ) {
 			return;
 		}

@@ -1,9 +1,10 @@
-// mediaControl for wp.media in widget
-// uses jquery data attached to object
-// 		uploader-title 	: Title for the wordpress media windows
-//		button-text 	: Text for the button
-//		targetid		: target ID of the hidden input that contains the attachment id of the selected picture
-// @hugosolar
+/** 
+ * mediaControl for wp.media in widget
+ * uses jquery data attached to object
+ * uploader-title 	: Title for the wordpress media windows
+ * button-text 	: Text for the button
+ * targetid		: target ID of the hidden input that contains the attachment id of the selected picture
+ **/
 function bindEventWidgetImage(id) {
 	var obj = jQuery('#'+id);
 	// Create the media frame.
