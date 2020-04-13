@@ -42,7 +42,6 @@
 @mixin grid-rows($cols, $min-width: 200px) {
     grid-template-rows: repeat($cols, $min-width);
 }
-
 @mixin use-columns($size) {
     grid-column: span $size;
 }

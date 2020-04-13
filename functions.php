@@ -19,8 +19,8 @@ define( 'THEME_JS', THEME_URI . '/assets/js' );
 * Calling related files
 */
   // include TEMPLATEPATH . '/inc/search.php';
-  include TEMPLATEPATH . '/inc/widgets.php';
-  include TEMPLATEPATH . '/inc/settings.php';
+  require TEMPLATEPATH . '/inc/widgets.php';
+  require TEMPLATEPATH . '/inc/settings.php';
   require TEMPLATEPATH . '/inc/metaboxes.php';
   require TEMPLATEPATH . '/inc/class-cc-site.php';
   require TEMPLATEPATH . '/inc/class-cc-filters.php';
@@ -48,19 +48,19 @@ add_image_size( 'landscape-featured', 1000, 500, true );
 *  Default sidebars availables
 */
 $mandatory_sidebars = array(
-	'Homepage Notification'      => array(
+	'Homepage Notification' => array(
 		'name' => 'home-notification',
 	),
 	'Homepage widgets'      => array(
 		'name' => 'homepage-sidebar',
 	),
-	'Single'      => array(
+	'Single'                => array(
 		'name' => 'single',
 	),
-	'Page'        => array(
+	'Page'                  => array(
 		'name' => 'page',
 	),
-	'Page Footer' => array(
+	'Page Footer'           => array(
 		'name' => 'page-footer',
 	),
 );
@@ -134,7 +134,7 @@ class Site {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'admin_enqueue_scripts', array($this, 'admin_enqueue_scripts') );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		add_action( 'init', array( $this, 'init_functions' ) );
 		add_action( 'init', array( $this, 'register_menus_locations' ) );
 	}
@@ -200,10 +200,10 @@ class Site {
 	function admin_enqueue_scripts() {
 		// admin scripts
 		global $pagenow;
-		if ( is_admin() && ($pagenow == 'widgets.php' ) ) {
-		 	wp_enqueue_media();
-		 	wp_enqueue_script( 'script-admin', THEME_JS . '/admin_scripts.js', array('jquery'), self::theme_ver );
-		 }
+		if ( is_admin() && ( $pagenow == 'widgets.php' ) ) {
+			wp_enqueue_media();
+			wp_enqueue_script( 'script-admin', THEME_JS . '/admin_scripts.js', array( 'jquery' ), self::theme_ver );
+		}
 	}
 
 	function enqueue_scripts() {
