@@ -1,8 +1,3 @@
-.home {
-	.main-content {
-		padding-top: 0;	
-	}
-}
 .page, .single {
 	.main-content {
 		padding-top: $space-bigger;
@@ -13,7 +8,11 @@
 		}
 	}
 }
-
+.page-template-page-home {
+	.main-content {
+		padding-top: 0;	
+	}
+}
 .push-up {
 	margin-top: -4rem;
 }

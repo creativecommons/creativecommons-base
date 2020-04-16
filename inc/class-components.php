@@ -31,11 +31,13 @@ class Components
 	 * @param boolean $has_button : should we show the action button?.
 	 * @param boolean $has_content : should we show the except of the entry?.
 	 * @param string  $direction : direction of the card `horizontal` or `vertical`.
+	 * @param string  $button_size : size of the button big|small|tiny
+	 * @param string  %button_color : color of the button is_primary|donate|is-success|is-info|.is-warning|.is-danger
 	 * @return string component layout
 	 */
-	public static function card_post($post_id, $show_image = true, $is_video = false, $has_button = true, $has_content = true, $direction = 'horizontal')
+	public static function card_post($post_id, $show_image = true, $is_video = false, $has_button = true, $has_content = true, $direction = 'horizontal', $button_size = false, $button_color = false)
 	{
-		$out .= '<article class="card entry-post ' . $direction . '">';
+		$out = '<article class="card entry-post ' . $direction . '">';
 		if (has_post_thumbnail($post_id) && $show_image) {
 			$out .= '<header class="card-image">';
 			$out .= '<figure class="image is-4by3">';
@@ -52,10 +54,12 @@ class Components
 		if ($has_content) {
 			$the_post = get_post($post_id);
 			$out .= '<div class="content">';
-			$out .= do_excerpt($the_post);
+			$out .= do_excerpt($the_post, array('length' => 110));
 			$out .= '</div>';
 		}
-		$out .= '<a href="' . get_permalink($post_id) . '" class="button is-primary">Read more</a>';
+		$button_color = ($button_color) ? $button_color : 'is-primary';
+		$button_size = ($button_size) ? $button_size : 'big';
+		$out .= self::button('Read more', get_permalink($post_id), $button_size, $button_color);
 		$out .= '</div>';
 		$out .= '</article>';
 
@@ -296,6 +300,35 @@ class Components
 		$out .= '</a>';
 		$out .= '</div>';
 
+		return $out;
+	}
+	/**
+	 * Notification
+	 *
+	 * @param int     $post_id : post or entry ID.
+	 * @param boolean $has_content : whether to show or not the content excerpt.
+	 * @param boolean $has_image : whether to show or not the entry thumbnail.
+	 * @return string component layout
+	 */
+	public static function simple_entry($post_id, $has_content = true, $has_image = true)
+	{
+		$out = '<article class="entry-simple-post">';
+		if (has_post_thumbnail($post_id) && $has_image) {
+			$out .= '<figure class="entry-image">';
+			$out .= get_the_post_thumbnail($post_id, 'squared');
+			$out .= '</figure>';
+		}
+		$out .= '<div class="entry-content">';
+		$out .= '<h4 class="b-header"><a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a></h4>';
+		$out .= '<span class="entry-date">'.get_the_date('d F Y').'</span>';
+		if ($has_content) {
+			$the_post = get_post($post_id);
+			$out .= '<div class="entry-description">';
+			$out .= do_excerpt($the_post);
+			$out .= '</div>';
+		}
+		$out .= '</div>';
+		$out .= '</article>';
 		return $out;
 	}
 }

@@ -30,13 +30,9 @@ class WP_Widget_Column_Open extends WP_Widget
 		echo '<select class="widefat" id="' . $this->get_field_id('columns') . '" name="' . $this->get_field_name('columns') . '">';
 		echo '<option value="">Select</option>';
 		echo '<option value="auto"' . (($columns == 'auto') ? 'selected="selected"' : '') . '>Auto fit</option>';
-		echo '<option value="2" ' . (($columns == '2') ? 'selected="selected"' : '') . '>2</option>';
-		echo '<option value="3" ' . (($columns == '3') ? 'selected="selected"' : '') . '>3</option>';
-		echo '<option value="4" ' . (($columns == '4') ? 'selected="selected"' : '') . '>4</option>';
-		echo '<option value="5" ' . (($columns == '5 ') ? 'selected="selected"' : '') . '>5</option>';
-		echo '<option value="6" ' . (($columns == '6') ? 'selected="selected"' : '') . '>6</option>';
-		echo '<option value="7" ' . (($columns == '7') ? 'selected="selected"' : '') . '>7</option>';
-		echo '<option value="8" ' . (($columns == '8') ? 'selected="selected"' : '') . '>8</option>';
+		for ( $i = 2; $i<= 8; $i++ ) {
+			echo '<option value="'.$i.'" ' . (($columns == $i) ? 'selected="selected"' : '') . '>'.$i.'</option>';
+		}
 		echo '</select>';
 		echo '</p>';
 	}
@@ -102,13 +98,9 @@ class WP_Widget_Single_Column_Open extends WP_Widget
 		echo '<select class="widefat" id="' . $this->get_field_id('columns') . '" name="' . $this->get_field_name('columns') . '">';
 		echo '<option value="">Select</option>';
 		echo '<option value="auto"' . (($columns == 'auto') ? 'selected="selected"' : '') . '>Auto fit</option>';
-		echo '<option value="2" ' . (($columns == '2') ? 'selected="selected"' : '') . '>2</option>';
-		echo '<option value="3" ' . (($columns == '3') ? 'selected="selected"' : '') . '>3</option>';
-		echo '<option value="4" ' . (($columns == '4') ? 'selected="selected"' : '') . '>4</option>';
-		echo '<option value="5" ' . (($columns == '5 ') ? 'selected="selected"' : '') . '>5</option>';
-		echo '<option value="6" ' . (($columns == '6') ? 'selected="selected"' : '') . '>6</option>';
-		echo '<option value="7" ' . (($columns == '7') ? 'selected="selected"' : '') . '>7</option>';
-		echo '<option value="8" ' . (($columns == '8') ? 'selected="selected"' : '') . '>8</option>';
+		for ( $i = 2; $i<= 8; $i++ ) {
+			echo '<option value="'.$i.'" ' . (($columns == $i) ? 'selected="selected"' : '') . '>'.$i.'</option>';
+		}
 		echo '</select>';
 		echo '</p>';
 	}
