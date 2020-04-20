@@ -52,8 +52,12 @@
 .entry-simple-post {
 	display: flex;
 	margin-bottom: $space-big;
+	&.has-image {
+		.entry-content{
+			padding-left: $space-bigger;
+		}
+	}
 	.entry-content {
-		padding-left: $space-bigger;
 		.b-header {
 			a {
 				color: $black;

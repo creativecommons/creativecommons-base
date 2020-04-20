@@ -164,6 +164,7 @@ class Site {
 			'main-navigation'   => 'Main navigation',
 			'main-menu-mobile'  => 'Main navigation mobile',
 			'footer-navigation' => 'Footer navigation',
+			'404-navigation'		=>	'404 Navigation'
 		);
 		/**
 	 * Menu locations

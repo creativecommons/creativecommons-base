@@ -312,8 +312,10 @@ class Components
 	 */
 	public static function simple_entry($post_id, $has_content = true, $has_image = true)
 	{
-		$out = '<article class="entry-simple-post">';
-		if (has_post_thumbnail($post_id) && $has_image) {
+		$has_thumb = has_post_thumbnail($post_id);
+		$has_thumb_class = ( $has_thumb ) ? ' has-image' : '';
+		$out = '<article class="entry-simple-post'.$has_thumb_class.'">';
+		if ( $has_thumb && $has_image) {
 			$out .= '<figure class="entry-image">';
 			$out .= get_the_post_thumbnail($post_id, 'squared');
 			$out .= '</figure>';
