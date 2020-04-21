@@ -126,7 +126,7 @@ class CC_Site {
 		} if (is_search()) {
 			return 'Search for: &#8220;'. get_search_query() .'&#8221;';
 		} elseif (is_404()) {
-			return 'Sorry, content not found';
+			return 'Content not found';
 		} elseif (is_author()) {
 			return 'Author: '. $get->display_name;
 		} else {

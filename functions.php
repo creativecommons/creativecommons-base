@@ -39,7 +39,7 @@ add_theme_support( 'post-thumbnails' );
 
 // Define custom thumbnail sizes
 add_image_size( 'squared', 300, 300, true );
-add_image_size( 'landscape-small', 264, 150, true );
+add_image_size( 'landscape-small', 450, 325, true );
 add_image_size( 'landscape-medium', 740, 416, true );
 add_image_size( 'landscape-featured', 1000, 500, true );
 

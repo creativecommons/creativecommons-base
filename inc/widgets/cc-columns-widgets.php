@@ -83,7 +83,8 @@ class WP_Widget_Single_Column_Open extends WP_Widget
 	function widget($args, $instance)
 	{
 		$class_columns = ($instance['columns'] != 'auto') ? 'use-' . $instance['columns'] . '-cols' : '';
-		echo '<div class="' . $class_columns . '">';
+		$class_color = ( !empty( $instance['color'] ) ) ? ' has-background-'.$instance['color'] : '';
+		echo '<div class="cell ' . $class_columns . $class_color . '">';
 	}
 
 	function update($new_instance, $old_instance)
@@ -94,6 +95,7 @@ class WP_Widget_Single_Column_Open extends WP_Widget
 	function form($instance)
 	{
 		$columns = $instance['columns'];
+		$color = $instance['color'];
 		echo '<p><label>How many columns should use?: </label>';
 		echo '<select class="widefat" id="' . $this->get_field_id('columns') . '" name="' . $this->get_field_name('columns') . '">';
 		echo '<option value="">Select</option>';
@@ -101,6 +103,17 @@ class WP_Widget_Single_Column_Open extends WP_Widget
 		for ( $i = 2; $i<= 8; $i++ ) {
 			echo '<option value="'.$i.'" ' . (($columns == $i) ? 'selected="selected"' : '') . '>'.$i.'</option>';
 		}
+		echo '</select>';
+		echo '</p>';
+		echo '<p><label>Color: </label>';
+		echo '<select class="widefat" id="' . $this->get_field_id('color') . '" name="' . $this->get_field_name('color') . '">';
+		echo '<option value="">Select color</option>';
+		echo '<option value="lighter-gray"' . (($color == 'lighter-gray') ? 'selected="selected"' : '') . '>Lighter Gray</option>';
+		echo '<option value="tomato"' . (($color == 'tomato') ? 'selected="selected"' : '') . '>Tomato</option>';
+		echo '<option value="gold" ' . (($color == 'gold') ? 'selected="selected"' : '') . '>Gold</option>';
+		echo '<option value="forest-green" ' . (($color == 'forest-green') ? 'selected="selected"' : '') . '>Forest Green</option>';
+		echo '<option value="dark-turquoise" ' . (($color == 'dark-turquoise') ? 'selected="selected"' : '') . '>Dark Turnquoise</option>';
+		echo '<option value="dark-slate-blue" ' . (($color == 'dark-slate-blue') ? 'selected="selected"' : '') . '>Dark Slate Blue</option>';
 		echo '</select>';
 		echo '</p>';
 	}

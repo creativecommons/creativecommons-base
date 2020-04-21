@@ -315,12 +315,13 @@ class Components
 		$has_thumb = has_post_thumbnail($post_id);
 		$has_thumb_class = ( $has_thumb ) ? ' has-image' : '';
 		$out = '<article class="entry-simple-post'.$has_thumb_class.'">';
+		$out .= '<div class="columns">';
 		if ( $has_thumb && $has_image) {
-			$out .= '<figure class="entry-image">';
-			$out .= get_the_post_thumbnail($post_id, 'squared');
+			$out .= '<figure class="entry-image column is-4">';
+			$out .= get_the_post_thumbnail($post_id, 'landscape-small');
 			$out .= '</figure>';
 		}
-		$out .= '<div class="entry-content">';
+		$out .= '<div class="entry-content column">';
 		$out .= '<h4 class="b-header"><a href="'.get_permalink($post_id).'">'.get_the_title($post_id).'</a></h4>';
 		$out .= '<span class="entry-date">'.get_the_date('d F Y').'</span>';
 		if ($has_content) {
@@ -329,6 +330,7 @@ class Components
 			$out .= do_excerpt($the_post);
 			$out .= '</div>';
 		}
+		$out .= '</div>';
 		$out .= '</div>';
 		$out .= '</article>';
 		return $out;

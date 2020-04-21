@@ -2,7 +2,7 @@
 	.main-content {
 		padding-top: $space-bigger;
 		padding-bottom: $space-bigger;
-		.entry-content {
+		.entry-page-content {
 			padding-top: $space-large;
 			padding-bottom: $space-larger;
 		}
@@ -11,6 +11,10 @@
 .page-template-page-home {
 	.main-content {
 		padding-top: 0;	
+		padding-bottom: 0;
+	}
+	.homepage-sidebars {
+		margin-top: $space-larger;
 	}
 }
 .push-up {
@@ -28,5 +32,16 @@
 	}
 	.button {
 		margin-right: $space-normal;
+	}
+}
+.error404 {
+	.page-header {
+		.container {
+			padding-top: 10rem;
+			padding-bottom: 10rem;
+			h4 {
+				margin-bottom: $space-normal;
+			}
+		}
 	}
 }
