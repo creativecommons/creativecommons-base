@@ -1,0 +1,22 @@
+.widget {
+	&.news {
+		padding-top: $space-large;
+		padding-bottom: $space-large;
+		.widget-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: $space-large;
+			.more-news {
+				a {
+					display: flex;
+					align-items: center;
+					font-weight: 600;
+					.icon {
+						margin-left: $space-small;
+					}
+				}
+			}
+		}
+	}
+}
