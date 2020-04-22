@@ -1,4 +1,13 @@
 .widget {
+	&.newsletter {
+		padding-top: $space-large;
+		padding-bottom: $space-larger;
+		border: 2px solid $color-lighter-gray;
+		.widget-byline {
+			display: block;
+			margin-bottom: $space-small;
+		}
+	}
 	&.news {
 		padding-top: $space-large;
 		padding-bottom: $space-large;
@@ -18,5 +27,10 @@
 				}
 			}
 		}
+	}
+}
+.no-gap {
+	.widget {
+		padding: $space-large;
 	}
 }

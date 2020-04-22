@@ -15,7 +15,7 @@ class WP_Widget_Column_Open extends WP_Widget
 	function widget($args, $instance)
 	{
 		$class_columns = ($instance['columns'] != 'auto') ? 'total-cols-' . $instance['columns'] : '';
-		echo '<aside class="grid-container ' . $class_columns . '">';
+		echo '<aside class="grid-container no-gap ' . $class_columns . '">';
 	}
 
 	function update($new_instance, $old_instance)

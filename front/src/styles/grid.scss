@@ -9,6 +9,9 @@
 		grid-template-columns: repeat($columns, minmax($min-width, 1fr));
 		grid-gap: $gap;
 		grid-auto-flow: $flow;
+		&.no-gap {
+			grid-gap: 0;
+		}
 		@include touch() {
 				display: block;
 		}
@@ -67,10 +70,16 @@
 		}
 }
 .grid-container {
-		@include grid-container(15rem);
+		@include grid-container(15rem,$column-gap);
 		@for $x from 2 through 12 {
 					&.total-cols-#{$x} {
-						@include grid-container(15rem,1.5rem,dense,$x);
+						@include grid-container(15rem,$column-gap,dense,$x);
+			}
+		}
+		&.no-gap {
+			.cell {
+				padding-top: 0;
+				padding-right: 0;
 			}
 		}
 		.cell {

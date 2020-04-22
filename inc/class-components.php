@@ -315,7 +315,7 @@ class Components
 		$has_thumb = has_post_thumbnail($post_id);
 		$has_thumb_class = ( $has_thumb ) ? ' has-image' : '';
 		$out = '<article class="entry-simple-post'.$has_thumb_class.'">';
-		$out .= '<div class="columns">';
+		$out .= '<div class="columns is-gapless">';
 		if ( $has_thumb && $has_image) {
 			$out .= '<figure class="entry-image column is-4">';
 			$out .= get_the_post_thumbnail($post_id, 'landscape-small');

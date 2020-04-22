@@ -114,7 +114,7 @@ class CC_Site {
 	 * @return string current page title
 	 */
 	static function page_title(){
-		$get= get_queried_object();
+		$get = get_queried_object();
 		if (is_post_type_archive()) {
 			return 'Archive: '.$get->labels->name;
 		} elseif (is_category()) {
