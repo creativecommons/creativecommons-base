@@ -8,3 +8,4 @@ require STYLESHEETPATH . '/inc/widgets/cc-notification.php';
 require STYLESHEETPATH . '/inc/widgets/cc-list-entries.php';
 require STYLESHEETPATH . '/inc/widgets/cc-newsletter-form.php';
 require STYLESHEETPATH . '/inc/widgets/cc-twitter-timeline.php';
+require STYLESHEETPATH . '/inc/widgets/cc-card.php';

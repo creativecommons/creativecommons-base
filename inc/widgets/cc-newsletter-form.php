@@ -21,7 +21,7 @@ class WP_Widget_Newsletter_Form extends WP_Widget {
 		if ( !empty( $instance['byline']) ) {
 			echo '<small class="widget-byline">'.esc_attr($instance['byline']).'</small>';
 		}
-		echo '<form method="post" action="https://us.e-activist.com/page/6747/data/2">';
+		echo '<form method="post" action="https://us.e-activist.com/page/6669/data/2">';
 		echo '<div class="field has-addons">';
   	echo '<div class="control">';
     	echo '<input id="en__field_supporter_emailAddress" type="text" class="input" name="supporter.emailAddress" value="'.$placeholder.'" />';

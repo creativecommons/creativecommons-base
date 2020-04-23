@@ -15,7 +15,8 @@ class WP_Widget_Column_Open extends WP_Widget
 	function widget($args, $instance)
 	{
 		$class_columns = ($instance['columns'] != 'auto') ? 'total-cols-' . $instance['columns'] : '';
-		echo '<aside class="grid-container no-gap ' . $class_columns . '">';
+		$class_gaps = ($instance['remove_gaps']) ? ' no-gap ' : '';
+		echo '<aside class="grid-container ' . $class_gaps . $class_columns . '">';
 	}
 
 	function update($new_instance, $old_instance)
@@ -26,7 +27,9 @@ class WP_Widget_Column_Open extends WP_Widget
 	function form($instance)
 	{
 		$columns = $instance['columns'];
+		$remove_gaps = $instance['remove_gaps'];
 		echo '<p><label>Columns: </label>';
+		echo '<p><label for="' . $this->get_field_name('remove_gaps') . '">Remove gap? </label><input type="checkbox" id="' . $this->get_field_id('remove_gaps') . '"' . ((!empty($remove_gaps)) ? ' checked="checked" ' : '') . ' name="' . $this->get_field_name('remove_gaps') . '" value="1"></p>';
 		echo '<select class="widefat" id="' . $this->get_field_id('columns') . '" name="' . $this->get_field_name('columns') . '">';
 		echo '<option value="">Select</option>';
 		echo '<option value="auto"' . (($columns == 'auto') ? 'selected="selected"' : '') . '>Auto fit</option>';

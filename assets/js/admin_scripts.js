@@ -15,15 +15,14 @@ function bindEventWidgetImage(id) {
 		},
 		multiple: false  // Set to true to allow multiple files to be selected
 	});
-	// When an image is selected, run a callback.
+	// When image is selected, run the callback.
 	file_frame.on( 'select', function() {
-		//var img_obj = obj.data('targetimg');
 		var img_id = obj.data('targetid');
 		attachment = file_frame.state().get('selection').first().toJSON();
-		if (attachment.sizes !== undefined)
+		if (attachment.sizes.thumbnail !== undefined)
 			var img_selected = '<img src="'+attachment.sizes.thumbnail.url+'">';
 		else
-			var img_selected = '<img src="'+attachment.url+'" width="150" height="150" />';
+			var img_selected = '<img src="'+attachment.sizes.full.url+'" width="150" height="150" />';
 
 		obj.prev().html(img_selected);
 

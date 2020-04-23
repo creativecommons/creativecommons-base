@@ -1,4 +1,25 @@
 .widget {
+	&.card {
+		text-align: center;
+		.pre-title {
+			display: block;
+			margin-bottom: $space-small;
+			color: $color-black;
+			font-weight: 600;
+		}
+		.card-image {
+			&.is_stretched {
+				.image {
+					img {
+						width: 100%;
+					}
+				}
+			}
+			.image {
+				text-align: center;
+			}
+		}
+	}
 	&.newsletter {
 		padding-top: $space-large;
 		padding-bottom: $space-larger;

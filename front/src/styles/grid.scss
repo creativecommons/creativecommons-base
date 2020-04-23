@@ -6,11 +6,16 @@
 
 @mixin grid-container($min-width: 160px, $gap: 1.5rem, $flow: dense, $columns: auto-fit) {
 		display: grid;
+		position: relative;
 		grid-template-columns: repeat($columns, minmax($min-width, 1fr));
 		grid-gap: $gap;
 		grid-auto-flow: $flow;
+		margin-top: $gap;
+		margin-bottom: $gap;
 		&.no-gap {
 			grid-gap: 0;
+			margin-bottom: 0;
+			margin-top: 0;
 		}
 		@include touch() {
 				display: block;

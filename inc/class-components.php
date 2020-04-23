@@ -35,31 +35,65 @@ class Components
 	 * @param string  %button_color : color of the button is_primary|donate|is-success|is-info|.is-warning|.is-danger
 	 * @return string component layout
 	 */
-	public static function card_post($post_id, $show_image = true, $is_video = false, $has_button = true, $has_content = true, $direction = 'horizontal', $button_size = false, $button_color = false)
+	public static function card_post(
+		$post_id = false, 
+		$use_post_data = false, 
+		$show_image = true, 
+		$is_stretch = true, 
+		$is_video = false, 
+		$has_button = true, 
+		$has_border = true,
+		$has_content = true,
+		$pre_title = false, 
+		$description = false, 
+		$url = false, 
+		$title = false, 
+		$date = false, 
+		$image_id = false, 
+		$direction = 'horizontal', 
+		$button_text = false, 
+		$button_size = false, 
+		$button_color = false
+		)
 	{
-		$out = '<article class="card entry-post ' . $direction . '">';
-		if (has_post_thumbnail($post_id) && $show_image) {
-			$out .= '<header class="card-image">';
+		$card_image = ($use_post_data) ? get_the_post_thumbnail( $post_id, 'landscape-medium' ) : wp_get_attachment_image( $image_id, 'landscape-medium' );
+		$card_title = ($use_post_data) ? get_the_title( $post_id ) : $title;
+		$card_url = ($use_post_data) ? get_permalink($post_id) : $url;
+		$card_date = ($use_post_data) ? get_the_date('d F Y', $post_id) : $date;
+		$card_border = ($has_border) ? '' : ' no-border ';
+		$button_color = ($button_color) ? $button_color : 'is-primary';
+		$button_size = ($button_size) ? $button_size : 'big';
+		$button_text = (!empty($button_text)) ? $button_text : 'Read More';
+		$strecth_class = ($is_stretch) ? ' is_stretched' : '';
+		$button_class = ($has_button) ? ' with-button' : '';
+
+		$out = '<article class="card entry-post ' . $direction . $card_border .'">';
+		if (($use_post_data && has_post_thumbnail($post_id) && $show_image) || (!$use_post_data && !empty($image_id) && $show_image)) {
+			$out .= '<header class="card-image'.$strecth_class.'">';
 			$out .= '<figure class="image is-4by3">';
-			$out .= get_the_post_thumbnail($post_id, 'landscape-medium');
+			$out .= $card_image;
 			$out .= '</figure>';
 			$out .= '</header>';
 		}
-		$button_class = ($has_button) ? ' with-button' : '';
+		
 		$out .= '<div class="card-content ' . $button_class . '">';
-		$out .= '<h4 class="card-title"><a href="' . get_permalink($post_id) . '">' . get_the_title($post_id) . '</a></h4>';
-		if (!$is_video) {
-			$out .= '<span class="subtitle"> ' . get_the_date('d F Y', $post_id) . ' </span>';
+		if (!empty($pre_title)) {
+			$out .= '<span class="pre-title">'.$pre_title.'</span>';
+		}
+		$out .= '<h4 class="card-title"><a href="' . $card_url . '">' . $card_title . '</a></h4>';
+		if (!$is_video && !empty($card_date)) {
+			$out .= '<span class="subtitle"> ' . $card_date . ' </span>';
 		}
 		if ($has_content) {
-			$the_post = get_post($post_id);
+			$the_post = ($use_post_data) ? get_post($post_id) : false;
+			$the_description = ($use_post_data) ? do_excerpt($the_post, array('length' => 110)) : $description;
 			$out .= '<div class="content">';
-			$out .= do_excerpt($the_post, array('length' => 110));
+			$out .= $the_description;
 			$out .= '</div>';
 		}
-		$button_color = ($button_color) ? $button_color : 'is-primary';
-		$button_size = ($button_size) ? $button_size : 'big';
-		$out .= self::button('Read more', get_permalink($post_id), $button_size, $button_color);
+		if ($has_button) {
+			$out .= self::button($button_text, $card_url, $button_size, $button_color);
+		}
 		$out .= '</div>';
 		$out .= '</article>';
 
