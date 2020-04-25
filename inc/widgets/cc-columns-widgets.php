@@ -16,7 +16,8 @@ class WP_Widget_Column_Open extends WP_Widget
 	{
 		$class_columns = ($instance['columns'] != 'auto') ? 'total-cols-' . $instance['columns'] : '';
 		$class_gaps = ($instance['remove_gaps']) ? ' no-gap ' : '';
-		echo '<aside class="grid-container ' . $class_gaps . $class_columns . '">';
+		$class_vertical_space = (!empty($instance['vertical_space'])) ? ' padding-vertical-'.$instance['vertical_space'] : '';
+		echo '<aside class="grid-container ' . $class_gaps . $class_columns . $class_vertical_space . '">';
 	}
 
 	function update($new_instance, $old_instance)
@@ -28,6 +29,7 @@ class WP_Widget_Column_Open extends WP_Widget
 	{
 		$columns = $instance['columns'];
 		$remove_gaps = $instance['remove_gaps'];
+		$vertical_space = $instance['vertical_space'];
 		echo '<p><label>Columns: </label>';
 		echo '<p><label for="' . $this->get_field_name('remove_gaps') . '">Remove gap? </label><input type="checkbox" id="' . $this->get_field_id('remove_gaps') . '"' . ((!empty($remove_gaps)) ? ' checked="checked" ' : '') . ' name="' . $this->get_field_name('remove_gaps') . '" value="1"></p>';
 		echo '<select class="widefat" id="' . $this->get_field_id('columns') . '" name="' . $this->get_field_name('columns') . '">';
@@ -36,6 +38,17 @@ class WP_Widget_Column_Open extends WP_Widget
 		for ( $i = 2; $i<= 8; $i++ ) {
 			echo '<option value="'.$i.'" ' . (($columns == $i) ? 'selected="selected"' : '') . '>'.$i.'</option>';
 		}
+		echo '</select>';
+		echo '</p>';
+		echo '<p><label>Space: </label>';
+		echo '<select class="widefat" id="' . $this->get_field_id('vertical_space') . '" name="' . $this->get_field_name('vertical_space') . '">';
+		echo '<option value="">Select size</option>';
+		echo '<option value="normal"' . (($vertical_space == 'normal') ? 'selected="selected"' : '') . '>Normal</option>';
+		echo '<option value="big"' . (($vertical_space == 'big') ? 'selected="selected"' : '') . '>Big</option>';
+		echo '<option value="bigger" ' . (($vertical_space == 'bigger') ? 'selected="selected"' : '') . '>Bigger</option>';
+		echo '<option value="large" ' . (($vertical_space == 'large') ? 'selected="selected"' : '') . '>Large</option>';
+		echo '<option value="larger" ' . (($vertical_space == 'larger') ? 'selected="selected"' : '') . '>Larger</option>';
+		echo '<option value="xl" ' . (($vertical_space == 'xl') ? 'selected="selected"' : '') . '>XL</option>';
 		echo '</select>';
 		echo '</p>';
 	}
@@ -87,7 +100,7 @@ class WP_Widget_Single_Column_Open extends WP_Widget
 	{
 		$class_columns = ($instance['columns'] != 'auto') ? 'use-' . $instance['columns'] . '-cols' : '';
 		$class_color = ( !empty( $instance['color'] ) ) ? ' has-background-'.$instance['color'] : '';
-		echo '<div class="cell ' . $class_columns . $class_color . '">';
+		echo '<div class="cell ' . $class_columns . $class_color .'">';
 	}
 
 	function update($new_instance, $old_instance)

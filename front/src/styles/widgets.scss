@@ -1,4 +1,26 @@
 .widget {
+	&.donate {
+		text-align: center;
+		h3 {
+			margin-bottom: $space-normal;
+		}
+		.donate-buttons {
+			display: flex;
+			justify-content: center;
+			.donate-amount {
+				margin-right: $space-normal;
+				&.active {
+					background-color: $color-dark-gray;
+					color: $white;
+				}
+			}
+		}
+	}
+	&.twitter {
+		&.has-border {
+			border: 2px solid $color-lighter-gray;
+		}
+	}
 	&.card {
 		text-align: center;
 		.pre-title {
@@ -23,7 +45,9 @@
 	&.newsletter {
 		padding-top: $space-large;
 		padding-bottom: $space-larger;
-		border: 2px solid $color-lighter-gray;
+		&.has-border {
+			border: 2px solid $color-lighter-gray;
+		}
 		.widget-byline {
 			display: block;
 			margin-bottom: $space-small;

@@ -14,7 +14,8 @@ class WP_Widget_Newsletter_Form extends WP_Widget {
 	{
 		$button_text = (!empty($instance['button_text'])) ?  esc_attr($instance['button_text']) : 'Join';
 		$placeholder = (!empty($instance['placeholder'])) ?  esc_attr($instance['placeholder']) : 'Enter your email';
-		echo '<div class="widget newsletter">';
+		$has_border = ($instance['has_border']) ? ' has-border' : '';
+		echo '<div class="widget newsletter'.$has_border.'">';
 		if ( !empty( $instance['title']) ) {
 			echo '<h4 class="b-header widget-title">'.esc_attr($instance['title']).'</h4>';
 		}
@@ -43,9 +44,10 @@ class WP_Widget_Newsletter_Form extends WP_Widget {
 	{
 		extract($instance);
 		echo '<p><label for="' . $this->get_field_id('title') . '">Title: <input type="text" name="' . $this->get_field_name('title') . '" id="' . $this->get_field_id('title') . '" value="' . $instance['title'] . '" class="widefat" /></label></p>';
-		echo '<p><label for="' . $this->get_field_id('byline') . '">Byline: <textarea name="' . $this->get_field_name('byline') . '" id="' . $this->get_field_id('byline') . '" class="widefat">' . $instance['byline'] . '</textarea></label></p>';
-		echo '<p><label for="' . $this->get_field_id('placeholder') . '">Input field placeholder: <textarea name="' . $this->get_field_name('placeholder') . '" id="' . $this->get_field_id('placeholder') . '" class="widefat">' . $instance['placeholder'] . '</textarea></label></p>';
+		echo '<p><label for="' . $this->get_field_id('byline') . '">Byline: <input type="text" name="' . $this->get_field_name(' byline') . '" id="' . $this->get_field_id(' byline') . '" value="' . $instance[' byline'] . '" class="widefat" /></label></p>';
+		echo '<p><label for="' . $this->get_field_id('placeholder') . '">Placeholder: <input type="text" name="' . $this->get_field_name('placeholder') . '" id="' . $this->get_field_id('placeholder') . '" value="' . $instance['placeholder'] . '" class="widefat" /></label></p>';
 		echo '<p><label for="' . $this->get_field_id('button_text') . '">Button Text: <input type="text" name="' . $this->get_field_name('button_text') . '" id="' . $this->get_field_id('button_text') . '" value="' . $instance['button_text'] . '" class="widefat" /></label></p>';
+		echo '<p><label for="' . $this->get_field_name('has_border') . '">Add border? </label><input type="checkbox" id="' . $this->get_field_id('has_border') . '"' . ((!empty($instance['has_border'])) ? ' checked="checked" ' : '') . ' name="' . $this->get_field_name('has_border') . '" value="1"></p>';
 	}
 }
 

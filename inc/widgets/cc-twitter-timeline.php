@@ -14,7 +14,8 @@ class WP_Widget_Twitter_Timeline extends WP_Widget {
 	{
 		$url = (!empty($instance['url'])) ?  esc_attr($instance['url']) : 'https://twitter.com/creativecommons';
 		$height = (!empty($instance['height'])) ?  esc_attr($instance['height']) : 390;
-		echo '<div class="widget twitter">';
+		$has_border = ($instance['has_border']) ? ' has-border' : '';
+		echo '<div class="widget twitter'.$has_border.'">';
 		if ( !empty( $instance['title']) ) {
 			echo '<h2 class="widget-title">'.esc_attr($instance['title']).'</h2>';
 		}
@@ -32,10 +33,9 @@ class WP_Widget_Twitter_Timeline extends WP_Widget {
 	{
 		extract($instance);
 		echo '<p><label for="' . $this->get_field_id('title') . '">Title: <input type="text" name="' . $this->get_field_name('title') . '" id="' . $this->get_field_id('title') . '" value="' . $instance['title'] . '" class="widefat" /></label></p>';
-		echo '<p><label for="' . $this->get_field_id('height') . '">Height: <input type="text" name="' . $this->get_field_name('height') . '" id="' . $this->get_field_id('height') . '" value="' . $instance['height'] . '" class="widefat" /></label></p>';
-		echo '<p><label for="' . $this->get_field_id('url') . '">Twitter Url: <input type="text" name="' . $this->get_field_name('url') . '" id="' . $this->get_field_id('url') . '" value="' . $instance['url'] . '" class="widefat" /></label></p>';
-		echo '<p><label for="' . $this->get_field_id('height') . '">Height: <textarea name="' . $this->get_field_name('height') . '" id="' . $this->get_field_id('height') . '" class="widefat">' . $instance['height'] . '</textarea></label></p>';
-		echo '<p><label for="' . $this->get_field_id('url') . '">Twitter url (creativecommons as default": <textarea name="' . $this->get_field_name('url') . '" id="' . $this->get_field_id('url') . '" class="widefat">' . $instance['url'] . '</textarea></label></p>';
+		echo '<p><label for="' . $this->get_field_id('height') . '">Height: <input type="text" name="' . $this->get_field_name('height') . '" id="' . $this->get_field_id('height') . '" value="' . $instance['height'] . '" class="widefat" /><br><small>Timeline height</small></label></p>';
+		echo '<p><label for="' . $this->get_field_id('url') . '">Twitter Url: <input type="text" name="' . $this->get_field_name('url') . '" id="' . $this->get_field_id('url') . '" value="' . $instance['url'] . '" class="widefat" /><br><small>Timeline account URL to point the timeline (default: https://twitter.com/creativecommons.org)</small></label></p>';
+		echo '<p><label for="' . $this->get_field_name('has_border') . '">Add border? </label><input type="checkbox" id="' . $this->get_field_id('has_border') . '"' . ((!empty($instance['has_border'])) ? ' checked="checked" ' : '') . ' name="' . $this->get_field_name('has_border') . '" value="1"></p>';
 	}
 }
 
