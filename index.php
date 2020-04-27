@@ -1,9 +1,40 @@
-<?php get_header(); ?>
+<?php
+	get_header();
+	the_post();
+?>
 <section class="main-content">
-	<div class="vocab container">
-		<div class="vocab grid">
-			<div class="desktop-12-wide cell">
-				
+	<header class="page-header">
+		<div class="container">
+			<div class="columns is-centered">
+				<div class="column">
+					<h2><?php echo CC_Site::page_title(); ?></h2>
+					<?php
+					if ( function_exists( 'yoast_breadcrumb' ) ) {
+						yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
+					}
+					?>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<div class="columns padding-vertical-larger">
+			<div class="column is-8">
+				<?php
+				if ( have_posts() ) :
+					while ( have_posts() ) :
+						the_post();
+						echo Components::simple_entry( get_the_ID(), true, true );
+						endwhile;
+					the_posts_pagination(
+						array(
+							'screen_reader_text' => ' ',
+							'prev_text'          => '<i class="icon chevron-left"></i>',
+							'next_text'          => '<i class="icon chevron-right"></i>',
+						)
+					);
+				endif;
+				?>
 			</div>
 		</div>
 	</div>

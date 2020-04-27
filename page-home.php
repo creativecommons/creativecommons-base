@@ -1,4 +1,5 @@
 <?php
+	/* Template name: Home Layout */
 	get_header();
 	global $_set;
   $settings                  = $_set->settings;

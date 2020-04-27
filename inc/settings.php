@@ -179,6 +179,7 @@ class ThemeSettings {
 					],
 				]
 			);
+		$form = apply_filters( 'cc_theme_base_settings_field', $form );
 		echo $form;
 	}
 	public function saveSettings() {

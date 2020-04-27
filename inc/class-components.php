@@ -20,42 +20,89 @@
  *
  *  @since 2020.04.1
  */
-class Components
-{
+class Components {
+
 	/**
 	 * Genereic card post and its variants
 	 *
-	 * @param int     $post_id : post or entry id.
-	 * @param boolean $show_image : whether to show or not the image.
-	 * @param boolean $is_video : is the post a video.
-	 * @param boolean $has_button : should we show the action button?.
-	 * @param boolean $has_content : should we show the except of the entry?.
-	 * @param string  $direction : direction of the card `horizontal` or `vertical`.
+	 * @param int       $post_id : post or entry id.
+	 * @param boolean   $use_post_data : whether to use data from a post ID
+	 * @param boolean   $show_image : whether to show or not the image.
+	 * @param boolean   $is_stretch : Should the top image be stretched to fit container.
+	 * @param boolean   $is_video : is the post a video.
+	 * @param boolean   $has_button : should we show the action button?.
+	 * @param boolean   $has_border : should we show the border of the card?.
+	 * @param boolean   $has_content : should we show the except of the entry?.
+	 * @param string    $pre_title : string showed before the title.
+	 * @param string    $description : content of the card if it's not using post data.
+	 * @param string    $url : url of card if it's not using post data.
+	 * @param string    $title : title of the card if it's not using post data.
+	 * @param string    $date : date format of the card if it's not using post data.
+	 * @param int       $image_id : image id of the card if it's not using post data.
+	 * @param string    $direction : direction of the card `horizontal` or `vertical`.
+	 * @param string    $button_text : text of the button.
+	 * @param string    $button_size : size of the button big|small|tiny
+	 * @param string    $button_color : color of the button is_primary|donate|is-success|is-info|.is-warning|.is-danger
 	 * @return string component layout
 	 */
-	public static function card_post($post_id, $show_image = true, $is_video = false, $has_button = true, $has_content = true, $direction = 'horizontal')
-	{
-		$out .= '<article class="card entry-post ' . $direction . '">';
-		if (has_post_thumbnail($post_id) && $show_image) {
-			$out .= '<header class="card-image">';
+	public static function card_post(
+		$post_id = false,
+		$use_post_data = false,
+		$show_image = true,
+		$is_stretch = true,
+		$is_video = false,
+		$has_button = true,
+		$has_border = true,
+		$has_content = true,
+		$pre_title = false,
+		$description = false,
+		$url = false,
+		$title = false,
+		$date = false,
+		$image_id = false,
+		$direction = 'horizontal',
+		$button_text = false,
+		$button_size = false,
+		$button_color = false
+		) {
+		 $card_image   = ( $use_post_data ) ? get_the_post_thumbnail( $post_id, 'landscape-medium' ) : wp_get_attachment_image( $image_id, 'landscape-medium' );
+		$card_title    = ( $use_post_data ) ? get_the_title( $post_id ) : $title;
+		$card_url      = ( $use_post_data ) ? get_permalink( $post_id ) : $url;
+		$card_date     = ( $use_post_data ) ? get_the_date( 'd F Y', $post_id ) : $date;
+		$card_border   = ( $has_border ) ? '' : ' no-border ';
+		$button_color  = ( $button_color ) ? $button_color : 'is-primary';
+		$button_size   = ( $button_size ) ? $button_size : 'big';
+		$button_text   = ( ! empty( $button_text ) ) ? $button_text : 'Read More';
+		$strecth_class = ( $is_stretch ) ? ' is_stretched' : '';
+		$button_class  = ( $has_button ) ? ' with-button' : '';
+
+		$out = '<article class="card entry-post ' . $direction . $card_border . '">';
+		if ( ( $use_post_data && has_post_thumbnail( $post_id ) && $show_image ) || ( ! $use_post_data && ! empty( $image_id ) && $show_image ) ) {
+			$out .= '<header class="card-image' . $strecth_class . '">';
 			$out .= '<figure class="image is-4by3">';
-			$out .= get_the_post_thumbnail($post_id, 'landscape-medium');
+			$out .= $card_image;
 			$out .= '</figure>';
 			$out .= '</header>';
 		}
-		$button_class = ($has_button) ? ' with-button' : '';
+
 		$out .= '<div class="card-content ' . $button_class . '">';
-		$out .= '<h4 class="card-title"><a href="' . get_permalink($post_id) . '">' . get_the_title($post_id) . '</a></h4>';
-		if (!$is_video) {
-			$out .= '<span class="subtitle"> ' . get_the_date('d F Y', $post_id) . ' </span>';
+		if ( ! empty( $pre_title ) ) {
+			$out .= '<span class="pre-title">' . $pre_title . '</span>';
 		}
-		if ($has_content) {
-			$the_post = get_post($post_id);
-			$out .= '<div class="content">';
-			$out .= do_excerpt($the_post);
-			$out .= '</div>';
+		$out .= '<h4 class="card-title"><a href="' . $card_url . '">' . $card_title . '</a></h4>';
+		if ( ! $is_video && ! empty( $card_date ) ) {
+			$out .= '<span class="subtitle"> ' . $card_date . ' </span>';
 		}
-		$out .= '<a href="' . get_permalink($post_id) . '" class="button is-primary">Read more</a>';
+		if ( $has_content ) {
+			$the_post        = ( $use_post_data ) ? get_post( $post_id ) : false;
+			$the_description = ( $use_post_data ) ? do_excerpt( $the_post, array( 'length' => 110 ) ) : $description;
+			$out            .= '<div class="content">';
+			$out            .= $the_description;
+			$out            .= '</div>';
+		}
+		if ( $has_button ) {
+			$out .= self::button( $button_text, $card_url, $button_size, $button_color );
+		}
 		$out .= '</div>';
 		$out .= '</article>';
 
@@ -68,25 +115,24 @@ class Components
 	 * @param boolean $has_content : should we show the except of the entry?.
 	 * @return string component layout
 	 */
-	public static function card_post_event($post_id, $has_content = true)
-	{
+	public static function card_post_event( $post_id, $has_content = true ) {
 		$out .= '<article class="card entry-post entry-event horizontal">';
 		$out .= '<header class="card-header">';
 		$out .= '<div class="card-date">';
-		$out .= '<span class="month">' . get_the_date('F', $post_id) . '</span>';
-		$out .= '<span class="day">' . get_the_date('d', $post_id) . '</span>';
-		$out .= '<span class="year">' . get_the_date('Y', $post_id) . '</span>';
+		$out .= '<span class="month">' . get_the_date( 'F', $post_id ) . '</span>';
+		$out .= '<span class="day">' . get_the_date( 'd', $post_id ) . '</span>';
+		$out .= '<span class="year">' . get_the_date( 'Y', $post_id ) . '</span>';
 		$out .= '</div>';
 		$out .= '</header>';
 		$out .= '<div class="card-content">';
-		$out .= '<h4 class="card-title"><a href="' . get_permalink($post_id) . '">' . get_the_title($post_id) . '</a></h4>';
-		if ($has_content) {
-			$the_post = get_post($post_id);
-			$out .= '<div class="content">';
-			$out .= do_excerpt($the_post);
-			$out .= '</div>';
+		$out .= '<h4 class="card-title"><a href="' . get_permalink( $post_id ) . '">' . get_the_title( $post_id ) . '</a></h4>';
+		if ( $has_content ) {
+			$the_post = get_post( $post_id );
+			$out     .= '<div class="content">';
+			$out     .= do_excerpt( $the_post );
+			$out     .= '</div>';
 		}
-		$out .= '<a href="' . get_permalink($post_id) . '" class="read-more">Read more</a>';
+		$out .= '<a href="' . get_permalink( $post_id ) . '" class="read-more">Read more</a>';
 		$out .= '</div>';
 		$out .= '</article>';
 
@@ -103,25 +149,24 @@ class Components
 	 * @param boolean $has_link : should we show the link to the entry?.
 	 * @return string component layout
 	 */
-	public static function card_statistic($post_id, $number, $caption, $caption_is_title = true, $has_content = true, $has_link = true)
-	{
-		$caption  = ($caption_is_title) ? get_the_title($post_id) : $caption;
-		$out .= '<article class="card entry-post entry-statistic">';
-		$out .= '<header class="card-header">';
-		$out .= '<div class="card-statistic">';
-		$out .= '<span class="number">' . $number . '</span>';
-		$out .= '<span class="caption">' . $caption . '</span>';
-		$out .= '</div>';
-		$out .= '</header>';
-		$out .= '<div class="card-content">';
-		if ($has_content) {
-			$the_post = get_post($post_id);
-			$out .= '<div class="content">';
-			$out .= do_excerpt($the_post);
-			$out .= '</div>';
+	public static function card_statistic( $post_id, $number, $caption, $caption_is_title = true, $has_content = true, $has_link = true ) {
+		$caption = ( $caption_is_title ) ? get_the_title( $post_id ) : $caption;
+		$out    .= '<article class="card entry-post entry-statistic">';
+		$out    .= '<header class="card-header">';
+		$out    .= '<div class="card-statistic">';
+		$out    .= '<span class="number">' . $number . '</span>';
+		$out    .= '<span class="caption">' . $caption . '</span>';
+		$out    .= '</div>';
+		$out    .= '</header>';
+		$out    .= '<div class="card-content">';
+		if ( $has_content ) {
+			$the_post = get_post( $post_id );
+			$out     .= '<div class="content">';
+			$out     .= do_excerpt( $the_post );
+			$out     .= '</div>';
 		}
-		if ($has_link) {
-			$out .= '<a href="' . get_permalink($post_id) . '" class="read-more">Read more</a>';
+		if ( $has_link ) {
+			$out .= '<a href="' . get_permalink( $post_id ) . '" class="read-more">Read more</a>';
 		}
 		$out .= '</div>';
 		$out .= '</article>';
@@ -137,28 +182,27 @@ class Components
 	 * @param string  $author_description : quote author description.
 	 * @return string component layout
 	 */
-	public static function card_quote($post_id, $show_image = true, $author_name, $author_description)
-	{
+	public static function card_quote( $post_id, $show_image = true, $author_name, $author_description ) {
 		$out .= '<article class="card entry-post entry-quote horizontal no-border">';
-		if (has_post_thumbnail($post_id) && $show_image) {
+		if ( has_post_thumbnail( $post_id ) && $show_image ) {
 			$out .= '<header class="card-image">';
 			$out .= '<figure class="image is-1by1">';
-			$out .= get_the_post_thumbnail($post_id, 'thumbnail');
+			$out .= get_the_post_thumbnail( $post_id, 'thumbnail' );
 			$out .= '</figure>';
 			$out .= '</header>';
 		}
-		$out .= '<div class="card-content">';
-		$out .= '<span class="quote"></span>';
-		$the_post = get_post($post_id);
-		$out .= '<div class="content">';
-		$out .= apply_filters('the_content', $the_post->post_content);
-		$out .= '<div class="quote-author">';
-		$out .= '<strong class="title"> ' . $author_name . '</strong>';
-		$out .= '<p class="description">' . $author_description . '</p>';
-		$out .= '</div>';
-		$out .= '</div>';
-		$out .= '</div>';
-		$out .= '</article>';
+		$out     .= '<div class="card-content">';
+		$out     .= '<span class="quote"></span>';
+		$the_post = get_post( $post_id );
+		$out     .= '<div class="content">';
+		$out     .= apply_filters( 'the_content', $the_post->post_content );
+		$out     .= '<div class="quote-author">';
+		$out     .= '<strong class="title"> ' . $author_name . '</strong>';
+		$out     .= '<p class="description">' . $author_description . '</p>';
+		$out     .= '</div>';
+		$out     .= '</div>';
+		$out     .= '</div>';
+		$out     .= '</article>';
 
 		return $out;
 	}
@@ -169,26 +213,25 @@ class Components
 	 * @param string $url : optional URL for card title.
 	 * @return string component layout
 	 */
-	public static function card_image($post_id, $url = false)
-	{
-		$out .= '<article class="card entry-post entry-image vertical">';
-		$out .= '<header class="card-image">';
-		$out .= '<figure class="image is-4by5">';
-		$out .= wp_get_attachment_image($post_id, 'landscape-medium');
-		$out .= '</figure>';
-		$out .= '</header>';
-		$out .= '<div class="card-content">';
-		$the_post     = get_post($post_id);
-		$out .= '<h4 class="card-title">';
-		if ($url) {
-			$out .= '<a href="' . esc_url($url) . '">';
+	public static function card_image( $post_id, $url = false ) {
+		$out     .= '<article class="card entry-post entry-image vertical">';
+		$out     .= '<header class="card-image">';
+		$out     .= '<figure class="image is-4by5">';
+		$out     .= wp_get_attachment_image( $post_id, 'landscape-medium' );
+		$out     .= '</figure>';
+		$out     .= '</header>';
+		$out     .= '<div class="card-content">';
+		$the_post = get_post( $post_id );
+		$out     .= '<h4 class="card-title">';
+		if ( $url ) {
+			$out .= '<a href="' . esc_url( $url ) . '">';
 		}
-		$out .= get_the_title($post_id);
-		if ($url) {
+		$out .= get_the_title( $post_id );
+		if ( $url ) {
 			$out .= '</a>';
 		}
 		$out .= '</h4>';
-		$out .= '<span class="subtitle">' . esc_attr($the_post->post_exerpt) . '</span>';
+		$out .= '<span class="subtitle">' . esc_attr( $the_post->post_exerpt ) . '</span>';
 		$out .= '</div>';
 		$out .= '</article>';
 
@@ -210,29 +253,28 @@ class Components
 	 * @param boolean $extra_class : extra class to component if it's needed.
 	 * @return string component layout
 	 */
-	public static function card_link($post_id = null, $use_post_data = false, $background_color, $title = null, $description = null, $link_text = null, $url = null, $has_content = true, $has_border = false, $has_link = true, $extra_class = false)
-	{
-		$the_title        = ($use_post_data) ? get_the_title($post_id) : $title;
-		$the_url          = ($use_post_data) ? get_permalink($post_id) : $url;
-		$the_link_text    = ($use_post_data) ? 'Read more' : esc_attr($link_text);
-		$border_class     = (!$has_border) ? ' no-border' : '';
-		$color_class      = (!$has_border) ? 'class="has-background-' . $background_color . '"' : '';
-		$class            = (!empty($extra_class)) ? ' ' . $extra_class : '';
+	public static function card_link( $post_id = null, $use_post_data = false, $background_color, $title = null, $description = null, $link_text = null, $url = null, $has_content = true, $has_border = false, $has_link = true, $extra_class = false ) {
+		$the_title     = ( $use_post_data ) ? get_the_title( $post_id ) : $title;
+		$the_url       = ( $use_post_data ) ? get_permalink( $post_id ) : $url;
+		$the_link_text = ( $use_post_data ) ? 'Read more' : esc_attr( $link_text );
+		$border_class  = ( ! $has_border ) ? ' no-border' : '';
+		$color_class   = ( ! $has_border ) ? 'class="has-background-' . $background_color . '"' : '';
+		$class         = ( ! empty( $extra_class ) ) ? ' ' . $extra_class : '';
 
 		$out .= '<article class="card entry-post link ' . $border_class . $class . '">';
 		$out .= '<a href="' . $the_url . '" ' . $color_class . '>';
 		$out .= '<span class="card-content has-bottom-link">';
 		$out .= '<h2 class="card-title">' . $the_title . '</h2>';
-		if ($has_content) {
-			if ($use_post_data) {
-				$the_post    = get_post($post_id);
-				$the_content = do_excerpt($the_post);
+		if ( $has_content ) {
+			if ( $use_post_data ) {
+				$the_post    = get_post( $post_id );
+				$the_content = do_excerpt( $the_post );
 			} else {
 				$the_content = $description;
 			}
-			$out .= '<span class="content">' . esc_attr($description) . '</span>';
+			$out .= '<span class="content">' . esc_attr( $description ) . '</span>';
 		}
-		if ($has_link) {
+		if ( $has_link ) {
 			$out .= '<span class="link-arrow">' . $the_link_text . '</span>';
 		}
 		$out .= '</span>';
@@ -250,15 +292,14 @@ class Components
 	 * @param boolean $new_tab : open the button in new tab.
 	 * @return string component layout
 	 */
-	public static function button($text, $url, $size, $color, $new_tab = false, $icon = false)
-	{
-		$size_class   = (!empty($size)) ? $size : '';
-		$color_class  = (!empty($color)) ? $color : '';
-		$open_new_tab = ($new_tab) ? ' target="_blank"' : '';
-		$icon         = (!empty($icon)) ? '<i class="icon ' . $icon . ' margin-right-small is-size-5 padding-top-smaller"></i> ' : '';
+	public static function button( $text, $url, $size, $color, $new_tab = false, $icon = false ) {
+		$size_class   = ( ! empty( $size ) ) ? $size : '';
+		$color_class  = ( ! empty( $color ) ) ? $color : '';
+		$open_new_tab = ( $new_tab ) ? ' target="_blank"' : '';
+		$icon         = ( ! empty( $icon ) ) ? '<i class="icon ' . $icon . ' margin-right-small is-size-5 padding-top-smaller"></i> ' : '';
 
 		$out = '';
-		if (!empty($text) && !empty($url)) {
+		if ( ! empty( $text ) && ! empty( $url ) ) {
 			$out .= '<a href="' . $url . '" class="button ' . $size_class . ' ' . $color_class . '"' . $open_new_tab . '>' . $icon . $text . '</a>';
 		}
 		return $out;
@@ -273,29 +314,60 @@ class Components
 	 * @param int    $img_id : Entry Id for image
 	 * @return string component layout
 	 */
-	public static function notification($type = 'warning', $url, $title, $content, $img_id = null)
-	{
+	public static function notification( $type = 'warning', $url, $title, $content, $img_id = null ) {
 		$out .= '<div class="notification ' . $type . '">';
-		$out .= '<a href="' . esc_url($url) . '" class="notification-container">';
-		if (($type == 'content') && (!empty($img_id))) {
+		$out .= '<a href="' . esc_url( $url ) . '" class="notification-container">';
+		if ( ( $type == 'content' ) && ( ! empty( $img_id ) ) ) {
 			$out .= '<span class="content-image">';
-			$out .= wp_get_attachment_image($img_id, 'landscape-small');
+			$out .= wp_get_attachment_image( $img_id, 'landscape-small' );
 			$out .= '</span>';
 		}
-		if ($type == 'content') {
+		if ( $type == 'content' ) {
 			$out .= '<span class="content-wrap">';
 		}
-		$out .= '<h4 class="b-header">' . esc_attr($title) . '</h4>';
-		$out .= '<span class="notification-content">' . esc_attr($content) . '</span>';
+		$out .= '<h4 class="b-header">' . esc_attr( $title ) . '</h4>';
+		$out .= '<span class="notification-content">' . esc_attr( $content ) . '</span>';
 		$out .= '<span class="icon-container">';
 		$out .= '<i class="icon chevron-right"></i>';
 		$out .= '</span>';
-		if ($type == 'content') {
+		if ( $type == 'content' ) {
 			$out .= '</span>';
 		}
 		$out .= '</a>';
 		$out .= '</div>';
 
+		return $out;
+	}
+	/**
+	 * Notification
+	 *
+	 * @param int     $post_id : post or entry ID.
+	 * @param boolean $has_content : whether to show or not the content excerpt.
+	 * @param boolean $has_image : whether to show or not the entry thumbnail.
+	 * @return string component layout
+	 */
+	public static function simple_entry( $post_id, $has_content = true, $has_image = true ) {
+		$has_thumb       = has_post_thumbnail( $post_id );
+		$has_thumb_class = ( $has_thumb ) ? ' has-image' : '';
+		$out             = '<article class="entry-simple-post' . $has_thumb_class . '">';
+		$out            .= '<div class="columns is-gapless">';
+		if ( $has_thumb && $has_image ) {
+			$out .= '<figure class="entry-image column is-4">';
+			$out .= get_the_post_thumbnail( $post_id, 'landscape-small' );
+			$out .= '</figure>';
+		}
+		$out .= '<div class="entry-content column">';
+		$out .= '<h4 class="b-header"><a href="' . get_permalink( $post_id ) . '">' . get_the_title( $post_id ) . '</a></h4>';
+		$out .= '<span class="entry-date">' . get_the_date( 'd F Y' ) . '</span>';
+		if ( $has_content ) {
+			$the_post = get_post( $post_id );
+			$out     .= '<div class="entry-description">';
+			$out     .= do_excerpt( $the_post );
+			$out     .= '</div>';
+		}
+		$out .= '</div>';
+		$out .= '</div>';
+		$out .= '</article>';
 		return $out;
 	}
 }

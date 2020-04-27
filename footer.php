@@ -36,8 +36,8 @@
 				</nav>
 				<div class="subscription">
 					<h5 class="b-header">Subscribe to our newsletter</h5>
-					<form class="newsletter">
-						<input type="text" class="input" placeholder="Your email">
+					<form method="post" action="https://us.e-activist.com/page/6747/data/2" class="newsletter">
+						<input type="text" class="input" name="supporter.emailAddress" placeholder="Your email">
 						<input type="submit" value="subscribe" class="button small">
 					</form>
 				</div>

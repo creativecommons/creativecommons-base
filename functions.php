@@ -39,7 +39,7 @@ add_theme_support( 'post-thumbnails' );
 
 // Define custom thumbnail sizes
 add_image_size( 'squared', 300, 300, true );
-add_image_size( 'landscape-small', 264, 150, true );
+add_image_size( 'landscape-small', 550, 300, true );
 add_image_size( 'landscape-medium', 740, 416, true );
 add_image_size( 'landscape-featured', 1000, 500, true );
 
@@ -51,16 +51,16 @@ $mandatory_sidebars = array(
 	'Homepage Notification' => array(
 		'name' => 'home-notification',
 	),
-	'Homepage widgets'      => array(
+	'Homepage widgets' => array(
 		'name' => 'homepage-sidebar',
 	),
-	'Single'                => array(
+	'Single' => array(
 		'name' => 'single',
 	),
-	'Page'                  => array(
+	'Page' => array(
 		'name' => 'page',
 	),
-	'Page Footer'           => array(
+	'Page Footer' => array(
 		'name' => 'page-footer',
 	),
 );
@@ -164,6 +164,7 @@ class Site {
 			'main-navigation'   => 'Main navigation',
 			'main-menu-mobile'  => 'Main navigation mobile',
 			'footer-navigation' => 'Footer navigation',
+			'404-navigation'    => '404 Navigation',
 		);
 		/**
 	 * Menu locations

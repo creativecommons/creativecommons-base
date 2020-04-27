@@ -1,24 +1,25 @@
 //Import Vocabulary 
-@import "../../node_modules/@creativecommons/vocabulary/scss/color.scss";
-@import "../../node_modules/@creativecommons/vocabulary/scss/spacing.scss";
-@import "../../node_modules/@creativecommons/vocabulary/scss/typography.scss";
+@import "@creativecommons/vocabulary/scss/color.scss";
+@import "@creativecommons/vocabulary/scss/spacing.scss";
+@import "@creativecommons/vocabulary/scss/typography.scss";
 
-@import "../../node_modules/@creativecommons/vocabulary/scss/button.scss";
-@import "../../node_modules/@creativecommons/vocabulary/scss/form.scss";
-@import "../../node_modules/@creativecommons/vocabulary/scss/card.scss";
-@import "../../node_modules/@creativecommons/vocabulary/scss/table.scss";
+@import "@creativecommons/vocabulary/scss/button.scss";
+@import "@creativecommons/vocabulary/scss/form.scss";
+@import "@creativecommons/vocabulary/scss/card.scss";
+@import "@creativecommons/vocabulary/scss/table.scss";
 
-@import "../../node_modules/@creativecommons/vocabulary/scss/header.scss";
-@import "../../node_modules/@creativecommons/vocabulary/scss/footer.scss";
+@import "@creativecommons/vocabulary/scss/header.scss";
+@import "@creativecommons/vocabulary/scss/footer.scss";
 
-@import "../../node_modules/@creativecommons/vocabulary/scss/layout.scss";
-@import "../../node_modules/@creativecommons/vocabulary/scss/notification.scss";
+@import "@creativecommons/vocabulary/scss/layout.scss";
+@import "@creativecommons/vocabulary/scss/notification.scss";
 
-@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss";
-@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss";
+@import "@glidejs/glide/src/assets/sass/glide.core.scss";
+@import "@glidejs/glide/src/assets/sass/glide.theme.scss";
 
 @import 'mixins';
 @import 'grid';
 @import 'base';
 @import 'modules';
 @import 'layout';
+@import 'widgets';

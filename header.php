@@ -30,7 +30,7 @@ if ( ! empty( $_set ) ) {
 					<use href="<?php echo get_bloginfo( 'template_directory' ) . '/assets/img/logos/cc/logomark.svg#logomark'; ?>"></use>
 				</svg>
 			</a>
-			<a role="button" class="navbar-burger is-active" aria-label="menu" aria-expanded="false">
+			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
@@ -39,14 +39,15 @@ if ( ! empty( $_set ) ) {
 	<?php
 		wp_nav_menu(
 			array(
-				'theme_location' => 'main-navigation',
-				'depth'          => 2,
-				'container'      => false,
-				'items_wrap'     => '<div id="%1$s" class="navbar-end">%3$s</div>',
-				'menu_class'     => 'navbar-menu',
-				'menu_id'        => 'primary-menu',
-				'after'          => '</div>',
-				'walker'         => new Navwalker(),
+				'theme_location'  => 'main-navigation',
+				'depth'           => 2,
+				'container'       => 'div',
+				'container_class' => 'navbar-menu',
+				'items_wrap'      => '<div id="%1$s" class="navbar-end">%3$s</div>',
+				'menu_class'      => 'navbar-menu',
+				'menu_id'         => 'primary-menu',
+				'after'           => '</div>',
+				'walker'          => new Navwalker(),
 			)
 		);
 		?>
