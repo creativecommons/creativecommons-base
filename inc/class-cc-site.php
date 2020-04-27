@@ -42,7 +42,7 @@ class CC_Site {
 			$out = '';
 			foreach ( $categories as $category ) {
 				$category_link = get_term_link( $category, 'category' );
-				$out .= Components::button( $category->name, $category_link, 'tiny', '' );
+				$out          .= Components::button( $category->name, $category_link, 'tiny', '' );
 			}
 			return $out;
 		}
@@ -64,18 +64,18 @@ class CC_Site {
 			return $out;
 		}
 	}
-	public static function get_highlighted_posts($current_object, $size = 10, $category='highlight') {
-		$args = array(
-			'post_type' => 'post',
-			'post_status' => 'publish',
+	public static function get_highlighted_posts( $current_object, $size = 10, $category = 'highlight' ) {
+		$args  = array(
+			'post_type'      => 'post',
+			'post_status'    => 'publish',
 			'posts_per_page' => $size,
-			'tax_query' => array(
+			'tax_query'      => array(
 				array(
 					'taxonomy' => 'category',
-					'field' => 'slug',
-					'terms' => array( $current_object->slug, $category )
-				)
-			)
+					'field'    => 'slug',
+					'terms'    => array( $current_object->slug, $category ),
+				),
+			),
 		);
 		$query = new WP_Query( $args );
 		return $query;
@@ -113,22 +113,22 @@ class CC_Site {
 	 *
 	 * @return string current page title
 	 */
-	static function page_title(){
+	static function page_title() {
 		$get = get_queried_object();
-		if (is_post_type_archive()) {
-			return 'Archive: '.$get->labels->name;
-		} elseif (is_category()) {
-			return 'Category '.$get->name;
-		} elseif (is_tag()){
-			return 'Tag "'.$get->name.'"';
-		} elseif (is_tax()) {
-			return 'Archive '.$get->name;
-		} if (is_search()) {
-			return 'Search for: &#8220;'. get_search_query() .'&#8221;';
-		} elseif (is_404()) {
+		if ( is_post_type_archive() ) {
+			return 'Archive: ' . $get->labels->name;
+		} elseif ( is_category() ) {
+			return 'Category ' . $get->name;
+		} elseif ( is_tag() ) {
+			return 'Tag "' . $get->name . '"';
+		} elseif ( is_tax() ) {
+			return 'Archive ' . $get->name;
+		} if ( is_search() ) {
+			return 'Search for: &#8220;' . get_search_query() . '&#8221;';
+		} elseif ( is_404() ) {
 			return 'Content not found';
-		} elseif (is_author()) {
-			return 'Author: '. $get->display_name;
+		} elseif ( is_author() ) {
+			return 'Author: ' . $get->display_name;
 		} else {
 			the_title();
 		}

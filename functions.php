@@ -51,16 +51,16 @@ $mandatory_sidebars = array(
 	'Homepage Notification' => array(
 		'name' => 'home-notification',
 	),
-	'Homepage widgets'      => array(
+	'Homepage widgets' => array(
 		'name' => 'homepage-sidebar',
 	),
-	'Single'                => array(
+	'Single' => array(
 		'name' => 'single',
 	),
-	'Page'                  => array(
+	'Page' => array(
 		'name' => 'page',
 	),
-	'Page Footer'           => array(
+	'Page Footer' => array(
 		'name' => 'page-footer',
 	),
 );
@@ -164,7 +164,7 @@ class Site {
 			'main-navigation'   => 'Main navigation',
 			'main-menu-mobile'  => 'Main navigation mobile',
 			'footer-navigation' => 'Footer navigation',
-			'404-navigation'		=>	'404 Navigation'
+			'404-navigation'    => '404 Navigation',
 		);
 		/**
 	 * Menu locations
