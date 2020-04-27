@@ -23,4 +23,12 @@ jQuery(document).ready(function($){
 			obj.addClass('active');
 		});
 	}
+	if ($('.navbar-burger').length > 0) {
+		$('.navbar-burger').on('click', function(e){
+			e.preventDefault();
+			var obj = $(this);
+			obj.parent().next().toggleClass('is-active');
+			obj.toggleClass('is-active');
+		});
+	}
 });
