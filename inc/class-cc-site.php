@@ -133,4 +133,29 @@ class CC_Site {
 			the_title();
 		}
 	}
+	/**
+	 * Set the default website logo and allows to filter it in child themes
+	 *
+	 * @return void
+	 */
+	public static function get_current_website_logo() {
+		$default_logo = 'logomark';
+		$current_main_logo = apply_filters( 'cc_theme_base_set_default_logo', $default_logo );
+		return Components::cc_logos($current_main_logo, false);
+	}
+	/**
+	 * Get the top parent page of the current navigation level
+	 *
+	 * @return int $post_id : top level parent page
+	 */
+	public static function get_parent_page() {
+		global $post;
+		if ($post->post_parent)	{
+			$ancestors = get_post_ancestors($post->ID);
+			$root = count( $ancestors )-1;
+			return $ancestors[$root];
+		} else {
+			return $post->ID;
+		}
+	}
 }

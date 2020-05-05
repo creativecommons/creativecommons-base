@@ -16,7 +16,7 @@ class WP_Widget_text_banner_simple extends WP_Widget {
 		$link_text   = ( $instance['has_link'] ) ? $instance['link-text'] : '';
 		$has_border  = ( ! $instance['has_border'] ) ? false : true;
 		$extra_class = ( ! empty( $spaces ) ) ? 'use-' . $spaces . '-cols' : '';
-		echo Components::card_link( false, false, $color, esc_attr( $instance['title'] ), $content, $link_text, esc_url( $instance['url'] ), $instance['has_content'], $instance['has_border'], $instance['has_link'], $extra_class );
+		echo Components::card_link( false, false, $color, esc_attr( $instance['title'] ), $content, $link_text, esc_url( $instance['url'] ), $instance['has_content'], $has_border, $instance['has_link'], $extra_class );
 	}
 
 	function update( $new_instance, $old_instance ) {

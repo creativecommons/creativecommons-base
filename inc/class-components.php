@@ -261,7 +261,7 @@ class Components {
 		$color_class   = ( ! $has_border ) ? 'class="has-background-' . $background_color . '"' : '';
 		$class         = ( ! empty( $extra_class ) ) ? ' ' . $extra_class : '';
 
-		$out .= '<article class="card entry-post link ' . $border_class . $class . '">';
+		$out = '<article class="card entry-post link ' . $border_class . $class . '">';
 		$out .= '<a href="' . $the_url . '" ' . $color_class . '>';
 		$out .= '<span class="card-content has-bottom-link">';
 		$out .= '<h2 class="card-title">' . $the_title . '</h2>';
@@ -368,6 +368,30 @@ class Components {
 		$out .= '</div>';
 		$out .= '</div>';
 		$out .= '</article>';
+		return $out;
+	}
+	/**
+	 * cc_logos
+	 *
+	 * @param string $logo_name lettermark|letterheart
+	 * @param boolean $has_dark_background
+	 * @return void
+	 */
+	public static function cc_logos($logo_name = 'logomark', $has_dark_background = false) {
+		$out = '';
+		if ( $has_dark_background ) {
+			$out .= '<div class="has-text-white">';
+		}
+		$out .= '<svg';
+			$out .= ' class="logo"';
+			$out .= ' xmlns="http://www.w3.org/2000/svg"';
+			$out .= ' preserveAspectRatio="xMidyMid meet"';
+			$out .= ' viewBox="0 0 304 73">';
+			$out .= ' <use href="'.get_bloginfo( 'template_directory' ) . '/assets/img/logos/cc/'.$logo_name.'.svg#'.$logo_name.'"></use>';
+		$out .= '</svg>';
+		if ( $has_dark_background ) {
+			$out .= '</div>';
+		}
 		return $out;
 	}
 }

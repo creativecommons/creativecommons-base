@@ -22,13 +22,7 @@ if ( ! empty( $_set ) ) {
 		<nav class="navbar">
 			<div class="navbar-brand">
 			<a href="<?php bloginfo( 'url' ); ?>" class="has-text-black">
-				<svg
-					class="logo"
-					xmlns="http://www.w3.org/2000/svg"
-					preserveAspectRatio="xMidyMid meet"
-					viewBox="0 0 304 73">
-					<use href="<?php echo get_bloginfo( 'template_directory' ) . '/assets/img/logos/cc/logomark.svg#logomark'; ?>"></use>
-				</svg>
+				<?php echo CC_Site::get_current_website_logo(); ?>
 			</a>
 			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
 				<span aria-hidden="true"></span>
