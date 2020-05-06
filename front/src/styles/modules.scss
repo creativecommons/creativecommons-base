@@ -115,6 +115,56 @@
 		}
 	}
 }
+.page {
+	.sidebar {
+		padding-top: 1.5rem;
+	}
+}
+.side-navigation {
+	.list-pages {
+		.page_item {
+			a {
+				display: block;
+				padding: $space-normal;
+				margin-bottom: $space-smaller;
+				background-color: $color-lighter-gray;
+				font-weight: 700;
+			}
+			&.current_page_item, &.current_page_ancestor {
+				&.page_item_has_children {
+					&>a {
+						margin-bottom: 0;
+						color: $color-black;
+					}
+				}
+				.children {
+					display: block;
+					margin-bottom: $space-smaller;
+					padding-bottom: $space-normal;
+					padding-left: $space-larger;
+					background-color: $color-lighter-gray;
+					list-style-type: disc;
+					.page_item {
+							&>a {
+								padding-top: $space-smaller;
+								padding-bottom: $space-smaller;
+								padding-left: $space-small;
+								margin-bottom: 0;
+							}
+							&.current_page_item {
+								&>a {
+									color: $color-black;
+								}
+							}
+						}
+					}
+				}
+			}
+		.children {
+			display: none;
+		}
+	}
+}
 .entry-footer {
 	.leveled {
 		justify-content: space-between;
