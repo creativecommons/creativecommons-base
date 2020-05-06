@@ -2,12 +2,12 @@
 /**
  * THEME WIDGETS
  */
-require STYLESHEETPATH . '/inc/widgets/cc-columns-widgets.php';
-require STYLESHEETPATH . '/inc/widgets/cc-banner-link.php';
-require STYLESHEETPATH . '/inc/widgets/cc-notification.php';
-require STYLESHEETPATH . '/inc/widgets/cc-list-entries.php';
-require STYLESHEETPATH . '/inc/widgets/cc-newsletter-form.php';
-require STYLESHEETPATH . '/inc/widgets/cc-twitter-timeline.php';
-require STYLESHEETPATH . '/inc/widgets/cc-card.php';
-require STYLESHEETPATH . '/inc/widgets/cc-title.php';
-require STYLESHEETPATH . '/inc/widgets/cc-donate.php';
+require TEMPLATEPATH . '/inc/widgets/cc-columns-widgets.php';
+require TEMPLATEPATH . '/inc/widgets/cc-banner-link.php';
+require TEMPLATEPATH . '/inc/widgets/cc-notification.php';
+require TEMPLATEPATH . '/inc/widgets/cc-list-entries.php';
+require TEMPLATEPATH . '/inc/widgets/cc-newsletter-form.php';
+require TEMPLATEPATH . '/inc/widgets/cc-twitter-timeline.php';
+require TEMPLATEPATH . '/inc/widgets/cc-card.php';
+require TEMPLATEPATH . '/inc/widgets/cc-title.php';
+require TEMPLATEPATH . '/inc/widgets/cc-donate.php';
