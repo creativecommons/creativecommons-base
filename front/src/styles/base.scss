@@ -17,6 +17,25 @@
 		margin-top: $space-larger;
 	}
 }
+.main-header {
+	.navbar {
+		.navbar-menu {
+			.menu-item {
+				&.current-menu-item {
+					color: $color-black;
+					&>a {
+						color: $color-black;
+					}
+				}
+				&.current-menu-ancestor {
+					&>a {
+						color: $color-black;
+					}
+				}
+			}
+		}
+	}
+}
 .push-up {
 	margin-top: -4rem;
 }

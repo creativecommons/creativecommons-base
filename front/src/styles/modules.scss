@@ -123,6 +123,11 @@
 .side-navigation {
 	.list-pages {
 		.page_item {
+			&.current_page_item {
+				&>a {
+					color: $color-black;
+				}
+			}
 			a {
 				display: block;
 				padding: $space-normal;
