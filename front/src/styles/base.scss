@@ -39,11 +39,6 @@
 .push-up {
 	margin-top: -4rem;
 }
-.text-format {
-	p {
-		margin-bottom: $space-normal;
-	}
-}
 
 .terms-list {
 	h6 {
@@ -62,5 +57,56 @@
 				margin-bottom: $space-normal;
 			}
 		}
+	}
+}
+.text-format {
+	p {
+		margin-bottom: $space-big;
+	}
+	ul {
+		padding-left: $space-big;
+		list-style: disc;
+		li {
+			margin-bottom: $space-normal;
+		}
+	}
+	ol {
+		list-style: none;
+		counter-reset: custom-order-counter;
+		li {
+			margin-bottom: $space-normal;
+			counter-increment: custom-order-counter;
+			&:before {
+				content: counter(custom-order-counter) ".- ";
+				color: $color-dark-turquoise;
+			}
+		}
+	}
+	.wp-caption {
+		margin-bottom: 1.75rem;
+		max-width: 100%;
+		.wp-caption-text {
+			color: $color-dark-gray;
+			font-size: .8rem;
+			font-style: italic;
+			line-height: $space-big;
+			padding-top: $space-small;
+		}
+	}
+	.alignright {
+		float: right;
+		margin: .4rem 0 1.75rem 1.8rem
+	}
+	.alignleft {
+		float: left;
+		margin: .4rem 1.8rem 1.75rem 0;
+	}
+	.aligncenter {
+		clear: both;
+		display: block;
+		margin: 0 auto 1.75em;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: $space-normal;
 	}
 }
