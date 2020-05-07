@@ -129,6 +129,8 @@ class CC_Site {
 			return 'Content not found';
 		} elseif ( is_author() ) {
 			return 'Author: ' . $get->display_name;
+		} elseif ( is_home() ) {
+			return 'Blog';
 		} else {
 			the_title();
 		}
