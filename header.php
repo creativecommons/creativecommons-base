@@ -15,7 +15,7 @@ if ( ! empty( $_set ) ) {
 ?>
 <body <?php body_class(); ?>>
 <?php do_action( 'cc_theme_before_header' ); ?>
-
+<!--BEGIN HEADER-->
 <header class="main-header">
 	<?php do_action( 'cc_theme_before_header_content' ); ?>
 	<div class="container">
@@ -49,4 +49,5 @@ if ( ! empty( $_set ) ) {
 	</div>
 	<?php do_action( 'cc_theme_after_header_content' ); ?>
 </header>
+<!--END HEADER-->
 <?php do_action( 'cc_theme_after_header' ); ?>
