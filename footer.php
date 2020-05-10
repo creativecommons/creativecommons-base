@@ -1,4 +1,5 @@
 <?php do_action( 'cc_theme_before_footer' ); ?>
+<!--BEGIN FOOTER-->
 <footer class="main-footer">
 	<?php do_action( 'cc_theme_before_footer_content' ); ?>
 	<div class="container">
@@ -56,6 +57,7 @@
 	</div>
 	<?php do_action( 'cc_theme_after_footer_content' ); ?>
 </footer>
+<!-- END FOOTER-->
 <?php do_action( 'cc_theme_after_footer' ); ?>
 <?php wp_footer(); ?>
 </body>
