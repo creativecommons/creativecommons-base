@@ -57,7 +57,7 @@
 	</div>
 	<?php do_action( 'cc_theme_after_footer_content' ); ?>
 </footer>
-<!-- END FOOTER-->
+<!--END FOOTER-->
 <?php do_action( 'cc_theme_after_footer' ); ?>
 <?php wp_footer(); ?>
 </body>
