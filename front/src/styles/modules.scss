@@ -54,6 +54,9 @@
 	&.has-image {
 		.entry-image {
 			padding: 0;
+			img {
+				width: 100%;
+			}
 		}
 		.entry-content{
 			padding-left: $space-bigger !important;
@@ -75,6 +78,13 @@
 			font-weight: 600;
 			font-size: .8rem;
 			text-transform: uppercase;
+		}
+	}
+	@include mobile() {
+		&.has-image {
+			.entry-content {
+				padding-left: 0 !important;
+			}
 		}
 	}
 }

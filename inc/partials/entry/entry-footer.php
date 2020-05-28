@@ -1,6 +1,6 @@
 <hr>
 <div class="columns leveled">
-	<div class="column is-one-third">
+	<div class="column is-8">
 		<div class="entry-meta">
 			<div class="terms-list the-categories margin-vertical-normal">
 				<h6>Categories</h6>
@@ -12,7 +12,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="column is-one-fifth">
+	<div class="column is-2">
 		<div class="share-entry margin-vertical-normal">
 			<h6>Share</h6>
 			<a href="<?php echo CC_Site::social_share( 'facebook', get_the_ID() ); ?>" class="share facebook"><i class="icon facebook colored"></i></a>

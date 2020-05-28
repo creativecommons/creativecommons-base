@@ -1,3 +1,17 @@
+.main-content {
+	.container {
+		@include mobile() {
+			padding-left: $space-normal;
+			padding-right: $space-normal;
+		}	
+		&.mobile-no-padding {
+			@include mobile() {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}
 .page, .single {
 	.main-content {
 		padding-top: 0;
@@ -110,4 +124,5 @@
 	h1, h2, h3, h4, h5, h6 {
 		margin-bottom: $space-normal;
 	}
+	
 }
