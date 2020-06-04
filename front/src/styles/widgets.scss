@@ -1,4 +1,12 @@
 .widget {
+	&.title {
+		@include mobile() {
+			padding: 0;
+			h1 {
+				font-size: 2.25rem;
+			}
+		}
+	}
 	&.donate {
 		text-align: center;
 		h3 {
@@ -12,6 +20,20 @@
 				&.active {
 					background-color: $color-dark-gray;
 					color: $white;
+				}
+			}
+		}
+		@include mobile() {
+			padding: $space-normal;
+			.donate-buttons {
+				justify-content: space-between;
+				.donate-amount {
+					margin-bottom: $space-normal;
+					margin-right: $space-normal;
+					margin-left: $space-normal;
+				}
+				.donate {
+					display: flex;
 				}
 			}
 		}
@@ -77,5 +99,10 @@
 .no-gap {
 	.widget {
 		padding: $space-large;
+		&.title {
+			@include mobile() {
+				padding: 0;
+			}
+		}
 	}
 }
