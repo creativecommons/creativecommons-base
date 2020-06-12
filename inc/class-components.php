@@ -377,17 +377,19 @@ class Components {
 	 * @param boolean $has_dark_background
 	 * @return void
 	 */
-	public static function cc_logos($logo_name = 'logomark', $has_dark_background = false) {
+	public static function cc_logos($logo_name = 'cc/logomark.svg#logomark', $has_dark_background = false) {
 		$out = '';
 		if ( $has_dark_background ) {
 			$out .= '<div class="has-text-white">';
 		}
+		$default_image_size = '304 73';
+		$image_size = apply_filters('cc_theme_base_set_default_size_logo', $default_image_size);
 		$out .= '<svg';
 			$out .= ' class="logo"';
 			$out .= ' xmlns="http://www.w3.org/2000/svg"';
 			$out .= ' preserveAspectRatio="xMidyMid meet"';
-			$out .= ' viewBox="0 0 304 73">';
-			$out .= ' <use href="'.get_bloginfo( 'template_directory' ) . '/assets/img/logos/cc/'.$logo_name.'.svg#'.$logo_name.'"></use>';
+			$out .= ' viewBox="0 0 '.$image_size.'">';
+			$out .= ' <use href="'.get_bloginfo( 'template_directory' ) . '/assets/img/logos/'.$logo_name.'"></use>';
 		$out .= '</svg>';
 		if ( $has_dark_background ) {
 			$out .= '</div>';
