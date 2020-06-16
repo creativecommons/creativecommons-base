@@ -192,3 +192,15 @@
 		}
 	}
 }
+.entry-author {
+	@extend .padding-vertical-normal;
+	display: flex;
+	.author-image {
+		.avatar {
+			margin-right: $space-smaller;
+		}
+	}
+	.author-info-group {
+		padding-left: $space-normal;
+	}
+}

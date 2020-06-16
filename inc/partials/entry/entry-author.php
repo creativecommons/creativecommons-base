@@ -7,7 +7,6 @@ if ( class_exists( 'coauthors_plus' ) ) { // Get the Co-Authors for the post
 }
 echo '<div class="entry-author">';
 	echo '<div class="author-image">';
-	<?php
 		$author_bio_avatar_size = apply_filters( 'cc_author_bio_avatar_size', 50 );
 		if (count($co_authors)){
 			foreach ($co_authors as $an_author){
@@ -23,7 +22,6 @@ echo '<div class="entry-author">';
 	echo '</div>';
 	echo '<div class="author-info-group">';
 		echo '<div class="author-name">';
-			echo '<h4>';
 			if ( function_exists( 'coauthors_posts_links' ) ) {
 				if (count($co_authors)){
 					$x = 1;
@@ -40,8 +38,8 @@ echo '<div class="entry-author">';
 			} else {
 					the_author_posts_link();
 			}
-			echo '</h4>';
 		echo '</div>';
 		echo '<div class="author-date">'. get_the_date( 'F d, Y' ); '</div>';
 	echo '</div>';
+echo '</div>';
 echo '</div>';
