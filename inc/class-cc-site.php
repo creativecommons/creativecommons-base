@@ -141,7 +141,7 @@ class CC_Site {
 	 * @return void
 	 */
 	public static function get_current_website_logo() {
-		$default_logo = 'logomark';
+		$default_logo = 'cc/logomark.svg#logomark';
 		$current_main_logo = apply_filters( 'cc_theme_base_set_default_logo', $default_logo );
 		return Components::cc_logos($current_main_logo, false);
 	}
