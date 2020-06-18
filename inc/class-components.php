@@ -68,7 +68,7 @@ class Components {
 		 $card_image   = ( $use_post_data ) ? get_the_post_thumbnail( $post_id, 'landscape-medium' ) : wp_get_attachment_image( $image_id, 'landscape-medium' );
 		$card_title    = ( $use_post_data ) ? get_the_title( $post_id ) : $title;
 		$card_url      = ( $use_post_data ) ? get_permalink( $post_id ) : $url;
-		$card_date     = ( $use_post_data ) ? get_the_date( 'd F Y', $post_id ) : $date;
+		$card_date     = ( $use_post_data ) ? get_the_date( CC_Site::get_date_format(), $post_id ) : $date;
 		$card_border   = ( $has_border ) ? '' : ' no-border ';
 		$button_color  = ( $button_color ) ? $button_color : 'is-primary';
 		$button_size   = ( $button_size ) ? $button_size : 'big';
@@ -358,7 +358,7 @@ class Components {
 		}
 		$out .= '<div class="entry-content column">';
 		$out .= '<h4 class="b-header"><a href="' . get_permalink( $post_id ) . '">' . get_the_title( $post_id ) . '</a></h4>';
-		$out .= '<span class="entry-date">' . get_the_date( 'd F Y' ) . '</span>';
+		$out .= '<span class="entry-date">' . get_the_date( CC_Site::get_date_format() ) . '</span>';
 		if ( $has_content ) {
 			$the_post = get_post( $post_id );
 			$out     .= '<div class="entry-description">';

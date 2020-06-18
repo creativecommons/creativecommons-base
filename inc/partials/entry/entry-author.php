@@ -39,7 +39,7 @@ echo '<div class="entry-author">';
 					the_author_posts_link();
 			}
 		echo '</div>';
-		echo '<div class="author-date">'. get_the_date( 'F d, Y' ); '</div>';
+		echo '<div class="author-date">'. get_the_date( CC_Site::get_date_format() ); '</div>';
 	echo '</div>';
 echo '</div>';
 echo '</div>';

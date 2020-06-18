@@ -25,7 +25,7 @@ if ( ! empty( $gallery_objects ) ) {
 	if ( $settings['show_authors'] ) {
 		get_template_part( 'inc/partials/entry/entry','author' );
 	} else {
-		echo '<span class="entry-date">'. get_the_date( 'F d, Y' ) .'</span>';
+		echo '<span class="entry-date">'. get_the_date( CC_Site::get_date_format() ) .'</span>';
 	}
  ?>
 <?php
