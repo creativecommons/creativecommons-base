@@ -148,6 +148,17 @@ class ThemeSettings {
 							]
 						),
 						Node_Factory::make(
+							Input_Checkbox::class,
+							[
+								'name'    => 'show_authors',
+								'label'   => 'Show authors on posts?',
+								'value'   => ( ! empty( $data['show_authors'] ) ) ? $data['show_authors'] : '',
+								'options' => [
+									'1' => 'Yes',
+								],
+							]
+						),
+						Node_Factory::make(
 							WP_Nonce::class,
 							[
 								'properties' => [
@@ -202,6 +213,7 @@ class ThemeSettings {
 			'featured_background_color',
 			'include_donate',
 			'enabled_announcement',
+			'show_authors'
 		);
 		$_POST['featured_image'] = $_POST['featured_image'][0];
 		$raw_post                = stripslashes_deep( $_POST );

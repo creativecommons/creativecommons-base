@@ -160,4 +160,8 @@ class CC_Site {
 			return $post->ID;
 		}
 	}
+	public static function get_date_format() {
+		$date_format = apply_filters('cc_theme_base_date_format', get_option( 'date_format' ) );
+		return $date_format;
+	}
 }
