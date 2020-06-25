@@ -201,6 +201,11 @@ class Site {
 	function admin_enqueue_scripts() {
 		// admin scripts
 		global $pagenow;
+		if ( is_admin() && (($pagenow == 'index.php' ) || ($pagenow == 'admin.php')) ) {
+		 	if ($_GET['page'] == 'cc-main-site-settings')
+		 		wp_enqueue_media();
+		 	//wp_enqueue_script( 'script-admin', THEME_JS . '/admin_scripts.js', array('jquery'), THEME_VERSION );
+		 }
 		if ( is_admin() && ( $pagenow == 'widgets.php' ) ) {
 			wp_enqueue_media();
 			wp_enqueue_script( 'script-admin', THEME_JS . '/admin_scripts.js', array( 'jquery' ), self::theme_ver );

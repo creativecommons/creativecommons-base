@@ -1,50 +1,33 @@
 <?php
-use Queulat\Metabox;
-use Queulat\Forms\Node_Factory;
-use Queulat\Forms\Element\WP_Gallery;
-use Queulat\Forms\Element\Input;
+use GutenPress\Forms;
+use GutenPress\Forms\Element;
+use GutenPress\Validate;
+use GutenPress\Validate\Validations;
+use GutenPress\Model;
 
-
-class Post_Metabox extends Metabox {
-
-	public function get_fields() : array {
-		return array(
-			Node_Factory::make(
-				Input::class,
+class MpostMeta extends Model\PostMeta{
+    protected function setId(){
+        return 'post';
+    }
+    protected function setDataModel(){
+        return array(
+            new Model\PostMetaData(
+                'video_url',
+                'video URL',
+                '\GutenPress\Forms\Element\InputText',
+                array(
+                	'description' => 'Video url (Vimeo and Youtube support), "Video" post format should be selected'
+                )
+            ),
+            new Model\PostMetaData(
+				'gallery',
+				'Image gallery',
+				'\GutenPress\Forms\Element\WPGallery',
 				array(
-					'name'       => 'video_url',
-					'label'      => 'Video URL',
-					'properties' => array(
-						'description' => 'Video url (Vimeo and Youtube support), "Video" post format should be selected',
-					),
+					'description' => '"Gallery" post format should be selected to show gallery on top'
 				)
-			),
-			Node_Factory::make(
-				WP_Gallery::class,
-				array(
-					'name'       => 'gallery',
-					'label'      => 'Image Gallery',
-					'properties' => array(
-						'description' => '"Gallery" post format should be selected to show gallery on top',
-					),
-				)
-			),
-		);
-	}
-	public function sanitize_data( array $data ) : array {
-		$sanitized = array();
-		foreach ( $data as $key => $val ) {
-			switch ( $key ) {
-				case 'video_url':
-					$sanitized[ $key ] = $val;
-					break;
-				case 'gallery':
-					$sanitized[ $key ] = $val;
-					break;
-			}
-		}
-		return $sanitized;
-	}
+			)
+	        );
+    }
 }
-
-new Post_Metabox( 'post', 'Post format', 'post', array( 'context' => 'normal' ) );
+new Model\Metabox( 'MpostMeta', 'Entry data', 'post', array('priority' => 'high') );
