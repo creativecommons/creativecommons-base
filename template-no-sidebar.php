@@ -3,7 +3,6 @@
 
 	get_header();
 	the_post();
-	$post_format = get_post_format();
 ?>
 <section class="main-content">
 	<header class="single-header">

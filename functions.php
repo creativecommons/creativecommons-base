@@ -226,3 +226,16 @@ class Site {
  * */
 
 $_s = Site::get_instance();
+
+// add_action( 'wp_print_scripts', 'cyb_list_scripts' );
+// function cyb_list_scripts() {
+//     global $wp_styles;
+//     global $enqueued_scripts;
+//     $enqueued_scripts = array();
+//     foreach( $wp_styles->queue as $handle ) {
+//         $enqueued_scripts[] = $wp_styles->registered[$handle]->src;
+//     }
+// 		echo '<pre>'; print_r($wp_styles->queue); echo '</pre>';
+// 		echo '<pre>'; print_r($enqueued_scripts); echo '</pre>';
+// 		echo print_r(wp_parse_url(get_bloginfo('siteurl')));
+// }
