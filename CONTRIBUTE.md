@@ -153,7 +153,7 @@ If you are not setup to detect WPCS errors, consider the following steps.
 ```shell
 cd wp-content/themes/wp-theme-base
 ```
-* Then clone your fork [this][wp-theme-base] repository in the current directory.
+* Then clone your fork of [this][wp-theme-base] repository in the current directory.
 * After successfully cloning the project, navigate to the `wp-theme-base` directory and run the command below on the terminal, to install all the necessary package dependencies:
 ```shell
 composer install
