@@ -24,6 +24,17 @@ guidelines on the Creative Common Open Source website.
 
 [contributing]:https://creativecommons.github.io/contributing-code/
 
+### Prerequisites
+
+The technologies below must be installed locally in your computer:
+* Web Server: Apache or Nginx
+* Database: [MySQL][mysql] version 5.0.15 or greater or any version of MariaDB.
+* [PHP][php]:  Version 7.3 or greater.
+* [WordPress][wordpress]: Version 5.2 or greater
+
+[php]: https://www.php.net/manual/en/install.php
+[mysql]: https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/
+[wordpress]: https://wordpress.org/support/article/how-to-install-wordpress/
 
 ### Development
 
@@ -71,6 +82,11 @@ If you are not setup to detect WPCS errors, consider the following steps.
    so it will make terminal look in that folder too:
    ```shell
    export PATH="$HOME/.composer/vendor/bin:$PATH"
+   ```
+
+   If you are using a Linux distro e.g. Ubuntu add the path below to your `.bashrc ` file:
+   ```shell
+   export PATH="$HOME/.config/composer/vendor/bin:$PATH"
    ```
 
 4. **Setup WPCS**
@@ -127,7 +143,28 @@ If you are not setup to detect WPCS errors, consider the following steps.
    fix, you are good to go.
 
 [wpcs-repo]: https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
-[phpcs]: https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs
+[phpcs]: https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs 
+
+**Running the ``wp-theme-base`` locally**
+
+* Fork [this][wp-theme-base] repository on GitHub.
+* Locally in your computer, open the `wordpress` directory in your text editor.
+* Then navigate to the themes directory by running the command below on your terminal:
+```shell
+cd wp-content/themes/wp-theme-base
+```
+* Then clone your fork [this][wp-theme-base] repository in the current directory.
+* After successfully cloning the project, navigate to the `wp-theme-base` directory and run the command below on the terminal, to install all the necessary package dependencies:
+```shell
+composer install
+```
+One of the installed dependencies is `Queulat`,in-order to initialize Queulat in the project follow the instruction provided in this [link][quelat]. 
+* Then you can proceed to run your server and activate the `wp-theme-base` in your local WordPress environment.
+Happy Coding!
+
+[quelat]: https://github.com/felipelavinz/queulat#loading-queulat-as-mu-plugin
+[wp-theme-base]: https://github.com/creativecommons/wp-theme-base
+
 
 ## Questions or Thoughts?
 
