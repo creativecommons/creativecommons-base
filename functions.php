@@ -20,8 +20,8 @@ define( 'THEME_JS', THEME_URI . '/assets/js' );
 */
   // include TEMPLATEPATH . '/inc/search.php';
   require TEMPLATEPATH . '/inc/widgets.php';
-  require TEMPLATEPATH . '/inc/settings.php';
-  require TEMPLATEPATH . '/inc/metaboxes.php';
+ require TEMPLATEPATH . '/inc/settings.php';
+ require TEMPLATEPATH . '/inc/metaboxes.php';
   require TEMPLATEPATH . '/inc/class-cc-site.php';
   require TEMPLATEPATH . '/inc/class-cc-filters.php';
   require TEMPLATEPATH . '/inc/class-components.php';
@@ -201,11 +201,6 @@ class Site {
 	function admin_enqueue_scripts() {
 		// admin scripts
 		global $pagenow;
-		if ( is_admin() && (($pagenow == 'index.php' ) || ($pagenow == 'admin.php')) ) {
-		 	if ($_GET['page'] == 'cc-main-site-settings')
-		 		wp_enqueue_media();
-		 	//wp_enqueue_script( 'script-admin', THEME_JS . '/admin_scripts.js', array('jquery'), THEME_VERSION );
-		 }
 		if ( is_admin() && ( $pagenow == 'widgets.php' ) ) {
 			wp_enqueue_media();
 			wp_enqueue_script( 'script-admin', THEME_JS . '/admin_scripts.js', array( 'jquery' ), self::theme_ver );
