@@ -13,7 +13,7 @@ class WP_Widget_org_news extends WP_Widget {
 	function __construct() {
 		$widget_ops  = array(
 			'classname'   => 'widget-org-news',
-			'description' => 'Show the last categorized news from the main CC website',
+			'description' => 'Show the latest categorized news from the main CC website',
 		);
 		$control_ops = array();
 		parent::__construct( 'widget-org-news', 'CC Org Last news', $widget_ops, $control_ops );
