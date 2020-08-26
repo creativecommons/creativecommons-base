@@ -348,33 +348,43 @@ class Components {
 
 		return $out;
 	}
-	/**
-	 * Notification
+/**
+	 * Simple entry
 	 *
 	 * @param int     $post_id : post or entry ID.
 	 * @param boolean $has_content : whether to show or not the content excerpt.
 	 * @param boolean $has_image : whether to show or not the entry thumbnail.
+	 * @param boolean $use_remote_data : whether to use or not remote data providing each element separatedly
+	 * @param string $title : the title of the entry
+	 * @param string $image_url : the url of the entry featured image
+	 * @param string $date : the date of the entry
+	 * @param string $permalink : the permalink of the entry
+	 * @param string $excerpt : the excerpt of the entry
 	 * @return string component layout
 	 */
-	public static function simple_entry( $post_id, $has_content = true, $has_image = true ) {
-		$has_thumb       = has_post_thumbnail( $post_id );
-		$has_thumb_class = ( $has_thumb ) ? ' has-image' : '';
+	public static function simple_entry( $post_id, $has_content = true, $has_image = true, $use_remote_data = null, $title = null, $image_url = null, $date = null, $permalink = null, $excerpt= null  ) {
+		$has_thumb       = ( !$use_remote_data ) ? has_post_thumbnail( $post_id ) : !empty( $image_url );
+		$has_thumb_class = ( !empty( $has_thumb ) ) ? ' has-image' : '';
+		$external = ( $use_remote_data ) ? ' target="_blank" ' : '';
 		$out             = '<article class="entry-simple-post' . $has_thumb_class . '">';
 		$out            .= '<div class="columns is-gapless">';
 		if ( $has_thumb && $has_image ) {
+			$thumb_image = ( !$use_remote_data ) ? get_the_post_thumbnail( $post_id, 'landscape-small' ) : '<img src="'.$image_url.'" alt="'.$title.'" />';
 			$out .= '<figure class="entry-image column is-4">';
-			$out .= get_the_post_thumbnail( $post_id, 'landscape-small' );
+			$out .= $thumb_image;
 			$out .= '</figure>';
 		}
+		$the_title = ( !$use_remote_data ) ? get_the_title( $post_id ) : $title;
+		$the_permalink = ( !$use_remote_data ) ? get_permalink( $post_id ) : $permalink;
+		$the_date = ( !$use_remote_data ) ? get_the_date( 'd F Y' ) : mysql2date( 'd F Y', $date );
 		$out .= '<div class="entry-content column">';
-		$out .= '<h4 class="b-header"><a href="' . get_permalink( $post_id ) . '">' . get_the_title( $post_id ) . '</a></h4>';
-		$out .= '<span class="entry-date">' . get_the_date( CC_Site::get_date_format() ) . '</span>';
+		$out .= '<h4 class="b-header"><a href="' . $the_permalink . '"'.$external.'>' . $the_title . '</a></h4>';
+		$out .= '<span class="entry-date">' . $the_date . '</span>';
 		if ( $has_content ) {
 			$the_post = get_post( $post_id );
-			$the_content = do_excerpt( $the_post );
-			$filtered_content = apply_filters( 'cc_theme_base_filter_card_link_content', $the_content, $post_id );
+			$the_excerpt = ( !$use_remote_data ) ? do_excerpt( $the_post ) : $excerpt;
 			$out     .= '<div class="entry-description">';
-			$out     .= $filtered_content;
+			$out     .= $the_excerpt;
 			$out     .= '</div>';
 		}
 		$out .= '</div>';

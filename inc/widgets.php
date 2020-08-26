@@ -11,3 +11,4 @@ require TEMPLATEPATH . '/inc/widgets/cc-twitter-timeline.php';
 require TEMPLATEPATH . '/inc/widgets/cc-card.php';
 require TEMPLATEPATH . '/inc/widgets/cc-title.php';
 require TEMPLATEPATH . '/inc/widgets/cc-donate.php';
+require TEMPLATEPATH . '/inc/widgets/cc-org-news.php';
