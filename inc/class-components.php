@@ -68,7 +68,7 @@ class Components {
 		 $card_image   = ( $use_post_data ) ? get_the_post_thumbnail( $post_id, 'landscape-medium' ) : wp_get_attachment_image( $image_id, 'landscape-medium' );
 		$card_title    = ( $use_post_data ) ? get_the_title( $post_id ) : $title;
 		$card_url      = ( $use_post_data ) ? get_permalink( $post_id ) : $url;
-		$card_date     = ( $use_post_data ) ? get_the_date( 'd F Y', $post_id ) : $date;
+		$card_date     = ( $use_post_data ) ? get_the_date( CC_Site::get_date_format(), $post_id ) : $date;
 		$card_border   = ( $has_border ) ? '' : ' no-border ';
 		$button_color  = ( $button_color ) ? $button_color : 'is-primary';
 		$button_size   = ( $button_size ) ? $button_size : 'big';
@@ -90,14 +90,15 @@ class Components {
 			$out .= '<span class="pre-title">' . $pre_title . '</span>';
 		}
 		$out .= '<h4 class="card-title"><a href="' . $card_url . '">' . $card_title . '</a></h4>';
-		if ( ! $is_video && ! empty( $card_date ) ) {
+		if ( ! $is_video && ! empty( $card_date ) & $date ) {
 			$out .= '<span class="subtitle"> ' . $card_date . ' </span>';
 		}
 		if ( $has_content ) {
 			$the_post        = ( $use_post_data ) ? get_post( $post_id ) : false;
 			$the_description = ( $use_post_data ) ? do_excerpt( $the_post, array( 'length' => 110 ) ) : $description;
+			$filtered_content = apply_filters( 'cc_theme_base_filter_card_content', $the_description, $post_id );
 			$out            .= '<div class="content">';
-			$out            .= $the_description;
+			$out            .= $filtered_content;
 			$out            .= '</div>';
 		}
 		if ( $has_button ) {
@@ -128,11 +129,13 @@ class Components {
 		$out .= '<h4 class="card-title"><a href="' . get_permalink( $post_id ) . '">' . get_the_title( $post_id ) . '</a></h4>';
 		if ( $has_content ) {
 			$the_post = get_post( $post_id );
+			$entry_content = do_excerpt( $the_post );
+			$filtered_content = apply_filters( 'cc_theme_base_filter_card_event_content', $entry_content, $post_id );
 			$out     .= '<div class="content">';
-			$out     .= do_excerpt( $the_post );
+			$out     .= $filtered_content;
 			$out     .= '</div>';
 		}
-		$out .= '<a href="' . get_permalink( $post_id ) . '" class="read-more">Read more</a>';
+		$out .= '<a href="' . get_permalink( $post_id ) . '" class="read-more">Read more <i class="icon chevron-right"></i></a>';
 		$out .= '</div>';
 		$out .= '</article>';
 
@@ -161,8 +164,10 @@ class Components {
 		$out    .= '<div class="card-content">';
 		if ( $has_content ) {
 			$the_post = get_post( $post_id );
+			$entry_content = do_excerpt( $the_post );
+			$filtered_content = apply_filters( 'cc_theme_base_filter_card_event_content', $entry_content, $post_id );
 			$out     .= '<div class="content">';
-			$out     .= do_excerpt( $the_post );
+			$out     .= $filtered_content;
 			$out     .= '</div>';
 		}
 		if ( $has_link ) {
@@ -194,8 +199,10 @@ class Components {
 		$out     .= '<div class="card-content">';
 		$out     .= '<span class="quote"></span>';
 		$the_post = get_post( $post_id );
+		$entry_content = apply_filters( 'the_content', $the_post->post_content );
+		$filtered_content = apply_filters( 'cc_theme_base_filter_card_quote_content', $entry_content, $post_id );
 		$out     .= '<div class="content">';
-		$out     .= apply_filters( 'the_content', $the_post->post_content );
+		$out     .= $filtered_content;
 		$out     .= '<div class="quote-author">';
 		$out     .= '<strong class="title"> ' . $author_name . '</strong>';
 		$out     .= '<p class="description">' . $author_description . '</p>';
@@ -268,9 +275,12 @@ class Components {
 		if ( $has_content ) {
 			if ( $use_post_data ) {
 				$the_post    = get_post( $post_id );
-				$the_content = do_excerpt( $the_post );
+				$get_content = do_excerpt( $the_post );
+				$filtered_content = apply_filters( 'cc_theme_base_filter_card_link_content', $get_content, $post_id );
+				$the_content = $filtered_content;
 			} else {
-				$the_content = $description;
+				$filtered_content = apply_filters( 'cc_theme_base_filter_card_link_content', $description, $post_id );
+				$the_content = $filtered_content;
 			}
 			$out .= '<span class="content">' . esc_attr( $description ) . '</span>';
 		}

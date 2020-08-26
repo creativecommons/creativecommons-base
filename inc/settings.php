@@ -125,7 +125,8 @@ class ThemeSettings{
 			'featured_content',
 			'featured_background_color',
 			'include_donate',
-			'enabled_announcement'
+			'enabled_announcement',
+			'show_authors'
 		);
 		$fields = apply_filters('cc-main_main_configuration_fields',$fields);
 		$raw_post = stripslashes_deep( $_POST );

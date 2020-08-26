@@ -137,19 +137,19 @@ class Videos {
 			$output    = array();
 			parse_str( $parse_url['query'], $output );
 			$id     = $output['v'];
-			$iframe = '<iframe width="' . $width . '" height="' . $height . '" src="http://www.youtube.com/embed/' . $id . '" frameborder="0" allowfullscreen></iframe>';
+			$iframe = '<iframe width="' . $width . '" height="' . $height . '" src="https://www.youtube.com/embed/' . $id . '" frameborder="0" allowfullscreen></iframe>';
 			return $iframe;
 		}
 		if ( strstr( $url, 'youtu.be' ) ) {
 			$parse_url = parse_url( $url );
 			$id        = array_pop( explode( '/', $parse_url ) );
-			$iframe    = '<iframe width="' . $width . '" height="' . $height . '" src="http://www.youtube.com/embed/' . $id . '" frameborder="0" allowfullscreen></iframe>';
+			$iframe    = '<iframe width="' . $width . '" height="' . $height . '" src="https://www.youtube.com/embed/' . $id . '" frameborder="0" allowfullscreen></iframe>';
 			return $iframe;
 		}
 		if ( strstr( $url, 'vimeo' ) ) {
 			if ( ! empty( $url ) ) {
 				$id     = array_pop( explode( '/', $url ) );
-				$iframe = '<iframe src="http://player.vimeo.com/video/' . $id . '" width="' . $width . '" height="' . $height . '" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
+				$iframe = '<iframe src="https://player.vimeo.com/video/' . $id . '" width="' . $width . '" height="' . $height . '" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
 				return $iframe;
 			}
 		}
@@ -183,14 +183,14 @@ class Videos {
 			parse_str( $parse_url['query'] );
 			$id       = $v;
 			$def_size = ( $size == 'small' ) ? 1 : 0;
-			$thumb    = 'http://img.youtube.com/vi/' . $id . '/' . $def_size . '.jpg';
+			$thumb    = 'https://img.youtube.com/vi/' . $id . '/' . $def_size . '.jpg';
 			return $thumb;
 		}
 		if ( strstr( $url, 'youtu.be' ) ) {
 			$parse_url = parse_url( $url );
 			$id        = array_pop( explode( '/', $parse_url ) );
 			$def_size  = ( $size == 'small' ) ? 1 : 0;
-			$thumb     = 'http://img.youtube.com/vi/' . $id . '/' . $def_size . '.jpg';
+			$thumb     = 'https://img.youtube.com/vi/' . $id . '/' . $def_size . '.jpg';
 			return $thumb;
 		}
 		if ( strstr( $url, 'vimeo' ) ) {
@@ -199,7 +199,7 @@ class Videos {
 				if ( false === ( $thumb = get_transient( 'vimeo_' . $id ) ) ) {
 					$id      = array_pop( explode( '/', $url ) );
 					$request = new WP_Http();
-					$result  = $request->request( 'http://vimeo.com/api/v2/video/' . $id . '.php', $args );
+					$result  = $request->request( 'https://vimeo.com/api/v2/video/' . $id . '.php', $args );
 					if ( ! is_wp_error( $result ) ) {
 						$body = maybe_unserialize( $result['body'] );
 						if ( $size == 'medium' ) {

@@ -1,9 +1,12 @@
 //Import Vocabulary 
+@import "@creativecommons/vocabulary/scss/color.scss";
+@import "@creativecommons/vocabulary/scss/color_overrides.scss";
+
 @import "bulma/sass/utilities/_all.sass";
 @import "bulma/sass/base/_all.sass";
-@import "@creativecommons/vocabulary/scss/color.scss";
 @import "@creativecommons/vocabulary/scss/spacing.scss";
 @import "@creativecommons/vocabulary/scss/typography.scss";
+@import "@creativecommons/vocabulary/scss/typography_overrides.scss";
 
 @import "@creativecommons/vocabulary/scss/button.scss";
 @import "@creativecommons/vocabulary/scss/form.scss";
