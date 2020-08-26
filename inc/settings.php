@@ -190,7 +190,7 @@ class ThemeSettings {
 					],
 				]
 			);
-		$form = apply_filters( 'cc_theme_base_settings_field', $form );
+		$form     = apply_filters( 'cc_theme_base_settings_field', $form );
 		echo $form;
 	}
 	public function saveSettings() {
@@ -213,7 +213,7 @@ class ThemeSettings {
 			'featured_background_color',
 			'include_donate',
 			'enabled_announcement',
-			'show_authors'
+			'show_authors',
 		);
 		$_POST['featured_image'] = $_POST['featured_image'][0];
 		$raw_post                = stripslashes_deep( $_POST );

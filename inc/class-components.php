@@ -25,24 +25,24 @@ class Components {
 	/**
 	 * Genereic card post and its variants
 	 *
-	 * @param int       $post_id : post or entry id.
-	 * @param boolean   $use_post_data : whether to use data from a post ID
-	 * @param boolean   $show_image : whether to show or not the image.
-	 * @param boolean   $is_stretch : Should the top image be stretched to fit container.
-	 * @param boolean   $is_video : is the post a video.
-	 * @param boolean   $has_button : should we show the action button?.
-	 * @param boolean   $has_border : should we show the border of the card?.
-	 * @param boolean   $has_content : should we show the except of the entry?.
-	 * @param string    $pre_title : string showed before the title.
-	 * @param string    $description : content of the card if it's not using post data.
-	 * @param string    $url : url of card if it's not using post data.
-	 * @param string    $title : title of the card if it's not using post data.
-	 * @param string    $date : date format of the card if it's not using post data.
-	 * @param int       $image_id : image id of the card if it's not using post data.
-	 * @param string    $direction : direction of the card `horizontal` or `vertical`.
-	 * @param string    $button_text : text of the button.
-	 * @param string    $button_size : size of the button big|small|tiny
-	 * @param string    $button_color : color of the button is_primary|donate|is-success|is-info|.is-warning|.is-danger
+	 * @param int     $post_id : post or entry id.
+	 * @param boolean $use_post_data : whether to use data from a post ID
+	 * @param boolean $show_image : whether to show or not the image.
+	 * @param boolean $is_stretch : Should the top image be stretched to fit container.
+	 * @param boolean $is_video : is the post a video.
+	 * @param boolean $has_button : should we show the action button?.
+	 * @param boolean $has_border : should we show the border of the card?.
+	 * @param boolean $has_content : should we show the except of the entry?.
+	 * @param string  $pre_title : string showed before the title.
+	 * @param string  $description : content of the card if it's not using post data.
+	 * @param string  $url : url of card if it's not using post data.
+	 * @param string  $title : title of the card if it's not using post data.
+	 * @param string  $date : date format of the card if it's not using post data.
+	 * @param int     $image_id : image id of the card if it's not using post data.
+	 * @param string  $direction : direction of the card `horizontal` or `vertical`.
+	 * @param string  $button_text : text of the button.
+	 * @param string  $button_size : size of the button big|small|tiny
+	 * @param string  $button_color : color of the button is_primary|donate|is-success|is-info|.is-warning|.is-danger
 	 * @return string component layout
 	 */
 	public static function card_post(
@@ -94,12 +94,12 @@ class Components {
 			$out .= '<span class="subtitle"> ' . $card_date . ' </span>';
 		}
 		if ( $has_content ) {
-			$the_post        = ( $use_post_data ) ? get_post( $post_id ) : false;
-			$the_description = ( $use_post_data ) ? do_excerpt( $the_post, array( 'length' => 110 ) ) : $description;
+			$the_post         = ( $use_post_data ) ? get_post( $post_id ) : false;
+			$the_description  = ( $use_post_data ) ? do_excerpt( $the_post, array( 'length' => 110 ) ) : $description;
 			$filtered_content = apply_filters( 'cc_theme_base_filter_card_content', $the_description, $post_id );
-			$out            .= '<div class="content">';
-			$out            .= $filtered_content;
-			$out            .= '</div>';
+			$out             .= '<div class="content">';
+			$out             .= $filtered_content;
+			$out             .= '</div>';
 		}
 		if ( $has_button ) {
 			$out .= self::button( $button_text, $card_url, $button_size, $button_color );
@@ -128,12 +128,12 @@ class Components {
 		$out .= '<div class="card-content">';
 		$out .= '<h4 class="card-title"><a href="' . get_permalink( $post_id ) . '">' . get_the_title( $post_id ) . '</a></h4>';
 		if ( $has_content ) {
-			$the_post = get_post( $post_id );
-			$entry_content = do_excerpt( $the_post );
+			$the_post         = get_post( $post_id );
+			$entry_content    = do_excerpt( $the_post );
 			$filtered_content = apply_filters( 'cc_theme_base_filter_card_event_content', $entry_content, $post_id );
-			$out     .= '<div class="content">';
-			$out     .= $filtered_content;
-			$out     .= '</div>';
+			$out             .= '<div class="content">';
+			$out             .= $filtered_content;
+			$out             .= '</div>';
 		}
 		$out .= '<a href="' . get_permalink( $post_id ) . '" class="read-more">Read more <i class="icon chevron-right"></i></a>';
 		$out .= '</div>';
@@ -163,12 +163,12 @@ class Components {
 		$out    .= '</header>';
 		$out    .= '<div class="card-content">';
 		if ( $has_content ) {
-			$the_post = get_post( $post_id );
-			$entry_content = do_excerpt( $the_post );
+			$the_post         = get_post( $post_id );
+			$entry_content    = do_excerpt( $the_post );
 			$filtered_content = apply_filters( 'cc_theme_base_filter_card_event_content', $entry_content, $post_id );
-			$out     .= '<div class="content">';
-			$out     .= $filtered_content;
-			$out     .= '</div>';
+			$out             .= '<div class="content">';
+			$out             .= $filtered_content;
+			$out             .= '</div>';
 		}
 		if ( $has_link ) {
 			$out .= '<a href="' . get_permalink( $post_id ) . '" class="read-more">Read more</a>';
@@ -196,20 +196,20 @@ class Components {
 			$out .= '</figure>';
 			$out .= '</header>';
 		}
-		$out     .= '<div class="card-content">';
-		$out     .= '<span class="quote"></span>';
-		$the_post = get_post( $post_id );
-		$entry_content = apply_filters( 'the_content', $the_post->post_content );
+		$out             .= '<div class="card-content">';
+		$out             .= '<span class="quote"></span>';
+		$the_post         = get_post( $post_id );
+		$entry_content    = apply_filters( 'the_content', $the_post->post_content );
 		$filtered_content = apply_filters( 'cc_theme_base_filter_card_quote_content', $entry_content, $post_id );
-		$out     .= '<div class="content">';
-		$out     .= $filtered_content;
-		$out     .= '<div class="quote-author">';
-		$out     .= '<strong class="title"> ' . $author_name . '</strong>';
-		$out     .= '<p class="description">' . $author_description . '</p>';
-		$out     .= '</div>';
-		$out     .= '</div>';
-		$out     .= '</div>';
-		$out     .= '</article>';
+		$out             .= '<div class="content">';
+		$out             .= $filtered_content;
+		$out             .= '<div class="quote-author">';
+		$out             .= '<strong class="title"> ' . $author_name . '</strong>';
+		$out             .= '<p class="description">' . $author_description . '</p>';
+		$out             .= '</div>';
+		$out             .= '</div>';
+		$out             .= '</div>';
+		$out             .= '</article>';
 
 		return $out;
 	}
@@ -268,19 +268,19 @@ class Components {
 		$color_class   = ( ! $has_border ) ? 'class="has-background-' . $background_color . '"' : '';
 		$class         = ( ! empty( $extra_class ) ) ? ' ' . $extra_class : '';
 
-		$out = '<article class="card entry-post link ' . $border_class . $class . '">';
+		$out  = '<article class="card entry-post link ' . $border_class . $class . '">';
 		$out .= '<a href="' . $the_url . '" ' . $color_class . '>';
 		$out .= '<span class="card-content has-bottom-link">';
 		$out .= '<h2 class="card-title">' . $the_title . '</h2>';
 		if ( $has_content ) {
 			if ( $use_post_data ) {
-				$the_post    = get_post( $post_id );
-				$get_content = do_excerpt( $the_post );
+				$the_post         = get_post( $post_id );
+				$get_content      = do_excerpt( $the_post );
 				$filtered_content = apply_filters( 'cc_theme_base_filter_card_link_content', $get_content, $post_id );
-				$the_content = $filtered_content;
+				$the_content      = $filtered_content;
 			} else {
 				$filtered_content = apply_filters( 'cc_theme_base_filter_card_link_content', $description, $post_id );
-				$the_content = $filtered_content;
+				$the_content      = $filtered_content;
 			}
 			$out .= '<span class="content">' . esc_attr( $description ) . '</span>';
 		}
@@ -349,33 +349,43 @@ class Components {
 		return $out;
 	}
 	/**
-	 * Notification
+	 * Simple entry
 	 *
 	 * @param int     $post_id : post or entry ID.
 	 * @param boolean $has_content : whether to show or not the content excerpt.
 	 * @param boolean $has_image : whether to show or not the entry thumbnail.
+	 * @param boolean $use_remote_data : whether to use or not remote data providing each element separatedly
+	 * @param string  $title : the title of the entry
+	 * @param string  $image_url : the url of the entry featured image
+	 * @param string  $date : the date of the entry
+	 * @param string  $permalink : the permalink of the entry
+	 * @param string  $excerpt : the excerpt of the entry
 	 * @return string component layout
 	 */
-	public static function simple_entry( $post_id, $has_content = true, $has_image = true ) {
-		$has_thumb       = has_post_thumbnail( $post_id );
-		$has_thumb_class = ( $has_thumb ) ? ' has-image' : '';
+	public static function simple_entry( $post_id, $has_content = true, $has_image = true, $use_remote_data = null, $title = null, $image_url = null, $date = null, $permalink = null, $excerpt = null ) {
+		$has_thumb       = ( ! $use_remote_data ) ? has_post_thumbnail( $post_id ) : ! empty( $image_url );
+		$has_thumb_class = ( ! empty( $has_thumb ) ) ? ' has-image' : '';
+		$external        = ( $use_remote_data ) ? ' target="_blank" ' : '';
 		$out             = '<article class="entry-simple-post' . $has_thumb_class . '">';
 		$out            .= '<div class="columns is-gapless">';
 		if ( $has_thumb && $has_image ) {
-			$out .= '<figure class="entry-image column is-4">';
-			$out .= get_the_post_thumbnail( $post_id, 'landscape-small' );
-			$out .= '</figure>';
+			$thumb_image = ( ! $use_remote_data ) ? get_the_post_thumbnail( $post_id, 'landscape-small' ) : '<img src="' . $image_url . '" alt="' . $title . '" />';
+			$out        .= '<figure class="entry-image column is-4">';
+			$out        .= $thumb_image;
+			$out        .= '</figure>';
 		}
-		$out .= '<div class="entry-content column">';
-		$out .= '<h4 class="b-header"><a href="' . get_permalink( $post_id ) . '">' . get_the_title( $post_id ) . '</a></h4>';
-		$out .= '<span class="entry-date">' . get_the_date( CC_Site::get_date_format() ) . '</span>';
+		$the_title     = ( ! $use_remote_data ) ? get_the_title( $post_id ) : $title;
+		$the_permalink = ( ! $use_remote_data ) ? get_permalink( $post_id ) : $permalink;
+		$the_date      = ( ! $use_remote_data ) ? get_the_date( 'd F Y' ) : mysql2date( 'd F Y', $date );
+		$out          .= '<div class="entry-content column">';
+		$out          .= '<h4 class="b-header"><a href="' . $the_permalink . '"' . $external . '>' . $the_title . '</a></h4>';
+		$out          .= '<span class="entry-date">' . $the_date . '</span>';
 		if ( $has_content ) {
-			$the_post = get_post( $post_id );
-			$the_content = do_excerpt( $the_post );
-			$filtered_content = apply_filters( 'cc_theme_base_filter_card_link_content', $the_content, $post_id );
-			$out     .= '<div class="entry-description">';
-			$out     .= $filtered_content;
-			$out     .= '</div>';
+			$the_post    = get_post( $post_id );
+			$the_excerpt = ( ! $use_remote_data ) ? do_excerpt( $the_post ) : $excerpt;
+			$out        .= '<div class="entry-description">';
+			$out        .= $the_excerpt;
+			$out        .= '</div>';
 		}
 		$out .= '</div>';
 		$out .= '</div>';
@@ -385,24 +395,24 @@ class Components {
 	/**
 	 * cc_logos
 	 *
-	 * @param string $logo_name lettermark|letterheart
+	 * @param string  $logo_name lettermark|letterheart
 	 * @param boolean $has_dark_background
 	 * @return void
 	 */
-	public static function cc_logos($logo_name = 'cc/logomark.svg#logomark', $has_dark_background = false) {
+	public static function cc_logos( $logo_name = 'cc/logomark.svg#logomark', $has_dark_background = false ) {
 		$out = '';
 		if ( $has_dark_background ) {
 			$out .= '<div class="has-text-white">';
 		}
 		$default_image_size = '304 73';
-		$image_size = apply_filters('cc_theme_base_set_default_size_logo', $default_image_size);
-		$out .= '<svg';
-			$out .= ' class="logo"';
-			$out .= ' xmlns="http://www.w3.org/2000/svg"';
-			$out .= ' preserveAspectRatio="xMidyMid meet"';
-			$out .= ' viewBox="0 0 '.$image_size.'">';
-			$out .= ' <use href="'.get_bloginfo( 'template_directory' ) . '/assets/img/logos/'.$logo_name.'"></use>';
-		$out .= '</svg>';
+		$image_size         = apply_filters( 'cc_theme_base_set_default_size_logo', $default_image_size );
+		$out               .= '<svg';
+			$out           .= ' class="logo"';
+			$out           .= ' xmlns="http://www.w3.org/2000/svg"';
+			$out           .= ' preserveAspectRatio="xMidyMid meet"';
+			$out           .= ' viewBox="0 0 ' . $image_size . '">';
+			$out           .= ' <use href="' . get_bloginfo( 'template_directory' ) . '/assets/img/logos/' . $logo_name . '"></use>';
+		$out               .= '</svg>';
 		if ( $has_dark_background ) {
 			$out .= '</div>';
 		}

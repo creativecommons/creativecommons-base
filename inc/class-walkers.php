@@ -18,9 +18,9 @@ class Navwalker extends Walker_Nav_Menu {
 		$output .= "<div class='navbar-dropdown'>";
 	}
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-		$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
-		$classes[] = 'menu-item-' . $item->ID;
-		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
+		$classes      = empty( $item->classes ) ? array() : (array) $item->classes;
+		$classes[]    = 'menu-item-' . $item->ID;
+		$class_names  = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
 		$li_classes   = 'navbar-item ' . $item->post_name . ' ' . $class_names;
 		$has_children = $args->walker->has_children;
 		$li_classes  .= $has_children ? ' has-dropdown is-hoverable' : '';
