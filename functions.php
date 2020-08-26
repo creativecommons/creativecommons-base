@@ -51,16 +51,16 @@ $mandatory_sidebars = array(
 	'Homepage Notification' => array(
 		'name' => 'home-notification',
 	),
-	'Homepage widgets' => array(
+	'Homepage widgets'      => array(
 		'name' => 'homepage-sidebar',
 	),
-	'Single' => array(
+	'Single'                => array(
 		'name' => 'single',
 	),
-	'Page' => array(
+	'Page'                  => array(
 		'name' => 'page',
 	),
-	'Page Footer' => array(
+	'Page Footer'           => array(
 		'name' => 'page-footer',
 	),
 );

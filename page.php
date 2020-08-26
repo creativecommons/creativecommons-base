@@ -16,21 +16,23 @@
 		<div class="columns is-centered is-variable is-5">
 			<div class="column is-3">
 				<aside class="sidebar">
-					<?php 
+					<?php
 						$parent = CC_Site::get_parent_page();
 						echo '<nav class="side-navigation padding-vertical-big">';
 							echo '<ul class="list-pages">';
-								wp_list_pages(array(
-									'child_of' => $parent,
-									'show_date' => '',
-									'depth' => 3,
-									'title_li' => ''
-								));
-							echo '</ul>';
-						echo '</nav>';
+								wp_list_pages(
+									array(
+										'child_of'  => $parent,
+										'show_date' => '',
+										'depth'     => 3,
+										'title_li'  => '',
+									)
+								);
+								echo '</ul>';
+								echo '</nav>';
 
-						get_sidebar(); 
-					?>
+								get_sidebar();
+								?>
 				</aside>
 			</div>
 			<div class="column is-8">
