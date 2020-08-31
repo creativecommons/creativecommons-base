@@ -2,6 +2,7 @@
 
 class WP_Widget_org_news extends WP_Widget {
 	const CATEGORIES_URL   = 'https://creativecommons.org/wp-json/wp/v2/categories';
+	const TAGS_URL         = 'https://creativecommons.org/wp-json/wp/v2/tags';
 	const ENTRIES_URL      = 'https://creativecommons.org/wp-json/wp/v2/posts';
 	const MEDIA_URL        = 'https://creativecommons.org/wp-json/wp/v2/media';
 	const TRANSIENT_PREFIX = 'cc_widget_org_news_';
@@ -28,11 +29,14 @@ class WP_Widget_org_news extends WP_Widget {
 			return false;
 		}
 	}
-	function get_last_news( $size, $category ) {
+	function get_last_news( $size, $category, $tag ) {
 		if ( false === ( $get_entries = get_transient( self::TRANSIENT_PREFIX . $this->id . '_entries' ) ) ) {
 			$entries_url = self::ENTRIES_URL . '?per_page=' . $size;
 			if ( ! empty( $category ) ) {
 				$entries_url .= '&categories=' . $category;
+			}
+			if ( ! empty( $tag ) ) {
+				$entries_url .= '&tags=' . $tag;
 			}
 
 			$get_entries = $this->query_api( $entries_url );
@@ -42,8 +46,8 @@ class WP_Widget_org_news extends WP_Widget {
 					if ( ! empty( $entry->featured_media ) ) {
 						$api_response = $this->query_api( self::MEDIA_URL . '/' . $entry->featured_media );
 						if ( ! empty( $api_response ) ) {
-							  $entry->featured_media_url      = $api_response->media_details->sizes->cc_list_post_thumbnail->source_url;
-							  $entry->featured_media_url_full = $api_response->media_details->sizes->full->source_url;
+							$entry->featured_media_url      = $api_response->media_details->sizes->cc_list_post_thumbnail->source_url;
+							$entry->featured_media_url_full = $api_response->media_details->sizes->full->source_url;
 						}
 					}
 					$modified_entries[] = $entry;
@@ -67,13 +71,19 @@ class WP_Widget_org_news extends WP_Widget {
 		}
 		return $get_categories;
 	}
-
+	function get_tag_id( $tag_slug ) {
+		$api_response = $this->query_api( self::TAGS_URL . '?slug=' . $tag_slug );
+		if ( ! empty( $api_response ) ) {
+			return $api_response[0]->id;
+		}
+	}
 	function widget( $args, $instance ) {
 		global $post;
 		$size         = ( ! empty( $instance['size'] ) ) ? $instance['size'] : 3;
 		$the_category = ( ! empty( $instance['category'] ) ) ? $instance['category'] : null;
 		$link_text    = ( ! empty( $instance['link_text'] ) ) ? $instance['link_text'] : 'More news';
-		$news         = $this->get_last_news( $size, $the_category );
+		$tag          = ( ! empty( $instance['tag_id'] ) ) ? $instance['tag_id'] : false;
+		$news         = $this->get_last_news( $size, $the_category, $tag );
 		$categories   = $this->get_ccorg_categories();
 		if ( ! empty( $news ) ) {
 			echo '<div class="widget news">';
@@ -99,6 +109,14 @@ class WP_Widget_org_news extends WP_Widget {
 	}
 
 	function update( $new_instance, $old_instance ) {
+		if ( ! empty( $new_instance['tag'] ) ) {
+			$new_instance['tag_id'] = $this->get_tag_id( $new_instance['tag'] );
+			if ( ! empty( $new_instance['tag_id'] ) ) {
+				$new_instance['tag_remote_exists'] = 1;
+			} else {
+				$new_instance['tag_remote_exists'] = 0;
+			}
+		}
 		delete_transient( self::TRANSIENT_PREFIX . $this->id . '_categories' );
 		delete_transient( self::TRANSIENT_PREFIX . $this->id . '_entries' );
 		delete_transient( self::TRANSIENT_PREFIX . '_thumbnails' );
@@ -112,6 +130,10 @@ class WP_Widget_org_news extends WP_Widget {
 		echo '<p><label for="' . $this->get_field_name( 'is_link' ) . '">Link to news archive? </label><input type="checkbox" id="' . $this->get_field_id( 'is_link' ) . '"' . ( ( ! empty( $is_link ) ) ? ' checked="checked" ' : '' ) . ' name="' . $this->get_field_name( 'is_link' ) . '" value="1"></p>';
 		echo '<p><label for="' . $this->get_field_id( 'link_text' ) . '">Link text: <input type="text" name="' . $this->get_field_name( 'link_text' ) . '" id="' . $this->get_field_id( 'link_text' ) . '" value="' . $instance['link_text'] . '" class="widefat"/></label></p>';
 		echo '<p><label for="' . $this->get_field_id( 'size' ) . '">Entries number: <input type="number" name="' . $this->get_field_name( 'size' ) . '" id="' . $this->get_field_id( 'size' ) . '" value="' . $instance['size'] . '"/></label></p>';
+		$tag_error = ( ! $instance['tag_remote_exists'] ) ? '<small style="color:red;">The tag doesn\'t seems to exists in the source website</small>' : '';
+		echo '<p><label for="' . $this->get_field_id( 'tag' ) . '">Tag slug: <input type="text" name="' . $this->get_field_name( 'tag' ) . '" id="' . $this->get_field_id( 'tag' ) . '" value="' . $instance['tag'] . '"/></label>' . $tag_error . '</p>';
+		echo '<input type="hidden" name="' . $this->get_field_name( 'tag_id' ) . ' value="' . $instance['tag_id'] . '"/>';
+		echo '<input type="hidden" name="' . $this->get_field_name( 'tag_remote_exists' ) . ' value="' . $instance['tag_remote_exists'] . '"/>';
 		echo '<p><label for="' . $this->get_field_id( 'category' ) . '">Category: ';
 		$get_categories = $this->get_ccorg_categories();
 		echo '<p><select name="' . $this->get_field_name( 'category' ) . '" id="' . $this->get_field_id( 'category' ) . '">';
