@@ -19,28 +19,28 @@ export default function (Vue, { router, head, isClient, appOptions }) {
 
   head.link.push({
     rel: 'manifest',
-    href: '/manifest.json'
+    href: '/manifest.json',
   })
 
   head.meta.push({
     name: 'theme-color',
-    content: '#10c186'
+    content: '#10c186',
   })
 
   head.meta.push({
     name: 'google-site-verification',
-    content: process.env.GSV_META
+    content: process.env.GSV_META,
   })
 
   head.meta.push({
     name: 'apple-mobile-web-app-status-bar-style',
-    content: 'default'
+    content: 'default',
   })
 
   // State
   appOptions.store = new Vuex.Store({
     state: {
-      sidebarOpen: false
+      sidebarOpen: false,
     },
     mutations: {
       toggleSidebar(state) {
@@ -51,7 +51,7 @@ export default function (Vue, { router, head, isClient, appOptions }) {
       },
       openSidebar(state) {
         state.sidebarOpen = true
-      }
-    }
+      },
+    },
   })
 }
