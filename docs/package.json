@@ -4,7 +4,8 @@
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@creativecommons/vocabulary": "^2020.8.7",
