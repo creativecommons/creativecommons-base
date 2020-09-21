@@ -7,7 +7,7 @@
       </div>
       <p>The CC WordPress Base Theme is a universal theme for all front-facing Creative Commons websites.</p>
 			<p>
-				Although CC WP Base Theme code is <a href="#">free software</a>, it’s intended to be used for the CC brand only as part of the <a href="https://cc-vocabulary.netlify.app/?path=/story/vocabulary-introduction--page">CC Vocabulary</a>. To learn more about the policies and licenses governing the use of the theme visit this <a href="#">link</a>.
+				Although CC WP Base Theme code is <a href="https://www.gnu.org/philosophy/free-sw.html" target="_blank">free software</a>, it’s intended to be used for the CC brand only as part of the <a href="https://cc-vocabulary.netlify.app/?path=/story/vocabulary-introduction--page" target="_blank">CC Vocabulary</a>. To learn more about the policies and licenses governing the use of the theme visit this <a href="https://creativecommons.org/policies" target="_blank">link</a>.
 			</p>
 			 <div  class="content-inner"> 
         <h2>Why CC WP Base Theme ?</h2>
