@@ -2,8 +2,8 @@
   <Layout :sidebar="true">
     <div class="content">
       <h1>{{ $static.metadata.siteName }}</h1>
-      <div class="screenshot">
-        <p>Mock Screenshot</p>
+      <div class="screenshot-wrapper">
+         <g-image src="~/screenshot.png" />
       </div>
       <p>The CC WordPress Base Theme is a universal theme for all front-facing Creative Commons websites.</p>
 			<p>
@@ -59,15 +59,13 @@ export default {
 	flex-direction: column;
 }
 
-.screenshot {
-	width: 100%;
-	height: 30em;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: aqua;
-	margin-bottom: 2em;
-	font-weight: 500;
+.screenshot-wrapper {
+width: 100%;
+height: auto;
+display: flex;
+border: 1px solid lightgrey;
+padding-bottom: 2em;
+margin-bottom: 3em;
 }
 
 h1 {
