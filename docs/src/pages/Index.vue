@@ -5,15 +5,15 @@
       <div class="screenshot-wrapper">
          <g-image src="~/screenshot.png" />
       </div>
-      <p>The CC WordPress Base Theme is a universal theme for all front-facing Creative Commons websites.</p>
+      <p>The CC WordPress Base Theme is a universal theme for all front-facing Creative Commons (CC) websites.</p>
 			<p>
-				Although CC WP Base Theme code is <a href="https://www.gnu.org/philosophy/free-sw.html" target="_blank">free software</a>, it’s intended to be used for the CC brand only as part of the <a href="https://cc-vocabulary.netlify.app/?path=/story/vocabulary-introduction--page" target="_blank">CC Vocabulary</a>. To learn more about the policies and licenses governing the use of the theme visit this <a href="https://creativecommons.org/policies" target="_blank">link</a>.
+				Although CC WP Base Theme code is <a href="https://www.gnu.org/philosophy/free-sw.html" target="_blank">free and open-source software</a>, it’s intended to be used for the CC brand only as part of the <a href="https://cc-vocabulary.netlify.app/?path=/story/vocabulary-introduction--page" target="_blank">CC Vocabulary</a>. To learn more about the policies and licenses governing the use of the theme, view <a href="https://creativecommons.org/policies" target="_blank">Policies - Creative Commons</a>.
 			</p>
 			 <div  class="content-inner"> 
         <h2>Why CC WP Base Theme ?</h2>
         <ul>
           <li>Provides uniformity in design and improves the ease of maintenance: The CC WP Base Theme is used across the Creative Commons ecosystem and as a consequence, all the websites are uniform and are generally easier to maintain.</li>
-          <li>Reduces the barrier of entry to contributing: CC WP Base theme is essentially a  WordPress theme, so anyone with little to no knowledge of web design can easily start contributing to CC websites. To learn more about contributing to CC WP Base Theme, please follow this <a href="#">link</a>.</li>
+          <li>Reduces the barrier of entry to contributing: CC WP Base theme is essentially a  WordPress theme, so anyone with little to no knowledge of web design can easily start contributing to CC websites. To learn more about contributing to CC WP Base Theme, see the <a href="#">Contributing</a> section.</li>
         </ul>
       </div>
       <div class="content-inner">
