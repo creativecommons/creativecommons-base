@@ -13,7 +13,7 @@ To get started you have to first install the CC WP Base Theme locally.
 
 <br/>
 
-_For a step by step guide on how you can set up WordPress in your local environment please read and follow the tutorial provided in this []()._
+_For a step by step guide on how you can set up WordPress in your local environment please read and follow the tutorial provided in this [How to set up a local development...](https://www.endpoint.com/blog/2019/08/07/set-up-local-development-environment-for-wordpress)._
 
 ## Installation Guide
 
