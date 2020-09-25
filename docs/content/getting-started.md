@@ -13,7 +13,7 @@ To get started you have to first install the CC WP Base Theme locally.
 
 <br/>
 
-_For a step by step guide on how you can set up WordPress in your local environment please read and follow the tutorial provided in this [link]()._
+_For a step by step guide on how you can set up WordPress in your local environment please read and follow the tutorial provided in this []()._
 
 ## Installation Guide
 
@@ -28,3 +28,17 @@ One of the installed dependencies is Queulat. In-order to initialize [Queulat](h
 
 <br/>
 Alternatively, to initialize Queulat navigate to the mu-plugins directory. The mu-plugins directory is in the root of the wp-content folder. It’s automatically created when you install Queulat using composer. At the root of the mu-plugins directory create an index.php file. Then copy and paste the code below:
+
+```bash
+<?php
+/**
+ * Plugin Name: Queulat Loader
+ * Description: Load Queulat mu-plugin
+ */
+
+// Load Composer autoloader (ABSPATH it's the path to wp-load.php).
+require_once ABSPATH . 'wp-content/themes/wp-theme-base/vendor/autoload.php';
+
+// Load Queulat main file.
+require_once __DIR__ .'/queulat/queulat.php';
+```
