@@ -17,7 +17,7 @@ _For a step by step guide on how you can set up WordPress in your local environm
 
 ## Installation Guide
 
-1. Download the [zip]() package of the theme.
+1. Download the <a href="https://github.com/creativecommons/wp-theme-base/archive/master.zip">zip</a> package of the theme.
 2. Unzip to your wp-content/themes directory.
 3. Navigate to the wp-theme-base directory and run the command below on the terminal, to install all the necessary package dependencies:
 
