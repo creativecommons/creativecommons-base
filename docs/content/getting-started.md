@@ -8,13 +8,19 @@ To get started you have to first install the CC WP Base Theme locally.
 
 ## Requirements
 
-- [WordPress](https://wordpress.org/support/article/how-to-install-wordpress/): Version 5.2 or greater
-- [Composer](https://getcomposer.org/): Install composer globally by following [documentation](https://getcomposer.org/doc/00-intro.md) for your particular OS.
+<ul class="markdown-list">
+<li>
+  <a href="https://wordpress.org/support/article/how-to-install-wordpress/" target="_blank">
+  WordPress</a></li>
+
+  <li>
+  <a href="https://getcomposer.org/" target="_blank">
+  Composer</a>:  Install composer globally by following the <a href="https://getcomposer.org/doc/00-intro.md#globally" target="_blank">documentation</a> for your particular OS.</li>
+</ul>
 
 <br/>
 
-_For a step by step guide on how you can set up WordPress in your local environment checkout [How to set up a local development...](https://www.endpoint.com/blog/2019/08/07/set-up-local-development-environment-for-wordpress)._
-
+_For a step by step guide on how you can set up WordPress in your local environment checkout [How to set up a local development...](https://www.endpoint.com/blog/2019/08/07/set-up-local-development-environment-for-wordpress)_
 ## Installation Guide
 
 1. Download the <a href="https://github.com/creativecommons/wp-theme-base/archive/master.zip">zip</a> package of the theme.
@@ -42,3 +48,4 @@ require_once ABSPATH . 'wp-content/themes/wp-theme-base/vendor/autoload.php';
 // Load Queulat main file.
 require_once __DIR__ .'/queulat/queulat.php';
 ```
+4. Start your development server and activate the CC WP Base Theme in your local WordPress Dashboard.
