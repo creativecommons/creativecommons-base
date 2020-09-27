@@ -30,7 +30,7 @@ _For a step by step guide on how you can set up WordPress in your local environm
 ```bash
 composer install
 ```
-One of the installed dependencies is Queulat. In-order to initialize [Queulat](https://github.com/felipelavinz/queulat) in the project, follow the instructions provided in [feliperlavinz/queulat](https://github.com/felipelavinz/queulat#loading-queulat-as-mu-plugin). 
+One of the installed dependencies is  [Queulat](https://github.com/felipelavinz/queulat). In-order to initialize Queulat in the project, follow the instructions provided in [feliperlavinz/queulat](https://github.com/felipelavinz/queulat#loading-queulat-as-mu-plugin). 
 
 <br/>
 Alternatively, to initialize Queulat navigate to the mu-plugins directory. The mu-plugins directory is in the root of the wp-content folder. It’s automatically created when you install Queulat using composer. At the root of the mu-plugins directory create an index.php file. Then copy and paste the code below:
