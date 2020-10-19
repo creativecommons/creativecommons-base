@@ -26,7 +26,7 @@ class Navwalker extends Walker_Nav_Menu {
 		$li_classes  .= $has_children ? ' has-dropdown is-hoverable' : '';
 		if ( $has_children ) {
 			$output .= "<div class='" . $li_classes . "'>";
-			$output .= "\n<a class='navbar-link' href='" . $item->url . "'>" . $item->title . '</a>';
+			$output .= "\n<a class='navbar-link is-arrowless' href='" . $item->url . "'>" . $item->title . '<i class="icon caret-down"></i></a>';
 		} else {
 			$output .= "<a class='" . $li_classes . "' href='" . $item->url . "'>" . $item->title;
 		}
