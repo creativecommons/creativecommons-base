@@ -141,9 +141,9 @@ class CC_Site {
 	 * @return void
 	 */
 	public static function get_current_website_logo() {
-		$default_logo = 'cc/logomark.svg#logomark';
+		$default_logo      = 'cc/logomark.svg#logomark';
 		$current_main_logo = apply_filters( 'cc_theme_base_set_default_logo', $default_logo );
-		return Components::cc_logos($current_main_logo, false);
+		return Components::cc_logos( $current_main_logo, false );
 	}
 	/**
 	 * Get the top parent page of the current navigation level
@@ -152,16 +152,16 @@ class CC_Site {
 	 */
 	public static function get_parent_page() {
 		global $post;
-		if ($post->post_parent)	{
-			$ancestors = get_post_ancestors($post->ID);
-			$root = count( $ancestors )-1;
-			return $ancestors[$root];
+		if ( $post->post_parent ) {
+			$ancestors = get_post_ancestors( $post->ID );
+			$root      = count( $ancestors ) - 1;
+			return $ancestors[ $root ];
 		} else {
 			return $post->ID;
 		}
 	}
 	public static function get_date_format() {
-		$date_format = apply_filters('cc_theme_base_date_format', get_option( 'date_format' ) );
+		$date_format = apply_filters( 'cc_theme_base_date_format', get_option( 'date_format' ) );
 		return $date_format;
 	}
 }

@@ -51,16 +51,16 @@ $mandatory_sidebars = array(
 	'Homepage Notification' => array(
 		'name' => 'home-notification',
 	),
-	'Homepage widgets' => array(
+	'Homepage widgets'      => array(
 		'name' => 'homepage-sidebar',
 	),
-	'Single' => array(
+	'Single'                => array(
 		'name' => 'single',
 	),
-	'Page' => array(
+	'Page'                  => array(
 		'name' => 'page',
 	),
-	'Page Footer' => array(
+	'Page Footer'           => array(
 		'name' => 'page-footer',
 	),
 );
@@ -201,7 +201,8 @@ class Site {
 	function admin_enqueue_scripts() {
 		// admin scripts
 		global $pagenow;
-		if ( is_admin() && ( $pagenow == 'widgets.php' ) ) {
+		$current_screen = get_current_screen();
+		if ( is_admin() && ( $pagenow == 'widgets.php' ) || $current_screen->id == 'dashboard_page_cc-main-site-settings' ) {
 			wp_enqueue_media();
 			wp_enqueue_script( 'script-admin', THEME_JS . '/admin_scripts.js', array( 'jquery' ), self::theme_ver );
 		}
