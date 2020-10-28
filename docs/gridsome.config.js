@@ -16,7 +16,7 @@ function addStyleResource(rule) {
 
 module.exports = {
   siteName: 'CC WP Base Theme',
-  siteUrl: '',
+  siteUrl: 'https://wp-theme-base.netlify.com',
   templates: {
     Doc: '/:slug',
   },
