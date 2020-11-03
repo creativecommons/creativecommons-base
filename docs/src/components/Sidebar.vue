@@ -23,10 +23,10 @@
 								:key="node.id"
 							>
 								<li v-for="heading in node.headings" :key="heading.value">
-									<a
+									<g-link
 										class="sub-topic"
-										:href="'/' + item.slug + heading.anchor"
-										>{{ heading.value }}</a
+										:to="'/' + item.slug + heading.anchor"
+										>{{ heading.value }}</g-link
 									>
 								</li>
 							</ul>
@@ -100,7 +100,7 @@ export default {
 <style lang="scss" scoped>
 .sidebar {
 	transition: background 0.15s ease-in-out, transform 0.15s ease-in-out,
-		border-color 0.15s linear;
+	border-color 0.15s linear;
 	padding: 100px 30px 30px;
 	width: 300px;
 	position: fixed;
@@ -139,22 +139,18 @@ nav {
 	padding-bottom: 40px;
 }
 
-ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+a {
+	text-decoration: none !important;
+	padding: 5px 0;
+	display: block;
+	font-weight: 700;
 
-	a {
-		text-decoration: none;
-		color: inherit;
-		padding: 5px 0;
-		display: block;
 
-		&.active {
-			color: $brandPrimary;
-		}
+	&.active, &:hover{
+		color:$brandBlack;
 	}
 }
+
 
 .section {
 	margin-bottom: 30px;
@@ -169,33 +165,21 @@ ul {
 	font-weight: 700;
 }
 
-.topic {
-	font-weight: 700;
-}
-
 .sub-topic {
-	font-size: 0.875rem;
 	position: relative;
-	opacity: 0.8;
+	left: 15px;
 
 	&::after {
 		content: '';
 		transition: opacity 0.15s ease-in-out;
 		width: 6px;
 		height: 6px;
-		background: $brandPrimary;
+		background:$brandGrey;
 		border-radius: 100%;
 		display: block;
-		opacity: 0;
 		position: absolute;
 		top: 13px;
 		left: -15px;
-	}
-
-	&.current {
-		&::after {
-			opacity: 1;
-		}
 	}
 }
 
