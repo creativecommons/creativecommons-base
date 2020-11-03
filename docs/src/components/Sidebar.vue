@@ -183,10 +183,4 @@ a {
 		left: -15px;
 	}
 }
-
-.git {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-}
 </style>
