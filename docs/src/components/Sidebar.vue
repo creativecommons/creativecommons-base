@@ -112,6 +112,7 @@ export default {
 	transform: translateX(-300px);
 	border-right: 1px solid transparent;
 	overflow: auto;
+	background-color: whitesmoke;
 
 	@include respond-above(sm) {
 		transform: translateX(0);
