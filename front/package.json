@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "@creativecommons/vocabulary": "^2020.9.4",
+    "@creativecommons/vocabulary": "^2020.10.1",
     "@glidejs/glide": "^3.4.1",
     "bulma": "^0.9.1",
     "copy-webpack-plugin": "^5.1.1",

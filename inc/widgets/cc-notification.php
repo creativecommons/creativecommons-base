@@ -37,8 +37,8 @@ class WP_Widget_Notification extends WP_Widget {
 		echo '<p><label>Notification format: </label>';
 		echo '<select class="widefat" id="' . $this->get_field_id( 'type' ) . '" name="' . $this->get_field_name( 'type' ) . '">';
 		echo '<option value="">Select format</option>';
-		echo '<option value="warning" ' . ( ( $type == 'warning' ) ? 'selected="selected"' : '' ) . '>Warning</option>';
-		echo '<option value="content" ' . ( ( $type == 'content' ) ? 'selected="selected"' : '' ) . '>Content</option>';
+		echo '<option value="warning" ' . ( ( $instance['type'] == 'warning' ) ? 'selected="selected"' : '' ) . '>Warning</option>';
+		echo '<option value="content" ' . ( ( $instance['type'] == 'content' ) ? 'selected="selected"' : '' ) . '>Content</option>';
 		echo '</select>';
 		echo '</p>';
 	}
