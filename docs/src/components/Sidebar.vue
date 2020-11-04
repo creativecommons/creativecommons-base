@@ -23,10 +23,10 @@
 								:key="node.id"
 							>
 								<li v-for="heading in node.headings" :key="heading.value">
-									<a
+									<g-link
 										class="sub-topic"
-										:href="'/' + item.slug + heading.anchor"
-										>{{ heading.value }}</a
+										:to="'/' + item.slug + heading.anchor"
+										>{{ heading.value }}</g-link
 									>
 								</li>
 							</ul>
@@ -90,33 +90,9 @@ export default {
 				this.$store.commit('openSidebar')
 			}
 		},
-		sidebarScroll: function () {
-			let mainNavLinks = document.querySelectorAll(
-				'.topic.active + ul .sub-topic'
-			)
-			let fromTop = window.scrollY
-
-			mainNavLinks.forEach((link) => {
-				let section = document.querySelector(link.hash)
-				let allCurrent = document.querySelectorAll('.current'),
-					i
-
-				if (section.offsetTop <= fromTop) {
-					for (i = 0; i < allCurrent.length; ++i) {
-						allCurrent[i].classList.remove('current')
-					}
-					link.classList.add('current')
-				} else {
-					link.classList.remove('current')
-				}
-			})
-		},
 	},
 	beforeMount() {
 		this.stateFromSize()
-	},
-	mounted() {
-		window.addEventListener('scroll', throttle(this.sidebarScroll, 50))
 	},
 }
 </script>
@@ -136,6 +112,7 @@ export default {
 	transform: translateX(-300px);
 	border-right: 1px solid transparent;
 	overflow: auto;
+	background-color: whitesmoke;
 
 	@include respond-above(sm) {
 		transform: translateX(0);
@@ -163,20 +140,15 @@ nav {
 	padding-bottom: 40px;
 }
 
-ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+a {
+	text-decoration: none !important;
+	padding: 5px 0;
+	display: block;
+	font-weight: 700;
 
-	a {
-		text-decoration: none;
-		color: inherit;
-		padding: 5px 0;
-		display: block;
-
-		&.active {
-			color: $brandPrimary;
-		}
+	&.active,
+	&:hover {
+		color: $brandBlack;
 	}
 }
 
@@ -193,39 +165,21 @@ ul {
 	font-weight: 700;
 }
 
-.topic {
-	font-weight: 700;
-}
-
 .sub-topic {
-	font-size: 0.875rem;
 	position: relative;
-	opacity: 0.8;
+	left: 15px;
 
 	&::after {
 		content: '';
 		transition: opacity 0.15s ease-in-out;
 		width: 6px;
 		height: 6px;
-		background: $brandPrimary;
+		background: $brandGrey;
 		border-radius: 100%;
 		display: block;
-		opacity: 0;
 		position: absolute;
-		top: 13px;
+		top: 15px;
 		left: -15px;
 	}
-
-	&.current {
-		&::after {
-			opacity: 1;
-		}
-	}
-}
-
-.git {
-	position: absolute;
-	bottom: 0;
-	left: 0;
 }
 </style>
