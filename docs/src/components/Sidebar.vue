@@ -179,7 +179,7 @@ a {
 		border-radius: 100%;
 		display: block;
 		position: absolute;
-		top: 13px;
+		top: 15px;
 		left: -15px;
 	}
 }
