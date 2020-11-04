@@ -27,6 +27,7 @@ class WP_Widget_Column_Open extends WP_Widget {
 		$vertical_space = $instance['vertical_space'];
 		echo '<p><label>Columns: </label>';
 		echo '<p><label for="' . $this->get_field_name( 'remove_gaps' ) . '">Remove gap? </label><input type="checkbox" id="' . $this->get_field_id( 'remove_gaps' ) . '"' . ( ( ! empty( $remove_gaps ) ) ? ' checked="checked" ' : '' ) . ' name="' . $this->get_field_name( 'remove_gaps' ) . '" value="1"></p>';
+		echo '<p><label>Column count: </label>';
 		echo '<select class="widefat" id="' . $this->get_field_id( 'columns' ) . '" name="' . $this->get_field_name( 'columns' ) . '">';
 		echo '<option value="">Select</option>';
 		echo '<option value="auto"' . ( ( $columns == 'auto' ) ? 'selected="selected"' : '' ) . '>Auto fit</option>';
