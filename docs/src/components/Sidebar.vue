@@ -100,7 +100,7 @@ export default {
 <style lang="scss" scoped>
 .sidebar {
 	transition: background 0.15s ease-in-out, transform 0.15s ease-in-out,
-	border-color 0.15s linear;
+		border-color 0.15s linear;
 	padding: 100px 30px 30px;
 	width: 300px;
 	position: fixed;
@@ -146,12 +146,11 @@ a {
 	display: block;
 	font-weight: 700;
 
-
-	&.active, &:hover{
-		color:$brandBlack;
+	&.active,
+	&:hover {
+		color: $brandBlack;
 	}
 }
-
 
 .section {
 	margin-bottom: 30px;
@@ -175,7 +174,7 @@ a {
 		transition: opacity 0.15s ease-in-out;
 		width: 6px;
 		height: 6px;
-		background:$brandGrey;
+		background: $brandGrey;
 		border-radius: 100%;
 		display: block;
 		position: absolute;
