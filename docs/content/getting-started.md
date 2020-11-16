@@ -2,6 +2,7 @@
 title: Getting started
 date: 2020-09-08 12:05:54
 slug: getting-started
+description:
 ---
 
 To get started you have to first install the CC WP Base Theme locally. 
