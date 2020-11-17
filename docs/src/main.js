@@ -7,9 +7,13 @@ import Vuex from 'vuex'
 require('typeface-source-sans-pro')
 
 import '@creativecommons/vocabulary/css/vocabulary.css'
+import VueClipboard from 'vue-clipboard2'
 
 export default function (Vue, { router, head, isClient, appOptions }) {
+  // Vue Plugins
   Vue.use(Vuex)
+
+  Vue.use(VueClipboard)
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)

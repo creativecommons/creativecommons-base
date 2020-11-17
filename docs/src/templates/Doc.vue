@@ -11,7 +11,6 @@
 query Doc($path: String!) {
 	doc: doc(path: $path) {
 		title
-		description
 	}
 }
 </page-query>
