@@ -1,6 +1,6 @@
 {
   "name": "wp-theme-base",
-  "version": "2020.3.1",
+  "version": "2020.11.1",
   "description": "Base WordPress theme for Creative Commons websites",
   "main": "index.js",
   "dependencies": {},

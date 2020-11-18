@@ -2,7 +2,7 @@
 /**
  * Functions: list
  *
- * @version 2020.04.1
+ * @version 2020.11.1
  * @package wp-theme-base
  */
 
@@ -34,7 +34,7 @@ define( 'THEME_JS', THEME_URI . '/assets/js' );
  * ------
  * */
 
-// Add theme suppor for post thumbnails
+// Add theme support for post thumbnails
 add_theme_support( 'post-thumbnails' );
 
 // Define custom thumbnail sizes
@@ -105,7 +105,7 @@ class Site {
 	public $show_welcome = true;
 
 	const id        = __CLASS__;
-	const theme_ver = '2020.04.1';
+	const theme_ver = '2020.11.1';
 	private function __construct() {
 		$this->actions_manager();
 
