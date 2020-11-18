@@ -51,7 +51,6 @@ button {
 	background: none;
 	border: none;
 	right: -0em;
-	outline: none;
 }
 
 .icon {
