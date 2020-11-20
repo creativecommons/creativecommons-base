@@ -2,6 +2,7 @@
 title: Using a Child Theme
 date: 2020-09-08 12:01:00
 slug: child-theme
+description:
 ---
 
 The recommended way to edit the CC WP Base Theme is to use the [CC WP Base Theme Starter](#). The CC WP Base Theme Starter is a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/#what-is-a-child-theme) of the CC WP Base Theme. 

@@ -17,18 +17,13 @@ function addStyleResource(rule) {
 module.exports = {
   siteName: 'CC WP Base Theme',
   siteUrl: 'https://cc-wp-theme-base.netlify.app',
-  templates: {
-    Doc: '/:slug',
-  },
   plugins: [
     {
-      use: '@gridsome/source-filesystem',
+      use: '@gridsome/vue-remark',
       options: {
-        path: 'content/**/*.md',
-        typeName: 'Doc',
-        remark: {
-          plugins: ['@gridsome/remark-prismjs'],
-        },
+        typeName: 'Doc', // Required
+        baseDir: './content',
+        template: './src/templates/Doc.vue', // Optional
       },
     },
     {

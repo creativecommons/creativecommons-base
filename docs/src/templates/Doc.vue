@@ -3,7 +3,7 @@
 		<h1>
 			{{ $page.doc.title }}
 		</h1>
-		<div class="markdown content" v-html="$page.doc.content" />
+		<VueRemarkContent />
 	</Layout>
 </template>
 
@@ -11,10 +11,6 @@
 query Doc($path: String!) {
 	doc: doc(path: $path) {
 		title
-		path
-		date(format: "D. MMMM YYYY")
-		timeToRead
-		content
 	}
 }
 </page-query>
@@ -35,4 +31,3 @@ export default {
 	},
 }
 </script>
-
