@@ -2,7 +2,7 @@
 /**
  * Bulma-Navwalker
  *
- * @package wp-theme-base
+ * @package creativecommons-base
  * @since 2020.04.1
  */
 

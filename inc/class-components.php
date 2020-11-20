@@ -5,11 +5,11 @@
  *
  * This file contains a component class to work with CC Vocabulary components.
  *
- * @link https://github.com/creativecommons/wp-theme-base
+ * @link https://github.com/creativecommons/creativecommons-base
  * @link https://github.com/creativecommons/vocabulary
  *
  * @package WordPress
- * @subpackage wp-theme-base
+ * @subpackage creativecommons-base
  * @since 2020.04.1
  */
 
