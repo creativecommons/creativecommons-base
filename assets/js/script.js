@@ -1,4 +1,12 @@
 jQuery(document).ready(function($){
+  // Initialize the global header
+  var globalHeaderInstance = vocabulary.createGlobalHeader();
+
+  var activeClass = "is-active"
+  function activateMenu(el) {
+    $(el).toggleClass(activeClass);
+  }
+
 	if ($('.glide').length > 0) {
 		new Glide('.glide').mount();
 	}
@@ -22,9 +30,31 @@ jQuery(document).ready(function($){
 	if ($('.navbar-burger').length > 0) {
 		$('.navbar-burger').on('click', function(e){
 			e.preventDefault();
-			var obj = $(this);
-			obj.parent().next().toggleClass('is-active');
-			obj.toggleClass('is-active');
+      var els = [
+        $(".main-header .navbar"),
+        $(".main-header .navbar-menu"),
+        $(".main-header .menu"),
+        $(".main-header .tabs-panel")
+      ]
+      els.map(activateMenu)
 		});
-	}
+  }
+  // if($('.main-header .tabs ul').length > 0) {
+  //   var tabs = $(".main-header .tabs li");
+  //   tabs.on("click", function (e) {
+  //     var tab = $(this)
+  //     tabs.removeClass(activeClass);
+  //     tab.toggleClass(activeClass);
+
+  //     // @todo the global header needs to be improved to make it easier to toggle tabs-palen content
+  //     if(tab.hasClass('explore')) {
+  //       $('.tabs-panel .explore').addClass(activeClass)
+  //       $(".tabs-panel").first().removeClass(activeClass);
+  //     } else {
+  //       $('.tabs-panel').first().addClass(activeClass)
+  //       $('.tabs-panel .explore').removeClass(activeClass)
+  //     }
+
+  //   });
+  // }
 });

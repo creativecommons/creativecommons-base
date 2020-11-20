@@ -3,9 +3,8 @@
   "version": "2020.11.1",
   "description": "Base WordPress theme for Creative Commons websites",
   "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
-    "@creativecommons/vocabulary": "^2020.10.1",
+    "@creativecommons/vocabulary": "^2020.11.3",
     "@glidejs/glide": "^3.4.1",
     "bulma": "^0.9.1",
     "copy-webpack-plugin": "^5.1.1",
@@ -14,7 +13,7 @@
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
-    "webpack": "^4.43.0",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
   "scripts": {

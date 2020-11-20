@@ -199,19 +199,20 @@ class Site {
 	}
 
 	function admin_enqueue_scripts() {
-		// admin scripts
+    // admin scripts
 		global $pagenow;
 		$current_screen = get_current_screen();
 		if ( is_admin() && ( $pagenow == 'widgets.php' ) || $current_screen->id == 'dashboard_page_cc-main-site-settings' ) {
-			wp_enqueue_media();
+      wp_enqueue_media();
 			wp_enqueue_script( 'script-admin', THEME_JS . '/admin_scripts.js', array( 'jquery' ), self::theme_ver );
 		}
 	}
 
 	function enqueue_scripts() {
-		// front-end scripts
+    // front-end scripts
 		wp_enqueue_script( 'jquery', true );
 		wp_enqueue_script( 'glideSlide', THEME_JS . '/glide.min.js', '', self::theme_ver, true );
+    wp_enqueue_script( 'vocabulary_global_header', 'https://unpkg.com/@creativecommons/vocabulary/js/vocabulary.js', array( 'jquery' ), self::theme_ver );
 		wp_enqueue_script( 'cc_base_script', THEME_JS . '/script.js', array( 'jquery' ), self::theme_ver, true );
 
 		// attach data to script.js

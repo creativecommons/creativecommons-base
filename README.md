@@ -1,6 +1,6 @@
 # CC blank WordPress theme
 
-This is a blank CC theme for Wordpress. Please use it with a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/) 
+This is a blank CC theme for Wordpress. Please use it with a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/)
 
 ## Hooks
 ### Filters
@@ -35,24 +35,28 @@ If you want to add new menu placeholder
 function filter_menu_list( $menu_list ) {
     // $menu_list['menu_ID'] = 'Menu name';
   $menu_list['new_menu'] = 'This is a new menu';
-  
+
   return $menu_list;
 }
 add_filter( 'cc_theme_base_menus', 'filter_menu_list', 10, 1 );
 ```
 
 ### Actions
-#### cc_theme_before_header
-Action before the header element
-
-#### cc_theme_before_header_content
-Action inside <header> element but before the header content
 
 #### cc_theme_after_header
 Action after the header element
 
 #### cc_theme_after_header_content
 Action inside <header> element but after the header content
+
+#### cc_theme_before_header_buttons
+Action inside header button group, before the default buttons. Add the locale chooser here.
+
+#### cc_theme_after_header_buttons
+Action inside header button group, at the end.
+
+#### cc_theme_after_header_menu_desktop
+Action inside header desktop `<nav>`, usefull for adding buttons/custom menu items.
 
 #### cc_theme_before_footer
 Action before the footer element
