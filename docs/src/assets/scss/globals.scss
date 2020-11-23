@@ -55,6 +55,8 @@ h1 {
   }
 }
 
-.markdown-list{
-  list-style: disc;
+.markdown{
+  ul {
+    list-style: disc !important;
+  }
 }
