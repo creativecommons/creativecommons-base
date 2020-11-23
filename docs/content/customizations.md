@@ -6,7 +6,7 @@ description:
 ---
 ## Custom Title
 
-**To add a custom title:**
+### To add a custom title:
 
 - Go to **Customize** > **Site Identity** 
 - In the field labeled **Site Title** enter a custom title of your site.
@@ -15,7 +15,7 @@ description:
 
 ## Custom site description or tag line
 
-**To add a custom site description or tagline:**
+### To add a custom site description or tagline:
 
 - Go to **Customize** > **Site Identity** 
 - In the field labeled **Site Tagline** enter a custom tagline(or description) of your site.
@@ -24,7 +24,7 @@ description:
 
 ## Custom Icon
 
-**To add a custom icon:**
+### To add a custom icon:
 
 - Go to **Customize** > **Site Identity** 
 - Click the button labeled **Select Icon** to set up an icon.
@@ -46,7 +46,7 @@ The screenshot below shows an example of a custom menu in the Footer Navigation:
 
 _The menus shown above are displayed in the desktop view. On any other screens, their appearance and or position might be different from what is shown above._
 
-**To create a custom menu using the customize panel on the live preview:**
+### To create a custom menu using the customize panel:
 
 - Go to **Customize** > **Menus** and click the **Create a Menu** button. You will be redirected to a form with a field labeled **Menu Name**.
 - Fill that field with a unique menu name.
@@ -60,7 +60,7 @@ _The menus shown above are displayed in the desktop view. On any other screens, 
 - You are able to re-order the arrangement of selected menu items by dragging them up and down.
 - After you are done you may proceed to publish the changes.
 
-**To create a custom menu using the dashboard:**
+### To create a custom menu using the dashboard:
 
 ![Form used to configure a custom menu on live preview](../src/assets/content-images/customizations/set-menu-dashboard.png)
 
@@ -77,18 +77,18 @@ The theme design supports two levels of nesting.
 
 ## Custom Pages
 
-**To create a page:**
+### To create a page:
 
 - Go to **Dashboard** > **Page** > **Add New**
 - On the right side of your editor in the sidebar, you will find different settings you may use to configure your page. If the sidebar is not shown, click on the Settings icon on the upper right corner of your editor
 - To set the page layout, go to **Document** > **Page Attributes** > **Template**, you will see three available layouts displayed select one that meets your requirements. To learn more about page layouts see the  next section.
 - Publish your changes.
 
-**Page Layouts**
+### Page Layouts
 
 There are three layouts in the theme you can use to configure the structure of your pages. The layouts are:
 
-**Default Layout**
+#### Default Layout
 
 ![Default page layout](../src/assets/content-images/customizations/default-page.png)
 
@@ -98,11 +98,11 @@ This is the default layout of the page template, it has a default sidebar compon
 - Go to **Customize** > **Widgets** > **Page**
 - View the Widgets section to learn how you can configure the widgets.
 
-**No Sidebar Layout**
+#### No Sidebar Layout
 
 This layout is structured like the Default layout but it does not have the sidebar component. Otherwise, everything else is the same.
 
-**Homepage Layout**
+#### Homepage Layout
 
 As its name implies, this layout was created to serve as a template for a custom Homepage, but it can also be used to structure any other static page depending on your preferences.
 
@@ -110,7 +110,7 @@ The Homepage Layout was designed to be populated with content through the use of
 
 Check out the Widget section to learn how you can use widgets to add and position content in the Homepage Layout.
 
-**Custom Homepage**
+### Custom Homepage
 
 By default, the homepage will display the latest blog posts.
 In order to display a static page on the homepage:
@@ -124,7 +124,7 @@ In order to display a static page on the homepage:
 - There are other optional settings outlined in the **Reading Settings** which you can use to also manage your site.
 - When done, click the button labeled **Save Changes**.
 
-**To a Hero Image on a Custom Homepage:**
+#### To add a Hero Image in a Custom Homepage:
 
 - Go to **Dashboard** > **Custom Settings**
 - Select **Yes** to **Enable featured content on homepage?**
@@ -134,13 +134,13 @@ In order to display a static page on the homepage:
 - Other optional features that can be incorporated in the hero include a **Background Color**, **CC Donate Button**, **Authors Posts**, and a **Notification Button**.
 - Click the **Submit** button to publish your changes.
 
-**To add content to a Custom Homepage**
+#### To add content to a Custom Homepage
 
 - See the Widget Section.
 
 ## Custom Posts
 
-**To create a post:**
+### To create a post:
 
 - Go to **Dashboard** > **Posts** > **Add New**
 - On the right side of your editor in the sidebar, you will find different settings you may use to configure your post. If the sidebar is not shown, click on the **Settings** icon on the upper right corner of your editor.
@@ -155,23 +155,23 @@ In order to display a static page on the homepage:
      ![Post format settings](../src/assets/content-images/customizations/post.png)
     - Add relevant configuration details which will be influenced by the format you selected in the Settings.
 
-**Post Formats**
+### Post Formats
 
 There are four formats available in the theme which can be used to configure the layout of your posts. The formats are:
 
-**Standard**
+#### Standard
 
 - This is the default format of the posts.
 
-**Video**
+#### Video
 
 - This format will enable you to embed videos into the Post page. It has support for both YouTube and Vimeo. The video will appear at the very top of your page.
 
-**Gallery**
+#### Gallery
 
 - This format will enable you to embed an image gallery in your post. The embed image gallery will appear at the very top of your page.
 
-**Image**
+#### Image
 
 - This format will enable you to embed a featured image in your post. The embed image will appear at the very top of your page.
 
@@ -183,14 +183,14 @@ The widgets are available in **Dashboard** > **Appearance** > **Widgets**. On th
 
  ![Available widgets](../src/assets/content-images/customizations/view-widgets.png)
 
-**To add a widget:**
+### To add a widget:
 - Drag it from the left panel into a widget area and provide the configuration information if it is required.
 - The selected widgets can be re-ordered by dragging them up and down within the selected widget area panel.
 
-**To remove a widget:**
+### To remove a widget:
 - Drag the widget back to the Available Widgets panel. If you want to save the settings of your widget drag it to the Inactive Widgets instead.
 
-**To add widgets using the Customize panel:**
+### To add widgets using the Customize panel:
 
 - Go to **Customize** > **Widgets**. If you are on a page that does not have any widget areas you will get a message shown in the screenshot below:
 

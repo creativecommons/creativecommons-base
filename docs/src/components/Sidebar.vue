@@ -24,6 +24,7 @@
 							>
 								<li v-for="heading in node.headings" :key="heading.value">
 									<g-link
+									    v-if="heading.depth === 2"
 										class="sub-topic"
 										:to="'/' + item.slug + heading.anchor"
 										>{{ heading.value }}</g-link
@@ -58,6 +59,7 @@ query Menu {
 				headings {
 					value
 					anchor
+					depth
 				}
 			}
 		}
