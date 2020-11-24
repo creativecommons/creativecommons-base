@@ -15,15 +15,35 @@ The styling of the theme is made up of [Sass](https://sass-lang.com/), [Bulma](h
 _The instructions that follow assume that you have successfully installed the CC WP Base Theme Starter into your **wordpress** > **wp-content** > **themes** directory and activated it in your local development environment._
 
 - Open the wordpress directory in a text editor or IDE of your choice.
-- Go to wordpress > **wp-content** > **themes** > **cc-wp-base-theme-starter** > **front**
+- Cd into **wordpress**/**wp-content**/**themes**/**cc-wp-base-theme-starter**/**front**
 - Install all the necessary node modules by running the command below in your terminal:
-npm install
+
+<CopyToClipBoard text="npm install"/>
+
 - To add custom styles cd into the styles folder, add your styles in the relevant sass files. 
 - Run the npm scripts below in your terminal, to watch and compile your styles respectively.
+```
 npm watch
+
 npm build
+```
 
 ## Advanced Widgets
+
+The widgets in the theme can be divided into three categories: default WordPress widgets, layout widgets, as well as CC custom content widgets.
+
+### Default WordPress Widgets 
+These are widgets that come prepackaged in WordPress to learn more about them view [WordPress Widgets](https://wordpress.org/support/article/wordpress-widgets/).
+
+### Layout Widgets
+These widgets are used to design the structure of the widget areas. The layout widgets are powered by CSS Grid and they effectively work in pairs as it is outlined below.
+
+#### Column Container Open and Column Container Close
+These are used to create containers. Column Containers are blocks of space that are designed to wrap Single Column Widgets.
+ 
+#### Column Container Open
+The Column Container Open widget is used to initialize a container component.
+Its parameters are shown in the screenshot below:
 
 ## Hooks
 
@@ -59,12 +79,14 @@ If you want to add new menu placeholder:
 
 ### Using Actions
 
-cc_theme_before_header: Action before the header element.
-cc_theme_before_header_content: Action inside element but before the header content.
-cc_theme_after_header: Action after the header element
-cc_theme_after_header_content: Action inside element but after the header content.
-cc_theme_before_footer: Action before the footer element.
-cc_theme_before_footer_content: Action inside element but before the footer content.
- cc_theme_after_footer:  Action after the footer element.
-cc_theme_after_footer_content: Action inside element but after the footer content.
+The following actions are available in the theme:
+
+- **cc_theme_before_header**: Action before the header element.
+- **cc_theme_before_header_content**: Action inside element but before the header content.
+- **cc_theme_after_header**: Action after the header element
+- **cc_theme_after_header_content**: Action inside element but after the header content.
+- **cc_theme_before_footer**: Action before the footer element.
+- **cc_theme_before_footer_content**: Action inside element but before the footer content.
+- **cc_theme_after_footer**:  Action after the footer element.
+- **cc_theme_after_footer_content**: Action inside element but after the footer content.
 
