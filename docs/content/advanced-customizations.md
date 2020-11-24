@@ -79,6 +79,12 @@ Follow the steps below to create a column container and populate it with a coupl
 - To close off the column, add the widget **Single Column Close**.
 - The final step is to add the Column Container Close widget to the Homepage panel so as to close off the Column Container.
 
+### CC Custom Content Widgets
+These widgets are prefixed by the acronym CC which stands for Creative Commons. They add custom Creative Commons assets and or content which may include social media content or special components derived from the CC Vocabulary.
+
+- CC Card: this widget was adapted from Cards, a CC Vocabulary Component.
+
+- CC Notification: this widget was adapted from Notification, a CC Vocabulary Component.
 
 ## Hooks
 
