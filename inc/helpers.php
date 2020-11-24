@@ -5,10 +5,10 @@
  * This file contains a mix of useful functions and classes
  * to ease the work with the template.
  *
- * @link https://github.com/creativecommons/wp-theme-base
+ * @link https://github.com/creativecommons/creativecommons-base
  *
  * @package WordPress
- * @subpackage wp-theme-base
+ * @subpackage creativecommons-base
  * @since 2020.04.1
  */
 

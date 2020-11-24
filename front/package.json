@@ -1,6 +1,6 @@
 {
-  "name": "wp-theme-base",
-  "version": "2020.11.1",
+  "name": "creativecommons-base",
+  "version": "2020.11.2",
   "description": "Base WordPress theme for Creative Commons websites",
   "main": "index.js",
   "devDependencies": {
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativecommons/wp-theme-base.git"
+    "url": "git+https://github.com/creativecommons/creativecommons-base.git"
   },
   "keywords": [
     "WordPress",
@@ -32,7 +32,7 @@
   "author": "Creative Commons",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/creativecommons/wp-theme-base/issues"
+    "url": "https://github.com/creativecommons/creativecommons-base/issues"
   },
-  "homepage": "https://github.com/creativecommons/wp-theme-base#readme"
+  "homepage": "https://github.com/creativecommons/creativecommons-base#readme"
 }

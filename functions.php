@@ -2,8 +2,8 @@
 /**
  * Functions: list
  *
- * @version 2020.11.1
- * @package wp-theme-base
+ * @version 2020.11.2
+ * @package creativecommons-base
  */
 
 /* Theme Constants (to speed up some common things) ------*/
@@ -105,7 +105,7 @@ class Site {
 	public $show_welcome = true;
 
 	const id        = __CLASS__;
-	const theme_ver = '2020.11.1';
+	const theme_ver = '2020.11.2';
 	private function __construct() {
 		$this->actions_manager();
 
