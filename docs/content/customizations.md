@@ -96,7 +96,7 @@ This is the default layout of the page template, it has a default sidebar compon
 
 - View the page on the **Live Preview**
 - Go to **Customize** > **Widgets** > **Page**
-- View the Widgets section to learn how you can configure the widgets.
+- View the <g-link to="/customizations#widgets">Widgets</g-link> section to learn how you can configure the widgets.
 
 #### No Sidebar Layout
 
@@ -108,7 +108,7 @@ As its name implies, this layout was created to serve as a template for a custom
 
 The Homepage Layout was designed to be populated with content through the use of widgets. You cannot use the Gutenberg editor to add content in the Homepage Layout.
 
-Check out the Widget section to learn how you can use widgets to add and position content in the Homepage Layout.
+Check out the <g-link to="/customizations#widgets">Widgets</g-link> section to learn how you can use widgets to add and position content in the Homepage Layout.
 
 ### Custom Homepage
 
@@ -208,4 +208,4 @@ When the page has widgets areas they are listed as shown in the screenshot below
 
 - After adding widgets you can then publish your changes.
 
-
+_To learn more about widgets view the <g-link to="/advanced-customizations#advanced-widgets"> Advanced Widgets</g-link> section._
