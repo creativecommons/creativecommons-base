@@ -8,11 +8,11 @@ import CopyToClipBoard from "../src/components/CopyToClipboard.vue"
 import { filters } from "../data/markdown-helpers/filters.js"
 
 ## Customize CSS
-The styling of the theme is made up of [Sass](https://sass-lang.com/), [Bulma](https://bulma.io/), and the [CC Vocabulary](https://cc-vocabulary.netlify.app/). All the boilerplate for creating custom styles is in the **front** directory in the root of the CC Child Theme starter. All custom styles in **front/styles/** will override default theme styles as long as you use the same CSS classes used in the parent theme.
+The styling of the theme is made up of [Sass](https://sass-lang.com/), [Bulma](https://bulma.io/), and the [CC Vocabulary](https://cc-vocabulary.netlify.app/). All the boilerplate for creating custom styles is in the **front** directory in the root of the CC Base Child Theme starter. All custom styles in **front/styles/** will override default theme styles as long as you use the same CSS classes used in the parent theme.
 
-### Add Advanced CSS
+The steps below briefly outline how you can add custom CSS styles:
 
-_The instructions that follow assume that you have successfully installed the CC WP Base Theme Starter into your **wordpress**/**wp-content**/**themes** directory and activated it in your local development environment._
+_As a prerequisite the CC Base Child Theme starter must be installed in the **wordpress**/**wp-content**/**themes** directory and activated._
 
 - Open the wordpress directory in a text editor or IDE of your choice.
 - Navigate into  the **wordpress**/**wp-content**/**themes**/**cc-wp-base-theme-starter**/**front** directory.
