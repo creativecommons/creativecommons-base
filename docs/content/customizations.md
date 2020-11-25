@@ -4,6 +4,8 @@ date: 2020-09-08 12:02:09
 slug: customizations
 description:
 ---
+
+The Creative Commons Base Theme is highly flexible. Continue reading to learn how you can customize it so as to meet your own specific needs.
 ## Custom Title
 
 ### To add a custom title:
