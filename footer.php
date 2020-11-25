@@ -50,7 +50,7 @@
 				<aside class="donate-section">
 					<h5>Our work relies on you!</h5>
 					<p>Help us keep the internet free and open.</p>
-					<?php echo Components::button( 'Donate now', 'https://us.netdonor.net/page/6650/donate/1', 'small', 'donate', true, 'cc-letterheart-filled' ); ?>
+					<?php echo Components::button( 'Donate now', 'https://creativecommons.org/donate?c_src=website&c_src2=GlobalFooter', 'small', 'donate', true, 'cc-letterheart-filled' ); ?>
 				</aside>
 			</div>
 		</div>
