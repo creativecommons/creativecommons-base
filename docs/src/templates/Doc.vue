@@ -3,7 +3,9 @@
 		<h1>
 			{{ $page.doc.title }}
 		</h1>
-		<VueRemarkContent />
+		<div class="markdown content">
+         <VueRemarkContent />
+		</div>
 	</Layout>
 </template>
 
