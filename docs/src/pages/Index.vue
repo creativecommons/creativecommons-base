@@ -10,7 +10,7 @@
 				Creative Commons websites.
 			</p>
 			<p>
-				Although the CC Base code is
+				Although the CC Base source code is
 				<a href="https://www.gnu.org/philosophy/free-sw.html" target="_blank"
 					>free and open-source software</a
 				>, it’s intended to be used for the CC brand only as part of the
