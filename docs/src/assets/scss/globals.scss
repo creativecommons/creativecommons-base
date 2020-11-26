@@ -61,6 +61,11 @@ h1 {
   }
 
   h2{
-    padding-top: 2.5em !important;
+    padding-top: 2.65em !important;
+
+
+    @include respond-above(sm) {
+      padding-top: 2.5em !important;
+    }
   }
 }
