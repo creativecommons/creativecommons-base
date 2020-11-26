@@ -49,19 +49,11 @@ button {
 	&:focus {
 		outline: none;
 	}
-
-	.bright & {
-		color: $textBright;
-	}
-
-	.dark & {
-		color: $textDark;
-	}
 }
 
 svg {
 	position: absolute;
-	top: 12px;
+	top: 5px;
 	left: 12px;
 }
 
