@@ -10,7 +10,7 @@ class WP_Widget_Donate extends WP_Widget {
 	}
 
 	function widget( $args, $instance ) {
-		$donate_url = 'https://us.netdonor.net/page/6650/donate/1/';
+		$donate_url = 'https://creativecommons.org/donate/';
 		echo '<div class="widget donate">';
 			echo '<h3 class="b-header">' . $instance['title'] . '</h3>';
 			echo '<div class="donate-buttons">';

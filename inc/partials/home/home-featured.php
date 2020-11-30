@@ -15,7 +15,7 @@ $featured_background_color = ( ! empty( $settings['featured_background_color'] )
 						<h3 class="heading-b"><?php echo esc_attr( $settings['featured_content'] ); ?></h3>
 						<?php
 						if ( $settings['include_donate'] ) {
-							echo Components::button( 'Donate now', 'https://us.netdonor.net/page/6650/donate/1', 'small', 'donate', true, 'cc-letterheart' );
+							echo Components::button( 'Donate now', 'https://creativecommons.org/donate', 'small', 'donate', true, 'cc-letterheart' );
 						}
 						?>
 					<?php endif; ?>
