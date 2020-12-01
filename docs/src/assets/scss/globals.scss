@@ -59,4 +59,13 @@ h1 {
   ul {
     list-style: disc !important;
   }
+
+  h2{
+    padding-top: 2.65em !important;
+
+
+    @include respond-above(sm) {
+      padding-top: 2.5em !important;
+    }
+  }
 }
