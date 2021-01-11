@@ -23,9 +23,9 @@ git clone https://github.com/creativecommons/creativecommons-base
 ```
 
 ```sh
-	cd docs
-	npm install
-	npm run develop
+cd docs
+npm install
+npm run develop
 
 ```
 
