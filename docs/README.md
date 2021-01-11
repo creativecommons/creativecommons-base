@@ -19,9 +19,14 @@ git clone https://github.com/creativecommons/creativecommons-base
 
 ```sh
   cd creativecommons-base
-  git checkout docs && cd docs
-  npm install
-  npm run develop
+  git checkout docs
+```
+
+```sh
+	cd docs
+	npm install
+	npm run develop
+
 ```
 
 3. Visit [http://localhost:8080/](http://localhost:8080/) and checkout the docs
@@ -37,3 +42,7 @@ All issues in this list are up for grabs!
 If it says "No results matched your search", then there are no issues currently up for grabs.
 
 _If no progress has been made on an issue for seven days after assignment, the assignment will be removed to allow others to contribute._
+
+```
+
+```
