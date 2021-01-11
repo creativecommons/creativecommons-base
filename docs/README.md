@@ -20,6 +20,7 @@ git clone https://github.com/creativecommons/creativecommons-base
 ```sh
   cd creativecommons-base
   git checkout docs
+	cd docs
   npm install
   npm run develop
 ```
