@@ -4,7 +4,7 @@
   "scripts": {
     "test-var": "echo $npm_execpath",
     "preinstall": "$npm_execpath --silent run checkyarn",
-    "checkyarn": "echo $npm_execpath | grep -q 'yarn.*js$' ; if [ $? -eq 0 ] ; then echo 'Please use npm instead of yarn.' && echo && false ; else true ; fi",
+    "checkyarn": "if echo $npm_execpath | grep -q 'yarn.*js$' ; then echo 'Please use npm instead of yarn.' && echo && false ; else true ; fi",
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore",
