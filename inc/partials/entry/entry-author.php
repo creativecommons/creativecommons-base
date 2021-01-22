@@ -20,8 +20,7 @@ if ( count( $co_authors ) ) {
 	echo '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) . '">' . get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size ) . '</a>';
 }
 	echo '</div>';
-	echo '<div class="author-info-group">';
-		echo '<div class="author-name">';
+	echo '<div class="author-name">';
 if ( function_exists( 'coauthors_posts_links' ) ) {
 	if ( count( $co_authors ) ) {
 		$x = 1;
@@ -42,6 +41,5 @@ if ( function_exists( 'coauthors_posts_links' ) ) {
 		echo '</div>';
 		echo '<div class="author-date">' . get_the_date( CC_Site::get_date_format() );
 '</div>';
-	echo '</div>';
 echo '</div>';
 echo '</div>';

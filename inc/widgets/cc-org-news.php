@@ -5,6 +5,7 @@ class WP_Widget_org_news extends WP_Widget {
 	const TAGS_URL         = 'https://creativecommons.org/wp-json/wp/v2/tags';
 	const ENTRIES_URL      = 'https://creativecommons.org/wp-json/wp/v2/posts';
 	const MEDIA_URL        = 'https://creativecommons.org/wp-json/wp/v2/media';
+	const USERS_URL        = 'https://creativecommons.org/wp-json/wp/v2/users';
 	const TRANSIENT_PREFIX = 'cc_widget_org_news_';
 	const CC_ORG_BLOG_URL  = 'https://creativecommons.org/blog';
 
@@ -45,9 +46,13 @@ class WP_Widget_org_news extends WP_Widget {
 				foreach ( $get_entries as $entry ) {
 					if ( ! empty( $entry->featured_media ) ) {
 						$api_response = $this->query_api( self::MEDIA_URL . '/' . $entry->featured_media );
+						$author_query = $this->query_api( self::USERS_URL . '/' . $entry->author );
 						if ( ! empty( $api_response ) ) {
 							$entry->featured_media_url      = $api_response->media_details->sizes->cc_list_post_thumbnail->source_url;
 							$entry->featured_media_url_full = $api_response->media_details->sizes->full->source_url;
+						}
+						if ( ! empty( $author_query )) {
+							$entry->author_data = $author_query;
 						}
 					}
 					$modified_entries[] = $entry;

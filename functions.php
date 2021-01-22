@@ -158,6 +158,17 @@ class Site {
 		add_theme_support( 'menus' );
 		add_theme_support( 'responsive-embeds' );
 	}
+	static function get_widgets_available_color_palette() {
+		$available_colors = array(
+			'tomato' => 'Tomato',
+			'gold' => 'Gold',
+			'forest-green' => "Forest Green",
+			'dark-turquoise' => "Dark Turquoise",
+			'dark-slate-blue' => "Dark Slate Blue"
+		);
+		$color_list = apply_filters('cc_color_palette_base_widgets', $available_colors);
+		return $color_list;
+	}
 
 	public function register_menus_locations() {
 		$theme_base_menus = array(

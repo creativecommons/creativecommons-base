@@ -1,0 +1,27 @@
+.column {
+  &.leveled {
+    justify-content: space-between;
+  }
+}
+.single {
+  .single-header {
+    .entry-meta-container {
+      position: relative;
+      .entry-meta-header {
+        position: absolute;
+        bottom: 0;
+        left: -6rem;
+        padding: 1.5rem;
+        background-color: $white;
+        .entry-category {
+          position: absolute;
+          top: -1.9rem;
+          left: 0;
+          .button {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}

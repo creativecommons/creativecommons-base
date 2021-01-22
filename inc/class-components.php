@@ -264,13 +264,14 @@ class Components {
 		$the_title     = ( $use_post_data ) ? get_the_title( $post_id ) : $title;
 		$the_url       = ( $use_post_data ) ? get_permalink( $post_id ) : $url;
 		$the_link_text = ( $use_post_data ) ? 'Read more' : esc_attr( $link_text );
+		$has_link_class = ( $has_link ) ? ' has-bottom-link' : ''; 
 		$border_class  = ( ! $has_border ) ? ' no-border' : '';
 		$color_class   = ( ! $has_border ) ? 'class="has-background-' . $background_color . '"' : '';
 		$class         = ( ! empty( $extra_class ) ) ? ' ' . $extra_class : '';
 
 		$out  = '<article class="card entry-post link ' . $border_class . $class . '">';
 		$out .= '<a href="' . $the_url . '" ' . $color_class . '>';
-		$out .= '<span class="card-content has-bottom-link">';
+		$out .= '<span class="card-content '.$has_link_class.'">';
 		$out .= '<h2 class="card-title">' . $the_title . '</h2>';
 		if ( $has_content ) {
 			if ( $use_post_data ) {
@@ -376,7 +377,7 @@ class Components {
 		}
 		$the_title     = ( ! $use_remote_data ) ? get_the_title( $post_id ) : $title;
 		$the_permalink = ( ! $use_remote_data ) ? get_permalink( $post_id ) : $permalink;
-		$the_date      = ( ! $use_remote_data ) ? get_the_date( 'd F Y' ) : mysql2date( 'd F Y', $date );
+		$the_date      = ( ! $use_remote_data ) ? get_the_date( CC_Site::get_date_format() ) : mysql2date( CC_Site::get_date_format(), $date );
 		$out          .= '<div class="entry-content column">';
 		$out          .= '<h4 class="b-header"><a href="' . $the_permalink . '"' . $external . '>' . $the_title . '</a></h4>';
 		$out          .= '<span class="entry-date">' . $the_date . '</span>';

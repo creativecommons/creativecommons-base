@@ -89,35 +89,7 @@
     }
   }
 }
-.navigation {
-  &.pagination {
-    padding-top: $space-bigger;
-    padding-bottom: $space-bigger;
-    .nav-links {
-      .page-numbers {
-        padding: 0.5rem;
-        margin-right: 0.5rem;
-        color: $color-black;
-        background-color: $color-lighter-gray;
-        &:hover {
-          background-color: lighten($color-lighter-gray, 2);
-        }
-        &.prev,
-        &.next {
-          font-weight: 600;
-          font-size: 1.1rem;
-          .icon {
-            font-size: 0.9rem;
-          }
-        }
-        &.current {
-          background-color: $color-tomato;
-          color: $white;
-        }
-      }
-    }
-  }
-}
+
 .searchform {
   .field {
     .control {
@@ -183,27 +155,116 @@
     }
   }
 }
-.entry-footer {
-  .leveled {
-    justify-content: space-between;
-    .share-entry {
-      .share {
-        .icon {
-          font-size: 2rem;
+
+.share-entry {
+  .share {
+    margin-right: 0.5rem;
+    color: $color-black;
+    text-decoration: none;
+    .icon {
+      font-size: 1.2rem;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.entry-image {
+  position: relative;
+  .caption {
+    @include caption-style;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.entry-author {
+  @extend .padding-vertical-normal;
+  display: flex;
+  align-items: center;
+  .author-image {
+    a {
+      display: block;
+      .avatar {
+        width: 100%;
+        object-fit: cover;
+        margin-right: $space-smaller;
+        border-radius: 50%;
+        border: 3px solid $color-dark-gray;
+      }
+    }
+  }
+  .author-name {
+    padding-left: 1rem;
+    &:after {
+      content: "";
+      margin: 0 1rem;
+      font-family: "Vocabulary Icons", monospace;
+      font-size: 0.7rem;
+      color: $color-light-gray;
+    }
+  }
+  .author-info-group {
+    padding-left: $space-normal;
+  }
+}
+.terms-list {
+  .tag {
+    background-color: $color-white;
+    color: $color-dark-gray;
+  }
+}
+.custom-pagination {
+  .pagination {
+    &.navigation {
+      justify-content: flex-start;
+      .nav-links {
+        @extend .pagination-list;
+        flex-grow: 0;
+        .page-numbers {
+          @extend .pagination-link;
+          border-radius: 0;
+          &.current {
+            @extend .is-current;
+          }
+        }
+      }
+    }
+    .page-numbers {
+      @extend .pagination-list;
+      li {
+        @extend .inactive;
+        border-radius: 0;
+        a {
+          text-decoration: none;
+          &.page-numbers {
+            @extend .pagination-link;
+            border-radius: 0;
+          }
+        }
+        span {
+          &.current {
+            border-radius: 0;
+            @extend .pagination-link;
+            @extend .is-current;
+          }
+          &.dots {
+            @extend .pagination-ellipsis;
+          }
         }
       }
     }
   }
 }
-.entry-author {
-  @extend .padding-vertical-normal;
-  display: flex;
-  .author-image {
-    .avatar {
-      margin-right: $space-smaller;
-    }
+#breadcrumbs {
+  margin-bottom: $space-big;
+  font-size: 0.8rem;
+  font-weight: 600;
+  a {
+    font-size: 0.8rem;
   }
-  .author-info-group {
-    padding-left: $space-normal;
+  .icon {
+    margin: 0 0.6rem;
+    font-size: 0.7rem;
   }
 }

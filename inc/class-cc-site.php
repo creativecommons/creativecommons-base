@@ -164,4 +164,17 @@ class CC_Site {
 		$date_format = apply_filters( 'cc_theme_base_date_format', get_option( 'date_format' ) );
 		return $date_format;
 	}
+	static function image_with_caption( $image_id, $size ) {
+		if ( is_array( $image_id ) ) {
+			$image_id = current( $image_id );
+		}
+		$caption = ( wp_get_attachment_caption( $image_id ) ) ? '<span class="caption">' . wp_get_attachment_caption( $image_id ) . '</span>' : '';
+		$out     = wp_get_attachment_image( $image_id, $size );
+		$out    .= $caption;
+		return $out;
+	}
+	static function post_thumbnail_caption( $post_id, $size ) {
+		$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+		return self::image_with_caption( $post_thumbnail_id, $size );
+	}
 }

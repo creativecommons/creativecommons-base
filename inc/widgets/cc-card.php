@@ -59,7 +59,7 @@ class WP_Widget_Card extends WP_Widget {
 		echo '</p>';
 		echo '<p><label>Button size: </label>';
 		echo '<select class="widefat" id="' . $this->get_field_id( 'button-size' ) . '" name="' . $this->get_field_name( 'button-size' ) . '">';
-		echo '<option value="">Select color</option>';
+		echo '<option value="">Select size</option>';
 		echo '<option value="big"' . ( ( $instance['button-size'] == 'big' ) ? 'selected="selected"' : '' ) . '>Big</option>';
 		echo '<option value="small" ' . ( ( $instance['button-size'] == 'small' ) ? 'selected="selected"' : '' ) . '>Small</option>';
 		echo '<option value="tiny" ' . ( ( $instance['button-size'] == 'tiny' ) ? 'selected="selected"' : '' ) . '>Tiny</option>';

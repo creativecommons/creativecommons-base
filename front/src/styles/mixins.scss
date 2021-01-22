@@ -1,0 +1,24 @@
+@mixin caption-style($float: false) {
+  @if not $float {
+    position: absolute;
+  }
+  padding: 0.5rem 1rem;
+  color: $color-white;
+  background-color: $color-black;
+  z-index: 20;
+}
+
+@mixin offset-bottom-left {
+  bottom: -0.3rem;
+  left: -0.3rem;
+}
+
+@mixin quote-icon {
+  background-image: url("data:image/svg+xml,%3Csvg width='26' height='19' viewBox='0 0 26 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.4781 15.1929C14.6213 13.6728 14.1309 11.9078 14.1309 10.0253C14.1309 6.43046 16.4667 1.59003 22.2362 0L23.2852 3.00339C20.5513 3.96935 18.7531 5.8889 18.5712 7.09094C19.1458 6.88957 19.7629 6.78016 20.4053 6.78016C23.4952 6.78016 26 9.31129 26 12.4336C26 15.5559 23.4952 18.0871 20.4053 18.0871C18.2971 18.0871 16.4613 16.9088 15.5075 15.1684L15.4781 15.1929Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.34826 15.1929C0.491409 13.6728 0.00100422 11.9078 0.00100422 10.0253C0.00100422 6.43046 2.33679 1.59003 8.10633 0L9.15534 3.00339C6.4214 3.96935 4.62323 5.8889 4.44133 7.09094C5.0159 6.88957 5.63301 6.78016 6.27541 6.78016C9.36528 6.78016 11.8701 9.31129 11.8701 12.4336C11.8701 15.5559 9.36528 18.0871 6.27541 18.0871C4.16723 18.0871 2.3314 16.9088 1.37766 15.1684L1.34826 15.1929Z' fill='black'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+}
+
+@mixin paragraph-spacing {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}

@@ -4,26 +4,18 @@
 	$post_format = get_post_format();
 ?>
 <section class="main-content">
-	<header class="single-header">
-		<div class="container">
-			<div class="columns is-centered">
-				<div class="column is-8">
-					<?php
-					if ( ! empty( $post_format ) ) {
-						get_template_part( 'inc/partials/post_formats/content', $post_format );
-					} else {
-						get_template_part( 'inc/partials/post_formats/content', 'default' );
-					}
-					?>
-				</div>
-			</div>
-		</div>
-	</header>
+	<?php
+	if ( ! empty( $post_format ) ) {
+		get_template_part( 'inc/partials/post_formats/content', $post_format );
+	} else {
+		get_template_part( 'inc/partials/post_formats/content', 'default' );
+	}
+	?>
 	<div class="container">
 		<div class="columns is-centered">
-			<div class="column is-8">
+			<div class="column is-10">
 				<section class="entry-page-content">
-					<div class="text-format body-big">
+					<div class="text-format content body-big">
 						<?php the_content(); ?>
 					</div>
 					<footer class="entry-footer">

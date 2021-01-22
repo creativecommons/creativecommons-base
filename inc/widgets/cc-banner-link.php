@@ -40,16 +40,14 @@ class WP_Widget_text_banner_simple extends WP_Widget {
 		echo '<option value="4" ' . ( ( $instance['spaces'] == '4' ) ? 'selected="selected"' : '' ) . '>4</option>';
 		echo '</select>';
 		echo '</p>';
+		//Get the available colors from the palette which can be filtered as well
+		$available_colors = Site::get_widgets_available_color_palette();
 		echo '<p><label>Color: </label>';
 		echo '<select class="widefat" id="' . $this->get_field_id( 'color' ) . '" name="' . $this->get_field_name( 'color' ) . '">';
 		echo '<option value="">Select color</option>';
-		echo '<option value="tomato"' . ( ( $instance['color'] == 'tomato' ) ? 'selected="selected"' : '' ) . '>Tomato</option>';
-		echo '<option value="dark-slate-gray" ' . ( ( $instance['color'] == 'dark-slate-gray' ) ? 'selected="selected"' : '' ) . '>Dark Slate Gray</option>';
-		echo '<option value="gold" ' . ( ( $instance['color'] == 'gold' ) ? 'selected="selected"' : '' ) . '>Gold</option>';
-		echo '<option value="orange" ' . ( ( $instance['color'] == 'orange' ) ? 'selected="selected"' : '' ) . '>Orange</option>';
-		echo '<option value="forest-green" ' . ( ( $instance['color'] == 'forest-green' ) ? 'selected="selected"' : '' ) . '>Forest Green</option>';
-		echo '<option value="dark-turquoise" ' . ( ( $instance['color'] == 'dark-turquoise' ) ? 'selected="selected"' : '' ) . '>Dark Turnquoise</option>';
-		echo '<option value="dark-slate-blue" ' . ( ( $instance['color'] == 'dark-slate-blue' ) ? 'selected="selected"' : '' ) . '>Dark Slate Blue</option>';
+		foreach ($available_colors as $key => $color) {
+			echo '<option value="'.$key.'"' . ( ( $instance['color'] == $key ) ? 'selected="selected"' : '' ) . '>'.$color.'</option>';	
+		}
 		echo '</select>';
 		echo '</p>';
 	}

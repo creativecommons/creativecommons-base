@@ -13,8 +13,9 @@ class WP_Widget_Column_Open extends WP_Widget {
 	function widget( $args, $instance ) {
 		$class_columns        = ( $instance['columns'] != 'auto' ) ? 'total-cols-' . $instance['columns'] : '';
 		$class_gaps           = ( $instance['remove_gaps'] ) ? ' no-gap ' : '';
+		$gap_space						= ( $instance['gap_space'] ) ? ' gap-'.$instance['gap_space'].' ' : '';
 		$class_vertical_space = ( ! empty( $instance['vertical_space'] ) ) ? ' padding-vertical-' . $instance['vertical_space'] : '';
-		echo '<aside class="grid-container ' . $class_gaps . $class_columns . $class_vertical_space . '">';
+		echo '<aside class="grid-container ' . $class_gaps . $gap_space . $class_columns . $class_vertical_space . '">';
 	}
 
 	function update( $new_instance, $old_instance ) {
@@ -25,6 +26,8 @@ class WP_Widget_Column_Open extends WP_Widget {
 		$columns        = $instance['columns'];
 		$remove_gaps    = $instance['remove_gaps'];
 		$vertical_space = $instance['vertical_space'];
+		$gap_space = $instance['gap_space'];
+
 		echo '<p><label>Columns: </label>';
 		echo '<p><label for="' . $this->get_field_name( 'remove_gaps' ) . '">Remove gap? </label><input type="checkbox" id="' . $this->get_field_id( 'remove_gaps' ) . '"' . ( ( ! empty( $remove_gaps ) ) ? ' checked="checked" ' : '' ) . ' name="' . $this->get_field_name( 'remove_gaps' ) . '" value="1"></p>';
 		echo '<p><label>Column count: </label>';
@@ -36,7 +39,7 @@ class WP_Widget_Column_Open extends WP_Widget {
 		}
 		echo '</select>';
 		echo '</p>';
-		echo '<p><label>Space: </label>';
+		echo '<p><label>Vertical Space: </label>';
 		echo '<select class="widefat" id="' . $this->get_field_id( 'vertical_space' ) . '" name="' . $this->get_field_name( 'vertical_space' ) . '">';
 		echo '<option value="">Select size</option>';
 		echo '<option value="normal"' . ( ( $vertical_space == 'normal' ) ? 'selected="selected"' : '' ) . '>Normal</option>';
@@ -45,6 +48,17 @@ class WP_Widget_Column_Open extends WP_Widget {
 		echo '<option value="large" ' . ( ( $vertical_space == 'large' ) ? 'selected="selected"' : '' ) . '>Large</option>';
 		echo '<option value="larger" ' . ( ( $vertical_space == 'larger' ) ? 'selected="selected"' : '' ) . '>Larger</option>';
 		echo '<option value="xl" ' . ( ( $vertical_space == 'xl' ) ? 'selected="selected"' : '' ) . '>XL</option>';
+		echo '</select>';
+		echo '</p>';
+		echo '<p><label>Gap Space: </label>';
+		echo '<select class="widefat" id="' . $this->get_field_id( 'gap_space' ) . '" name="' . $this->get_field_name( 'gap_space' ) . '">';
+		echo '<option value="">Select size</option>';
+		echo '<option value="normal"' . ( ( $gap_space == 'normal' ) ? 'selected="selected"' : '' ) . '>Normal</option>';
+		echo '<option value="big"' . ( ( $gap_space == 'big' ) ? 'selected="selected"' : '' ) . '>Big</option>';
+		echo '<option value="bigger" ' . ( ( $gap_space == 'bigger' ) ? 'selected="selected"' : '' ) . '>Bigger</option>';
+		echo '<option value="large" ' . ( ( $gap_space == 'large' ) ? 'selected="selected"' : '' ) . '>Large</option>';
+		echo '<option value="larger" ' . ( ( $gap_space == 'larger' ) ? 'selected="selected"' : '' ) . '>Larger</option>';
+		echo '<option value="xl" ' . ( ( $gap_space == 'xl' ) ? 'selected="selected"' : '' ) . '>XL</option>';
 		echo '</select>';
 		echo '</p>';
 	}
