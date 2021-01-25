@@ -22,6 +22,15 @@
           }
         }
       }
+      @include mobile() {
+        .entry-meta-header {
+          position: static;
+          .entry-category {
+            position: static;
+            margin-bottom: 1rem;
+          }
+        }
+      }
     }
   }
 }
