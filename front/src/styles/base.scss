@@ -91,7 +91,8 @@
     h6 {
       @include paragraph-spacing;
     }
-    .wp-block-quote {
+    .wp-block-quote,
+    .wp-block-columns {
       @include paragraph-spacing;
     }
   }
