@@ -220,6 +220,7 @@ class Site {
 		// front-end scripts
 		wp_enqueue_script( 'jquery', true );
 		wp_enqueue_script( 'glideSlide', THEME_JS . '/glide.min.js', '', self::theme_ver, true );
+		wp_enqueue_script( 'vocabulary_global_header', 'https://unpkg.com/@creativecommons/vocabulary/js/vocabulary.js', array( 'jquery' ), self::theme_ver );
 		wp_enqueue_script( 'cc_base_script', THEME_JS . '/script.js', array( 'jquery' ), self::theme_ver, true );
 
 		// attach data to script.js

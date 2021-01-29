@@ -16,5 +16,5 @@ $active_widgets = apply_filters('cc_active_parent_widgets_list', array(
 ) );
 
 foreach ($active_widgets as $widget) {
-	require TEMPLATEPATH . '/inc/widgets/'.$widget.'.php';
+	require get_template_directory() . '/inc/widgets/'.$widget.'.php';
 }
