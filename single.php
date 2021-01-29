@@ -13,7 +13,7 @@
 	?>
 	<div class="container">
 		<div class="columns is-centered">
-			<div class="column is-10">
+			<div class="column is-8">
 				<section class="entry-page-content">
 					<div class="text-format content body-big">
 						<?php the_content(); ?>

@@ -78,25 +78,25 @@
     }
   }
 }
-.single {
-  .text-format {
-    p,
-    ul,
-    ol,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      @include paragraph-spacing;
-    }
-    .wp-block-quote,
-    .wp-block-columns {
-      @include paragraph-spacing;
-    }
-  }
-}
+// .single {
+//   .text-format {
+//     p,
+//     ul,
+//     ol,
+//     h1,
+//     h2,
+//     h3,
+//     h4,
+//     h5,
+//     h6 {
+//       @include paragraph-spacing;
+//     }
+//     .wp-block-quote,
+//     .wp-block-columns {
+//       @include paragraph-spacing;
+//     }
+//   }
+// }
 .text-format {
   color: $color-black;
   p {
@@ -167,21 +167,62 @@
     }
   }
   div.wp-block-image {
-    margin: 0;
-    figure {
-      position: relative;
-      figcaption {
-        display: inherit;
-        position: relative;
-        top: -0.5rem;
-        margin: 0;
-        @include caption-style(no-float);
+    margin: 1rem 0;
+    &.is-style-img-metadata-wide {
+      figure {
+        &.size-large {
+          width: 100vw;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
+        }
       }
     }
-    @include mobile() {
-      .alignright,
-      .alignleft {
-        float: none;
+    figure {
+      position: relative;
+      margin-left: 0;
+      margin-right: 0;
+      &.size-medium {
+        max-width: 15vw;
+      }
+      &.size-thumbnail {
+        max-width: 11vw;
+      }
+      &.alignright {
+        right: -5vw;
+      }
+      &.alignleft {
+        left: -5vw;
+      }
+      img {
+        width: 100%;
+      }
+      .image-data {
+        margin-top: -0.5rem;
+        text-align: left;
+        background-color: $color-lighter-gray;
+        font-size: 0.8rem;
+        p {
+          padding: $space-small $space-normal $space-normal $space-normal;
+          margin-bottom: 0;
+        }
+        figcaption {
+          display: inline-block;
+          position: relative;
+          margin: 0;
+          @include caption-style(no-float);
+        }
+      }
+      @include mobile() {
+        &.alignright,
+        &.alignleft {
+          float: none;
+          width: 100%;
+          max-width: 100%;
+          right: 0;
+          left: 0;
+        }
       }
     }
   }

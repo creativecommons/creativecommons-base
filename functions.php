@@ -26,7 +26,8 @@ define( 'THEME_JS', THEME_URI . '/assets/js' );
   require TEMPLATEPATH . '/inc/class-cc-filters.php';
   require TEMPLATEPATH . '/inc/class-components.php';
   require TEMPLATEPATH . '/inc/class-walkers.php';
-  require TEMPLATEPATH . '/inc/helpers.php';
+	require TEMPLATEPATH . '/inc/helpers.php';
+	require TEMPLATEPATH . '/inc/class-cc-blocks.php';
 
 
 /**
@@ -100,9 +101,6 @@ foreach ( $mandatory_sidebars as $sidebar => $id_sidebar ) {
  **/
 class Site {
 	private static $instance;
-
-	protected $settings;
-	public $show_welcome = true;
 
 	const id        = __CLASS__;
 	const theme_ver = '2020.11.2';
