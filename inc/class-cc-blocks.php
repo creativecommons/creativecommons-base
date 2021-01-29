@@ -93,12 +93,15 @@ class CC_Blocks {
 		}
 		$attachment_data = get_post( $attributes['id'] );
 		$image           = wp_get_attachment_image( $attributes['id'], $image_size, '', $attr );
-	
+		$attachment_has_description_class = '';
+		if ( ! empty( $attachment_data->post_content ) ) {
+			$attachment_has_description_class = ' has-description';
+		}
 		$out .= '<div class="' . join( ' ', $image_container_classes ) . '">';
 		$out .= '<figure class="' . join( ' ', $image_classes ) . '">';
 		$out .= $image;
 		if ( ! empty( $attachment_data->post_excerpt ) || ! empty( $attachment_data->post_content ) ) {
-			$out .= '<div class="image-data">';
+			$out .= '<div class="image-data'.$attachment_has_description_class.'">';
 			if ( ! empty( $attachment_data->post_excerpt ) ) {
 				$out .= '<figcaption>' . $attachment_data->post_excerpt . '</figcaption>';
 			}

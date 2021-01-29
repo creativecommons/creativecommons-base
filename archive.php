@@ -1,19 +1,6 @@
 <?php get_header(); ?>
 <section class="main-content">
-	<header class="page-header">
-		<div class="container">
-			<div class="columns is-centered">
-				<div class="column">
-					<h2><?php echo CC_Site::page_title(); ?></h2>
-					<?php
-					if ( function_exists( 'yoast_breadcrumb' ) ) {
-						yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
-					}
-					?>
-				</div>
-			</div>
-		</div>
-	</header>
+<?php get_template_part( 'inc/partials/entry/page', 'header' ); ?>
 	<div class="container">
 		<div class="columns padding-vertical-larger">
 			<div class="column is-8">

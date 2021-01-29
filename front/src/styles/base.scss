@@ -201,8 +201,10 @@
       .image-data {
         margin-top: -0.5rem;
         text-align: left;
-        background-color: $color-lighter-gray;
         font-size: 0.8rem;
+        &.has-description {
+          background-color: $color-lighter-gray;
+        }
         p {
           padding: $space-small $space-normal $space-normal $space-normal;
           margin-bottom: 0;
