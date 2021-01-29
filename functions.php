@@ -18,16 +18,15 @@ define( 'THEME_JS', THEME_URI . '/assets/js' );
 /**
 * Calling related files
 */
-  // include TEMPLATEPATH . '/inc/search.php';
-  require TEMPLATEPATH . '/inc/widgets.php';
-  require TEMPLATEPATH . '/inc/settings.php';
-  require TEMPLATEPATH . '/inc/metaboxes.php';
-  require TEMPLATEPATH . '/inc/class-cc-site.php';
-  require TEMPLATEPATH . '/inc/class-cc-filters.php';
-  require TEMPLATEPATH . '/inc/class-components.php';
-  require TEMPLATEPATH . '/inc/class-walkers.php';
-	require TEMPLATEPATH . '/inc/helpers.php';
-	require TEMPLATEPATH . '/inc/class-cc-blocks.php';
+  require get_template_directory() . '/inc/widgets.php';
+  require get_template_directory() . '/inc/settings.php';
+  require get_template_directory() . '/inc/metaboxes.php';
+  require get_template_directory() . '/inc/class-cc-site.php';
+  require get_template_directory() . '/inc/class-cc-filters.php';
+  require get_template_directory() . '/inc/class-components.php';
+  require get_template_directory() . '/inc/class-walkers.php';
+	require get_template_directory() . '/inc/helpers.php';
+	require get_template_directory() . '/inc/class-cc-blocks.php';
 
 
 /**

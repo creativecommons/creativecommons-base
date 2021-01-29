@@ -13,7 +13,7 @@ class WP_Widget_Title extends WP_Widget {
 
 	function widget( $args, $instance ) {
 		$title_size           = ( ! empty( $instance['title_size'] ) ) ? 'h' . $instance['title_size'] : 'h1';
-		$class_centered       = ( $instance['is_centered'] ) ? 'has-text-centered' : '';
+		$class_centered       = ( !empty($instance['is_centered']) ) ? 'has-text-centered' : '';
 		$class_vertical_space = ( ! empty( $instance['vertical_space'] ) ) ? ' padding-vertical-' . $instance['vertical_space'] : ' padding-vertical-normal';
 		echo '<div class="widget title">';
 			echo '<' . $title_size . '  class="' . $class_centered . $class_vertical_space . '">' . $instance['title'] . '</' . $title_size . '>';

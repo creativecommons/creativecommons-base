@@ -12,14 +12,14 @@ class WP_Widget_Card extends WP_Widget {
 
 	function widget( $args, $instance ) {
 		$url           = ( ! empty( $instance['url'] ) ) ? esc_url( $instance['url'] ) : '#';
-		$has_border    = ( $instance['has_border'] ) ? true : false;
-		$is_video      = ( $instance['is_video'] ) ? true : false;
-		$has_button    = ( $instance['has_button'] ) ? true : false;
-		$stretch_image = ( $instance['stretch_image'] ) ? true : false;
-		$direction     = ( $instance['direction'] ) ? $instance['direction'] : 'horizontal';
-		$format        = ( $instance['type'] ) ? $instance['type'] : 'card-post';
-		$button_size   = ( $instance['button-size'] ) ? $instance['button-size'] : 'small';
-		$button_color  = ( $instance['color'] ) ? $instance['color'] : 'is-primary';
+		$has_border    = ( !empty($instance['has_border']) ) ? true : false;
+		$is_video      = ( !empty($instance['is_video']) ) ? true : false;
+		$has_button    = ( !empty($instance['has_button']) ) ? true : false;
+		$stretch_image = ( !empty($instance['stretch_image']) ) ? true : false;
+		$direction     = ( !empty($instance['direction']) ) ? $instance['direction'] : 'horizontal';
+		$format        = ( !empty($instance['type']) ) ? $instance['type'] : 'card-post';
+		$button_size   = ( !empty($instance['button-size']) ) ? $instance['button-size'] : 'small';
+		$button_color  = ( !empty($instance['color']) ) ? $instance['color'] : 'is-primary';
 		echo '<div class="widget card">';
 			echo Components::card_post( false, false, true, $stretch_image, $is_video, $has_button, $has_border, true, $instance['pre-title'], $instance['description'], $url, $instance['title'], false, $instance['attachment_id'], $direction, $instance['button_text'], $button_size, $button_color );
 		echo '</div>';

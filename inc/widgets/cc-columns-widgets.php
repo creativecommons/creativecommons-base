@@ -12,8 +12,8 @@ class WP_Widget_Column_Open extends WP_Widget {
 
 	function widget( $args, $instance ) {
 		$class_columns        = ( $instance['columns'] != 'auto' ) ? 'total-cols-' . $instance['columns'] : '';
-		$class_gaps           = ( $instance['remove_gaps'] ) ? ' no-gap ' : '';
-		$gap_space						= ( $instance['gap_space'] ) ? ' gap-'.$instance['gap_space'].' ' : '';
+		$class_gaps           = ( !empty($instance['remove_gaps']) ) ? ' no-gap ' : '';
+		$gap_space						= ( !empty($instance['gap_space']) ) ? ' gap-'.$instance['gap_space'].' ' : '';
 		$class_vertical_space = ( ! empty( $instance['vertical_space'] ) ) ? ' padding-vertical-' . $instance['vertical_space'] : '';
 		echo '<aside class="grid-container ' . $class_gaps . $gap_space . $class_columns . $class_vertical_space . '">';
 	}

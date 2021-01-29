@@ -46,14 +46,15 @@ class WP_Widget_org_news extends WP_Widget {
 				foreach ( $get_entries as $entry ) {
 					if ( ! empty( $entry->featured_media ) ) {
 						$api_response = $this->query_api( self::MEDIA_URL . '/' . $entry->featured_media );
-						$author_query = $this->query_api( self::USERS_URL . '/' . $entry->author );
+						//Author endpoint was restricted from the creativecommons.org due to security risk on listing users
+						//$author_query = $this->query_api( self::USERS_URL . '/' . $entry->author );
 						if ( ! empty( $api_response ) ) {
 							$entry->featured_media_url      = $api_response->media_details->sizes->cc_list_post_thumbnail->source_url;
 							$entry->featured_media_url_full = $api_response->media_details->sizes->full->source_url;
 						}
-						if ( ! empty( $author_query )) {
-							$entry->author_data = $author_query;
-						}
+						// if ( ! empty( $author_query )) {
+						// 	$entry->author_data = $author_query;
+						// }
 					}
 					$modified_entries[] = $entry;
 				}

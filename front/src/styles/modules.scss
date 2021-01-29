@@ -224,8 +224,15 @@
         .page-numbers {
           @extend .pagination-link;
           border-radius: 0;
+          &:hover {
+            text-decoration: none;
+            color: $color-dark-gray;
+          }
           &.current {
             @extend .is-current;
+            &:hover {
+              color: $color-white;
+            }
           }
         }
       }
