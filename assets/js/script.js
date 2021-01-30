@@ -33,9 +33,23 @@ jQuery(document).ready(function ($) {
         $(".main-header .navbar"),
         $(".main-header .navbar-menu"),
         $(".main-header .menu"),
-        $(".main-header .tabs-panel"),
+        $(".main-header .navbar-burger"),
       ];
       els.map(activateMenu);
     });
   }
+  $(".tabs")
+    .find("a")
+    .on("click", function (e) {
+      e.preventDefault();
+      let element = $(this);
+      let target = $(element.attr("href"));
+      let els = [
+        element.parent(),
+        element.parent().siblings(),
+        target,
+        target.siblings(),
+      ];
+      els.map(activateMenu);
+    });
 });

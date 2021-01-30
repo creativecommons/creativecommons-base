@@ -61,21 +61,21 @@ if ( ! empty( $_set ) ) {
         <div class="tabs-nav">
           <div class="tabs">
             <ul>
-              <li class="menu"><a>Menu</a><?php // gets .is-active applied ?>
+              <li class="menu"><a href="#tab-menu">Menu</a><?php // gets .is-active applied ?>
               </li>
-              <li class="explore-tab"><a>Explore Creative Commons</a></li>
+              <li class="explore-tab"><a href="#tab-explore">Explore Creative Commons</a></li>
             </ul>
           </div>
           <div class="tabs-content">
-            <div class="tabs-panel is-active"><?php // gets .is-active applied ?>
+            <div class="tabs-panel is-active" id="tab-menu"><?php // gets .is-active applied ?>
               <?php
                 wp_nav_menu(
                   array(
-                    'theme_location'  => 'main-navigation-mobile',
+                    'theme_location'  => 'main-menu-mobile',
                     'depth'           => 2,
                     'container'       => 'div',
                     'container_class' => 'navbar-end',
-                    'items_wrap'      => '<div id="%1$s" class="navbar-end main-nav">%3$s</div>',
+                    'items_wrap'      => '<div id="%1$s" class="navbar-end">%3$s</div>',
                     'menu_class'      => 'navbar-end',
                     'menu_id'         => 'mobile-menu',
                     'after'           => '</div>',
@@ -84,7 +84,7 @@ if ( ! empty( $_set ) ) {
                 );
               ?>
             </div>
-            <div class="tabs-panel explore"><?php // gets .is-active applied ?>
+            <div class="tabs-panel explore" id="tab-explore"><?php // gets .is-active applied ?>
               <!-- Populated by the global header -->
             </div>
           </div>
