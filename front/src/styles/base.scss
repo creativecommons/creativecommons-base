@@ -1,3 +1,8 @@
+body {
+  @include mobile() {
+    overflow-x: hidden;
+  }
+}
 .main-content {
   .container {
     @include mobile() {
