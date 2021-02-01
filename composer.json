@@ -5,8 +5,8 @@
   "license": "GPL-2.0-or-later",
   "authors": [
     {
-      "email": "hugo@creativecommons.org",
-      "name": "Hugo Solar"
+      "name": "Hugo Solar",
+      "email": "hugo@creativecommons.org"
     }
   ],
   "repositories": [
