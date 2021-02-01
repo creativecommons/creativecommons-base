@@ -1,6 +1,7 @@
 {
 	"name": "creativecommons/creativecommons-base",
 	"description": "The Creative Commons base theme",
+	"type": "wordpress-theme",
 	"license": "GPL-2.0-or-later",
   "authors": [
     {
@@ -8,7 +9,17 @@
       "name": "Hugo Solar"
     }
   ],
-	"type": "wordpress-theme",
+	"repositories": [
+		{
+			"no-api": true,
+			"type": "vcs",
+			"url": "https://github.com/creativecommons/queulat"
+		},
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
 	"require": {
 		"composer/installers": "~1.0",
 		"felipelavinz/queulat": "2019.4.2"
@@ -20,17 +31,6 @@
 		"wp-coding-standards/wpcs": "^2.0",
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1"
 	},
-  "repositories": [
-    {
-      "no-api": true,
-      "type": "vcs",
-      "url": "https://github.com/creativecommons/queulat"
-    },
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    }
-  ],
   "scripts": {
 		"compat": "phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.0 -n . --extensions=php --cache",
     "fix": "phpcbf --standard=WordPress . --extensions=php --ignore=vendor",
