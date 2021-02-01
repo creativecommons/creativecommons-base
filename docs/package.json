@@ -2,6 +2,8 @@
   "name": "jamdocs",
   "private": true,
   "scripts": {
+    "preinstall": "$npm_execpath --silent run checkyarn",
+    "checkyarn": "if echo $npm_execpath | grep -q 'yarn.*js$' ; then echo 'Please use npm instead of yarn.' && echo && false ; else true ; fi",
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore",
