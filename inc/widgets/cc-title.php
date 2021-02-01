@@ -37,7 +37,7 @@ class WP_Widget_Title extends WP_Widget {
 		}
 		echo '</select>';
 		echo '</p>';
-		echo '<p><label>Space: </label>';
+		echo '<p><label>Vertical Space: </label>';
 		echo '<select class="widefat" id="' . $this->get_field_id( 'vertical_space' ) . '" name="' . $this->get_field_name( 'vertical_space' ) . '">';
 		echo '<option value="">Select size</option>';
 		echo '<option value="normal"' . ( ( $vertical_space == 'normal' ) ? 'selected="selected"' : '' ) . '>Normal</option>';
