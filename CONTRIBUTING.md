@@ -29,3 +29,30 @@ guidelines on the Creative Common Open Source website.
 Talk to us on [one of our community forums][community].
 
 [community]:https://opensource.creativecommons.org/community/
+
+## Development
+
+The following tools are recommended when setting up a development environment.
+
+- Docker / docker-compose
+- PHP Composer
+
+### Installing project dependencies
+
+This project has several dependencies that are managed by Composer. To install the dependencies, run the following command in the project root:
+
+```sh
+composer install
+```
+
+### Setting environment variables
+
+Copy the file `.env.example` to `.env` and change the variables to desired values (or leave as they are.)
+
+### Running the development server
+
+Once you have installed the dependencies and configured the environment variables, run the development server with:
+
+```sh
+docker-compose up
+```
