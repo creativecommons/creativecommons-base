@@ -1,0 +1,49 @@
+{
+  "sidebar": [
+    {
+      "section": "Introduction",
+      "topics": [
+        {
+          "title": "Getting started",
+          "slug": "getting-started"
+        }
+      ]
+    },
+    {
+      "section": "Usage Guide",
+      "topics": [
+        {
+          "title": "Using a Child Theme",
+          "slug": "child-theme"
+        },
+        {
+          "title": "Customizations",
+          "slug": "customizations"
+        },
+        {
+          "title": "Advanced Customizations",
+          "slug": "advanced-customizations"
+        }
+      ]
+    },
+    {
+      "section": "Updates",
+      "topics": [
+        {
+          "title": "Updating the Theme",
+          "slug": "updating-the-theme"
+        }
+      ]
+    },
+    {
+      "section": "Contributing",
+      "topics": [
+        {
+          "title": "Contributing",
+          "slug": "contributing"
+        }
+      ]
+    }
+  ]
+}
+
