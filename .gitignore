@@ -1,3 +1,6 @@
+# Ignore WordPress app files
+wp-app/
+
 # Ignore composer files and folders
 vendor/
 vendor/*
