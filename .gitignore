@@ -1,6 +1,9 @@
 # Ignore WordPress app files
 wp-app/
 
+# Ignore environment variables
+.env
+
 # Ignore composer files and folders
 vendor/
 vendor/*
