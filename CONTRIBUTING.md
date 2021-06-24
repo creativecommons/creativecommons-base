@@ -37,6 +37,12 @@ The following tools are recommended when setting up a development environment.
 - Docker / docker-compose
 - PHP Composer
 
+Note, you may need a few PHP dependencies installed on your operating system in order to use Composer. For example, on Ubuntu you may need to install `php-xml` as follows:
+
+```sh
+sudo apt install php-xml
+```
+
 ### Installing project dependencies
 
 This project has several dependencies that are managed by Composer. To install the dependencies, run the following command in the project root:
