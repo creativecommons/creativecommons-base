@@ -3,6 +3,7 @@ version: '3'
 services:
   wp:
     image: wordpress:latest # https://hub.docker.com/_/wordpress/
+    container_name: cc-base-wp
     ports:
       - ${IP}:80:80 # change ip if required
     volumes:
@@ -22,6 +23,7 @@ services:
 
   wpcli:
     image: wordpress:cli
+    container_name: cc-base-wp-cli
     volumes:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
       - ./wp-app:/var/www/html
@@ -36,6 +38,7 @@ services:
 
   pma:
     image: phpmyadmin/phpmyadmin
+    container_name: cc-base-phpmyadmin
     environment:
       # https://docs.phpmyadmin.net/en/latest/setup.html#docker-environment-variables
       PMA_HOST: db
@@ -48,6 +51,7 @@ services:
 
   db:
     image: mysql:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
+    container_name: cc-base-db
     ports:
       - ${IP}:3306:3306 # change ip if required
     command: [
@@ -61,6 +65,17 @@ services:
     environment:
       MYSQL_DATABASE: "${DB_NAME}"
       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+  
+  composer:
+    image: composer/composer
+    container_name: cc-base-composer
+    working_dir: /var/www/html/wp-content/themes/creativecommons-base/
+    command: sh -c "composer install"
+    restart: 'no'
+    depends_on:
+      - wp
+    volumes:
+      -  ../:/var/www/html/wp-content/themes/creativecommons-base
 
 volumes:
   db_data:
