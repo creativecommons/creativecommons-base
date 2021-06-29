@@ -9,7 +9,6 @@ The following projects inherit from the `creativecommons-base` theme:
 - [Certificate](https://github.com/creativecommons/creativecommons-certificate/blob/b2967296b0324f33d1be4c041954513363191bcc/composer.json#L21)
 - [wp-theme-creativecommons.org](https://github.com/creativecommons/wp-theme-creativecommons.org/blob/375cafbaccf03eded02f8f7f422e02e97833515a/composer.json#L20)
 
-
 ## Hooks
 ### Filters
 #### cc_theme_base_mandatory_sidebars
