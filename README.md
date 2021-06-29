@@ -2,6 +2,14 @@
 
 This is a blank CC theme for Wordpress. Please use it with a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/) 
 
+## Theme usage
+
+The following projects inherit from the `creativecommons-base` theme:
+
+- [Certificate](https://github.com/creativecommons/creativecommons-certificate/blob/b2967296b0324f33d1be4c041954513363191bcc/composer.json#L21)
+- 
+
+
 ## Hooks
 ### Filters
 #### cc_theme_base_mandatory_sidebars
