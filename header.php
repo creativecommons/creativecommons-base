@@ -37,7 +37,7 @@ if ( ! empty( $_set ) ) {
 				'depth'           => 2,
 				'container'       => 'div',
 				'container_class' => 'navbar-menu',
-				'items_wrap'      => '<div id="%1$s" class="navbar-end">%3$s</div>',
+				'items_wrap'      => '<div id="%1$s" class="navbar-start">%3$s</div>',
 				'menu_class'      => 'navbar-menu',
 				'menu_id'         => 'primary-menu',
 				'after'           => '</div>',
