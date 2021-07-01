@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   wp:
@@ -23,19 +23,19 @@ services:
       - db
 
   wpcli:
-   image: wordpress:cli
-   container_name: cc-base-wp-cli
-   volumes:
-     - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
-     - ./wp-app:/var/www/html
-   environment:
-     WORDPRESS_DB_HOST: db
-     WORDPRESS_DB_NAME: "${DB_NAME}"
-     WORDPRESS_DB_USER: root
-     WORDPRESS_DB_PASSWORD: "${DB_ROOT_PASSWORD}"
-   depends_on:
-     - db
-     - wp
+    image: wordpress:cli
+    container_name: cc-base-wp-cli
+    volumes:
+      - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./wp-app:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: "${DB_NAME}"
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: "${DB_ROOT_PASSWORD}"
+    depends_on:
+      - db
+      - wp
 
   pma:
     image: phpmyadmin/phpmyadmin
@@ -51,7 +51,7 @@ services:
       - db:db
   db:
     build:
-      context: ./bin/${DATABASE} #change db if required in .env file 
+      context: ./bin/${DATABASE} #change db if required in .env file
     container_name: cc-base-db
     ports:
       - ${IP}:3306:3306 # change ip if required
@@ -68,11 +68,11 @@ services:
     container_name: cc-base-composer
     working_dir: /var/www/html/wp-content/themes/creativecommons-base/
     command: sh -c "composer install"
-    restart: 'no'
+    restart: "no"
     depends_on:
       - wp
     volumes:
-      -  ../:/var/www/html/wp-content/themes/creativecommons-base
+      - ../:/var/www/html/wp-content/themes/creativecommons-base
 
 volumes:
   db_data:
