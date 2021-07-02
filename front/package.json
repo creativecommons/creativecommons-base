@@ -1,6 +1,6 @@
 {
   "name": "creativecommons-base",
-  "version": "2020.11.2",
+  "version": "2021.7.2",
   "description": "Base WordPress theme for Creative Commons websites",
   "main": "index.js",
   "dependencies": {},
