@@ -31,5 +31,5 @@ If you change the value of the `DATABASE` variable at any time during developmen
     - `docker volume ls`
 2. remove the volume
     - `docker volume rm <volume-id>`
-3. After removing the volume, rebuild the docker image:
+3. rebuild the docker image
     - `docker-compose up --build -d`
