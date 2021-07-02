@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   wp:
@@ -18,6 +18,7 @@ services:
       WORDPRESS_DB_PASSWORD: "${DB_ROOT_PASSWORD}"
     depends_on:
       - db
+
     links:
       - db
 
@@ -48,34 +49,30 @@ services:
       - ${IP}:8080:80
     links:
       - db:db
-
   db:
-    image: mysql:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
+    build:
+      context: ./bin/${DATABASE} #change db if required in .env file
     container_name: cc-base-db
     ports:
       - ${IP}:3306:3306 # change ip if required
-    command: [
-        '--default_authentication_plugin=mysql_native_password',
-        '--character-set-server=utf8mb4',
-        '--collation-server=utf8mb4_unicode_ci'
-    ]
     volumes:
       - ./wp-data:/docker-entrypoint-initdb.d
       - db_data:/var/lib/mysql
     environment:
       MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
-  
+
   composer:
     image: composer/composer
     container_name: cc-base-composer
     working_dir: /var/www/html/wp-content/themes/creativecommons-base/
     command: sh -c "composer install"
-    restart: 'no'
+    restart: "no"
     depends_on:
       - wp
     volumes:
-      -  ../:/var/www/html/wp-content/themes/creativecommons-base
+      - ../:/var/www/html/wp-content/themes/creativecommons-base
 
 volumes:
   db_data:
