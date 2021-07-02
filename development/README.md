@@ -25,4 +25,11 @@ There are several environment variables required to run the `docker-compose` com
 
 The `.env` file should contain a variable called `DATABASE` that is used to choose which database to use for development (mysql or mariadb).
 
-If you change the value of the `DATABASE` variable at any time during development, you will need to remove the old database volume in order to prevent errors. After removing the volume you need to rebuild the docker image with `docker-compose up --build -d`.
+If you change the value of the `DATABASE` variable at any time during development, you will need to remove the old database volume in order and rebuild the images to prevent errors. 
+
+1. list all Docker volumes to find the relevant volume
+    - `docker volume ls`
+2. remove the volume
+    - `docker volume rm <volume-id>`
+3. rebuild the docker image
+    - `docker-compose up --build -d`
