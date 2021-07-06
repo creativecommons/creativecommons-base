@@ -1,6 +1,6 @@
 # CC blank WordPress theme
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This is a blank CC theme for Wordpress. Please use it with a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/) 
@@ -90,6 +90,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="http://www.epacking.be"><img src="https://avatars.githubusercontent.com/u/19891785?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alain Seys</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=alainseys" title="Code">💻</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=alainseys" title="Documentation">📖</a></td>
     <td align="center"><a href="https://zack.cat"><img src="https://avatars.githubusercontent.com/u/6351754?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zack Krida</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=zackkrida" title="Code">💻</a></td>
+    <td align="center"><a href="http://kritigodey.com"><img src="https://avatars.githubusercontent.com/u/287034?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kriti Godey</b></sub></a><br /><a href="#projectManagement-kgodey" title="Project Management">📆</a></td>
   </tr>
 </table>
 
