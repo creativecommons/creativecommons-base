@@ -14,6 +14,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "zackkrida",
+      "name": "Zack Krida",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6351754?v=4",
+      "profile": "https://zack.cat",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
