@@ -51,6 +51,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "hugosolar",
+      "name": "Hugo Solar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/894708?v=4",
+      "profile": "http://hugo.solar",
+      "contributions": [
+        "code",
+        "mentoring",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
