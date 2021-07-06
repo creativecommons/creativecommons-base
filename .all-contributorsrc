@@ -32,6 +32,16 @@
       "contributions": [
         "projectManagement"
       ]
+    },
+    {
+      "login": "JackieBinya",
+      "name": "JackieBinya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50267279?v=4",
+      "profile": "http://jackiebinya.github.io",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
