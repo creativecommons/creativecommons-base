@@ -2,7 +2,7 @@
 /**
  * Functions: list
  *
- * @version 2020.11.2
+ * @version 2021.07.1
  * @package creativecommons-base
  */
 
