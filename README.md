@@ -1,6 +1,6 @@
 # CC blank WordPress theme
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This is a blank CC theme for Wordpress. Please use it with a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/) 
@@ -92,6 +92,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://zack.cat"><img src="https://avatars.githubusercontent.com/u/6351754?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zack Krida</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=zackkrida" title="Code">💻</a></td>
     <td align="center"><a href="http://kritigodey.com"><img src="https://avatars.githubusercontent.com/u/287034?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kriti Godey</b></sub></a><br /><a href="#projectManagement-kgodey" title="Project Management">📆</a></td>
     <td align="center"><a href="http://jackiebinya.github.io"><img src="https://avatars.githubusercontent.com/u/50267279?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JackieBinya</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=JackieBinya" title="Code">💻</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=JackieBinya" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Cronus1007"><img src="https://avatars.githubusercontent.com/u/56436023?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cronus </b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=Cronus1007" title="Code">💻</a></td>
   </tr>
 </table>
 
