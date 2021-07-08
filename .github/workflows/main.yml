@@ -1,0 +1,11 @@
+name: CI
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+     - name: Build the docker container
+       run: docker-compose -f development/docker-compose up --build 
