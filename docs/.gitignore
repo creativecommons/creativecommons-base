@@ -8,3 +8,5 @@ dist
 .env.*
 .netlify
 package-lock.json
+_site/
+.sass-cache

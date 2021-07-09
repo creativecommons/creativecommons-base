@@ -1,1 +1,14 @@
-theme: jekyll-theme-cayman
+remote_theme: pmarsceill/just-the-docs
+
+logo: "/assets/images/CC-theme-base.svg"
+
+aux_links:
+  "CC Open Source":
+    - "https://opensource.creativecommons.org/"
+
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub."
+gh_edit_repository: "https://github.com/creativecommons/creativecommons-base/"
+gh_edit_branch: "main" # the branch that the docs are served from
+gh_edit_source: docs # the source directory where the docs are located
+gh_edit_view_mode: "tree"
