@@ -9,3 +9,4 @@ dist
 .netlify
 package-lock.json
 _site/
+.sass-cache
