@@ -1,12 +1,12 @@
 ## CC WP BASE THEME
 
 <ul>
-<li><a href="content/advanced-customizations.md">Advanced Customizations</a></li>
-<li><a href="content/child-theme.md">Child Theme</a></li>
-<li><a href="content/contributing.md">Contribution guidelines</a></li>
-<li><a href="content/customizations.md">Customizations</a> </li>
-<li><a href="content/getting-started.md">Getting started</a> </li>
-<li><a href="content/updating-the-theme.md">Updating the theme</a> </li>
+<li><a href="/advanced-customizations">Advanced Customizations</a></li>
+<li><a href="/child-theme">Child Theme</a></li>
+<li><a href="/contributing">Contribution guidelines</a></li>
+<li><a href="/customizations">Customizations</a> </li>
+<li><a href="/getting-started">Getting started</a> </li>
+<li><a href="/updating-the-theme">Updating the theme</a> </li>
 </ul>
 
 ###Releases
