@@ -15,17 +15,11 @@ _As a prerequisite the CC Base Child Theme starter must be installed in the **wo
 - Open the wordpress directory in a text editor or IDE of your choice.
 - Navigate into  the **wordpress**/**wp-content**/**themes**/**cc-wp-base-theme-starter**/**front** directory.
 - Install all the necessary node modules by running the command below in your terminal:
-
-```
-npm install
-```
-
+    - `npm install`
 - To add custom styles cd into the styles folder, add your styles in the relevant sass files. 
-- Run the npm scripts below in your terminal, to watch and compile your styles respectively.```
-npm watch
-
-npm build
-```
+- Run the npm scripts below in your terminal, to watch and compile your styles respectively.
+    - `npm watch`
+    - `npm build`
 
 ## Advanced Widgets
 
@@ -47,7 +41,7 @@ These are used to create containers. Column Containers are blocks of space that 
 The Column Container Open widget is used to initialize a container component.
 Its parameters are shown in the screenshot below:
 
-![Open column container widget parameters](/assets/content-images/advanced-widgets/open-column.png)
+![Open column container widget parameters](https://opensource.creativecommons.org/creativecommons-base/assets/content-images/advanced-widgets/open-column.png)
 
 - Remove Gap: This parameter denotes horizontal the space in between inner columns as well as the space below and above the container, in css those spaces are defined by grid gap,  margin bottom, and margin top respectively. These all have a default value of 0.75rem.
 - Column Count: This parameter will allow you to set the number of columns in the container.
@@ -66,7 +60,7 @@ These widgets effectively form a single column structure which can be populated 
 The Single Column Open widget is used to initialize a column component.
 Its parameters are shown in the screenshot below:
 
-![Single column open container widget parameters](/assets/content-images/advanced-widgets/single-column-open.png)
+![Single column open container widget parameters](https://opensource.creativecommons.org/creativecommons-base/assets/content-images/advanced-widgets/single-column-open.png)
 
 - How many columns should be used: This parameter is used to configure the span of a single column. The parent container (refer to the previous section for more details) consists of a fixed number of columns which are set using the parameter Column Count. The How many columns should use field will allow you to set the number of columns the single column should occupy from the preset number columns.
 - Color: This parameter is used to set the background color of the single column.
