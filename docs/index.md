@@ -23,7 +23,7 @@ Although the CC Base source code is <a href="https://www.gnu.org/philosophy/free
 
  CC Base provides uniformity in design and improves the ease of maintenance. The CC Base theme is used across the Creative Commons ecosystem and as a consequence, all the websites are uniform and are generally easier to maintain.
 
-CC Base reduces the barrier of entry to contributing: CC Base theme is essentially a WordPress theme, so anyone with little to no knowledge of web design can easily start contributing to CC websites. To learn more about contributing to CC Base theme, see the <a href="#">Contributing</a> section.
+CC Base reduces the barrier of entry to contributing: CC Base theme is essentially a WordPress theme, so anyone with little to no knowledge of web design can easily start contributing to CC websites. To learn more about contributing to CC Base theme, see the [Contributing](/contributing) section.
 
 ## Features
 
