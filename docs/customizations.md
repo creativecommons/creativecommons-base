@@ -13,7 +13,7 @@ The Creative Commons Base Theme is highly flexible. Continue reading to learn ho
 - Go to **Customize** > **Site Identity** 
 - In the field labeled **Site Title** enter a custom title of your site.
 
-<![Emphasized title field and label](../src/assets/content-images/customizations/set-title.png)
+<![Emphasized title field and label](/assets/content-images/customizations/set-title.png)
 
 ## Custom site description or tag line
 
@@ -22,7 +22,7 @@ The Creative Commons Base Theme is highly flexible. Continue reading to learn ho
 - Go to **Customize** > **Site Identity** 
 - In the field labeled **Site Tagline** enter a custom tagline(or description) of your site.
 
-![Emphasized tagline field and label](../src/assets/content-images/customizations/set-description.png)
+![Emphasized tagline field and label](/assets/content-images/customizations/set-description.png)
 
 ## Custom Icon
 
@@ -32,7 +32,7 @@ The Creative Commons Base Theme is highly flexible. Continue reading to learn ho
 - Click the button labeled **Select Icon** to set up an icon.
 Note that the site icon must be a square that is 512 x 512 pixels.
 
-![Emphasized icon field and label](../src/assets/content-images/customizations/set-icon.png)
+![Emphasized icon field and label](/assets/content-images/customizations/set-icon.png)
 
 ## Custom Navigation Menus
 
@@ -40,11 +40,11 @@ There are two menu locations in the site which are namely: Main Navigation and F
 
 The screenshot below shows an example of a custom menu in the Main Navigation:
 
-![Main navigation](../src/assets/content-images/customizations/main-nav.png)
+![Main navigation](/assets/content-images/customizations/main-nav.png)
 
 The screenshot below shows an example of a custom menu in the Footer Navigation:
 
-![Footer navigation](../src/assets/content-images/customizations/footer-nav.png)
+![Footer navigation](/assets/content-images/customizations/footer-nav.png)
 
 _The menus shown above are displayed in the desktop view. On any other screens, their appearance and or position might be different from what is shown above._
 
@@ -56,7 +56,7 @@ _The menus shown above are displayed in the desktop view. On any other screens, 
 - To proceed to the next step in the form, click the button labeled **Next**.
 - Then click the button labeled **+Add Items**, it will reveal all of the items which can be included in the menu.
 
-![Form used to configure a custom menu on live preview](../src/assets/content-images/customizations/set-menu-live-preview.png)
+![Form used to configure a custom menu on live preview](/assets/content-images/customizations/set-menu-live-preview.png)
 
 - Select menu items by clicking on them. 
 - You are able to re-order the arrangement of selected menu items by dragging them up and down.
@@ -64,7 +64,7 @@ _The menus shown above are displayed in the desktop view. On any other screens, 
 
 ### To create a custom menu using the dashboard:
 
-![Form used to configure a custom menu on live preview](../src/assets/content-images/customizations/set-menu-dashboard.png)
+![Form used to configure a custom menu on live preview](/assets/content-images/customizations/set-menu-dashboard.png)
 
 - Go to **Dashboard** > **Appearance** > **Menus**, the form in the diagram above will be shown.
 - Enter the menu name in the filled labeled **Menu Name**.
@@ -92,7 +92,7 @@ There are three layouts in the theme you can use to configure the structure of y
 
 #### Default Layout
 
-![Default page layout](../src/assets/content-images/customizations/default-page.png)
+![Default page layout](/assets/content-images/customizations/default-page.png)
 
 This is the default layout of the page template, it has a default sidebar component on the left. To populate the sidebar with widgets:
 
@@ -121,7 +121,7 @@ In order to display a static page on the homepage:
 - Create another page and give a title of your choice(e.g. Blog).
 - Go to **Dashboard** > **Settings** > **Reading**, and set your homepage display to the static page. Then set your Homepage to display the Homepage(the static page we created above) and set your posts to be displayed on the Blog page.
 
-![Reading Settings](../src/assets/content-images/customizations/reading-settings.png)
+![Reading Settings](/assets/content-images/customizations/reading-settings.png)
 
 - There are other optional settings outlined in the **Reading Settings** which you can use to also manage your site.
 - When done, click the button labeled **Save Changes**.
@@ -151,10 +151,10 @@ In order to display a static page on the homepage:
     - Select the Document tab
     - You will find Post Format listed in the Document settings.
     - Select your desired Post format from the dropdown:
-    ![Form to set post format](../src/assets/content-images/customizations/set-post-format.png)
+    ![Form to set post format](/assets/content-images/customizations/set-post-format.png)
     - Close the Settings by clicking on the gear icon.
     - On your editor at the very bottom of your post, click on the Post Format Panel so as to enlarge it.
-     ![Post format settings](../src/assets/content-images/customizations/post.png)
+     ![Post format settings](/assets/content-images/customizations/post.png)
     - Add relevant configuration details which will be influenced by the format you selected in the Settings.
 
 ### Post Formats
@@ -183,7 +183,7 @@ _If the above-listed post formats do not meet your requirements, you can complet
 
 The widgets are available in **Dashboard** > **Appearance** > **Widgets**. On the left panel, we have the available widgets and the small panels on the right are the widget areas available in the theme.
 
- ![Available widgets](../src/assets/content-images/customizations/view-widgets.png)
+ ![Available widgets](/assets/content-images/customizations/view-widgets.png)
 
 ### To add a widget:
 - Drag it from the left panel into a widget area and provide the configuration information if it is required.
@@ -196,17 +196,17 @@ The widgets are available in **Dashboard** > **Appearance** > **Widgets**. On th
 
 - Go to **Customize** > **Widgets**. If you are on a page that does not have any widget areas you will get a message shown in the screenshot below:
 
-![No widgets listed on the live preview](../src/assets/content-images/customizations/no-widgets.png)
+![No widgets listed on the live preview](/assets/content-images/customizations/no-widgets.png)
 
 When the page has widgets areas they are listed as shown in the screenshot below:
 
-![Available widgets listed on the live preview](../src/assets/content-images/customizations/has-widgets.png)
+![Available widgets listed on the live preview](/assets/content-images/customizations/has-widgets.png)
 
 - You select a widget area by clicking it. 
 - To add widgets click the +Add Widget button and then select a widget from the widget panel on your right.
 - You are also able to search for widgets in the event the one you need is not displayed.
 
-![Set widgets listed on the live preview](../src/assets/content-images/customizations/set-widgets.png)
+![Set widgets listed on the live preview](/assets/content-images/customizations/set-widgets.png)
 
 - After adding widgets you can then publish your changes.
 
