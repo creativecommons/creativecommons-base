@@ -29,7 +29,3 @@ CC Base reduces the barrier of entry to contributing: CC Base theme is essential
 
 - Responsive site and images
 - Customizable
-
-### Releases
-
-<a href="">v2020.11.2</a>
