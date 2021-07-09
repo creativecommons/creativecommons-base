@@ -1,4 +1,8 @@
-# CC WP BASE THEME
+---
+title: Creative Commons WordPress base theme
+---
+
+# Creative Commons WordPress base theme
 
 <ul>
 <li><a href="/advanced-customizations">Advanced Customizations</a></li>
