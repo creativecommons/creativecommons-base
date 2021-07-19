@@ -36,6 +36,8 @@ services:
     depends_on:
       - db
       - wp
+    links:
+      - db:db
 
   pma:
     image: phpmyadmin/phpmyadmin
