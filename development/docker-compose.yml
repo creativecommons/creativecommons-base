@@ -63,16 +63,5 @@ services:
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
 
-  composer:
-    image: composer/composer
-    container_name: cc-base-composer
-    working_dir: /var/www/html/wp-content/themes/creativecommons-base/
-    command: sh -c "composer install"
-    restart: "no"
-    depends_on:
-      - wp
-    volumes:
-      - ../:/var/www/html/wp-content/themes/creativecommons-base
-
 volumes:
   db_data:
