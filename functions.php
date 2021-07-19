@@ -5,6 +5,7 @@
  * @version 2021.07.1
  * @package creativecommons-base
  */
+include( get_theme_file_path('inc/theme-customizer.php') );
 
 /* Theme Constants (to speed up some common things) ------*/
 define( 'HOME_URI', get_bloginfo( 'url' ) );
@@ -27,6 +28,7 @@ define( 'THEME_JS', THEME_URI . '/assets/js' );
   require TEMPLATEPATH . '/inc/class-walkers.php';
   require TEMPLATEPATH . '/inc/helpers.php';
 
+  add_action('customize_register', 'cc_base_theme_customize_register');
 
 /**
  * Images
