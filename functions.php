@@ -21,7 +21,6 @@ define( 'THEME_JS', THEME_URI . '/assets/js' );
   // include TEMPLATEPATH . '/inc/search.php';
   require TEMPLATEPATH . '/inc/widgets.php';
   require TEMPLATEPATH . '/inc/settings.php';
-  require TEMPLATEPATH . '/inc/metaboxes.php';
   require TEMPLATEPATH . '/inc/class-cc-site.php';
   require TEMPLATEPATH . '/inc/class-cc-filters.php';
   require TEMPLATEPATH . '/inc/class-components.php';
