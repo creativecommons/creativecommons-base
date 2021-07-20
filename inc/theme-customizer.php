@@ -20,6 +20,7 @@ function register_display_settings($wp_customize)
     $wp_customize->add_setting(
         'cc_base_include_donate',
         array(
+            'type' => 'theme_mod',
             'default'   => true,
             'transport' => 'refresh',
             'capability' => 'manage_options',
@@ -29,6 +30,7 @@ function register_display_settings($wp_customize)
     $wp_customize->add_setting(
         'cc_base_enabled_announcement',
         array(
+            'type' => 'theme_mod',
             'default'   => true,
             'transport' => 'refresh',
             'capability' => 'manage_options',
@@ -38,6 +40,7 @@ function register_display_settings($wp_customize)
     $wp_customize->add_setting(
         'cc_base_show_authors',
         array(
+            'type' => 'theme_mod',
             'default'   => true,
             'transport' => 'refresh',
             'capability' => 'manage_options',
@@ -89,6 +92,7 @@ function register_featured_content_settings($wp_customize)
     $wp_customize->add_setting(
         'cc_base_enable_featured_content',
         array(
+            'type' => 'theme_mod',
             'default'   => true,
             'transport' => 'refresh',
             'capability' => 'manage_options',
@@ -98,6 +102,7 @@ function register_featured_content_settings($wp_customize)
     $wp_customize->add_setting(
         'cc_base_featured_content',
         array(
+            'type' => 'theme_mod',
             'default'   => '',
             'transport' => 'refresh',
             'capability' => 'manage_options',
@@ -107,6 +112,7 @@ function register_featured_content_settings($wp_customize)
     $wp_customize->add_setting(
         'cc_base_featured_content_background_color',
         array(
+            'type' => 'theme_mod',
             'default'   => '#ffffff',
             'transport' => 'refresh',
             'capability' => 'manage_options',
@@ -116,6 +122,7 @@ function register_featured_content_settings($wp_customize)
     $wp_customize->add_setting(
         'cc_base_featured_content_background_image',
         array(
+            'type' => 'theme_mod',
             'default'   => null,
             'transport' => 'refresh',
             'capability' => 'manage_options',
