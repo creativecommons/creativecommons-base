@@ -1,6 +1,6 @@
 <?php
 	get_header();
-	the_post();
+	the_post();	
 ?>
 <section class="main-content">
 	<header class="page-header">

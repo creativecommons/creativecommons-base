@@ -6,13 +6,7 @@
 	<title><?php wp_title( '|' ); ?></title>
 	<?php wp_head(); ?>
 </head>
-<?php
-	// get site global settings (settings.php)
-	global $_set;
-if ( ! empty( $_set ) ) {
-	$settings = $_set->settings;
-}
-?>
+
 <body <?php body_class(); ?>>
 <?php do_action( 'cc_theme_before_header' ); ?>
 <!--BEGIN HEADER-->
