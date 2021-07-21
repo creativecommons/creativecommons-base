@@ -22,8 +22,8 @@
   },
   "scripts": {
     "compat": "phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.0 -n . --extensions=php --cache",
-    "fix": "phpcbf --standard=WordPress . --extensions=php --ignore=vendor",
+    "fix": "phpcbf --standard=WordPress . --extensions=php --ignore=vendor,development",
     "lint": "parallel-lint . --blame --exclude vendor",
-    "sniff": "phpcs --standard=WordPress . --ignore=vendor --extensions=php"
+    "sniff": "phpcs --standard=WordPress . --ignore=vendor,development --extensions=php"
   }
 }
