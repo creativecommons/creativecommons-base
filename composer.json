@@ -1,0 +1,22 @@
+{
+    "name": "creativecommons/creativecommons-base",
+    "description": "The Creative Commons base theme",
+    "type": "wordpress-theme",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+      {
+        "name": "Hugo Solar",
+        "email": "hugo@creativecommons.org"
+      },
+      {
+        "name": "Brylie Christopher Oxley",
+        "email": "brylie@creativecommons.org"
+      }
+    ],
+    "scripts": {
+      "compat": "phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.0 -n . --extensions=php --cache",
+      "fix": "phpcbf --standard=WordPress . --extensions=php --ignore=vendor",
+      "lint": "parallel-lint . --blame --exclude vendor",
+      "sniff": "phpcs --standard=WordPress . --ignore=vendor --extensions=php"
+    }
+  }
