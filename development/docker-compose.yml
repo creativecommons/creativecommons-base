@@ -51,6 +51,7 @@ services:
       - ${IP}:8080:80
     links:
       - db:db
+
   db:
     build:
       context: ./bin/${DATABASE} #change db if required in .env file
@@ -64,6 +65,17 @@ services:
       MYSQL_DATABASE: "${DB_NAME}"
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+
+  composer:
+    image: composer/composer
+    container_name: cc-base-composer
+    working_dir: /var/www/html/wp-content/themes/creativecommons-base/
+    command: sh -c "composer install"
+    restart: "no"
+    depends_on:
+      - wp
+    volumes:
+      - ../:/var/www/html/wp-content/themes/creativecommons-base
 
 volumes:
   db_data:
