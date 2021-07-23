@@ -5,6 +5,7 @@
  * @version 2021.07.1
  * @package creativecommons-base
  */
+require get_theme_file_path( 'inc/theme-customizer.php' );
 
 /* Theme Constants (to speed up some common things) ------*/
 define( 'HOME_URI', get_bloginfo( 'url' ) );
@@ -20,14 +21,13 @@ define( 'THEME_JS', THEME_URI . '/assets/js' );
 */
   // include TEMPLATEPATH . '/inc/search.php';
   require TEMPLATEPATH . '/inc/widgets.php';
-  require TEMPLATEPATH . '/inc/settings.php';
-  require TEMPLATEPATH . '/inc/metaboxes.php';
   require TEMPLATEPATH . '/inc/class-cc-site.php';
   require TEMPLATEPATH . '/inc/class-cc-filters.php';
   require TEMPLATEPATH . '/inc/class-components.php';
   require TEMPLATEPATH . '/inc/class-walkers.php';
   require TEMPLATEPATH . '/inc/helpers.php';
 
+  add_action( 'customize_register', 'cc_base_theme_customize_register' );
 
 /**
  * Images

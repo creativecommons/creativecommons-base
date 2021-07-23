@@ -36,6 +36,8 @@ services:
     depends_on:
       - db
       - wp
+    links:
+      - db:db
 
   pma:
     image: phpmyadmin/phpmyadmin
@@ -49,6 +51,7 @@ services:
       - ${IP}:8080:80
     links:
       - db:db
+
   db:
     build:
       context: ./bin/${DATABASE} #change db if required in .env file

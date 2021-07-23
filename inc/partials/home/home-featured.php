@@ -1,20 +1,26 @@
 <?php
-global $_set;
-$settings                  = $_set->settings;
-$is_feature_enabled        = $settings['enable_featured'];
-$is_announcement_enabled   = ( $settings['enabled_announcement'] ) ? ' has-notification-enabled' : '';
-$featured_image            = ( ! empty( $settings['featured_image'] ) ) ? 'style="background-image: url(' . wp_get_attachment_url( $settings['featured_image'], 'landscape-featured' ) . ');"' : false;
-$featured_background_color = ( ! empty( $settings['featured_background_color'] ) ) ? 'has-background-' . $settings['featured_background_color'] : '';
+$featured_content_is_enabled       = get_theme_mod( 'cc_base_enable_featured_content' );
+$announcement_is_enabled           = ( get_theme_mod( 'cc_base_enabled_announcement' ) ) ? ' has-notification-enabled' : '';
+$featured_content                  = get_theme_mod( 'cc_base_featured_content' );
+$featured_image_setting            = get_theme_mod( 'cc_base_featured_content_background_image' );
+$featured_image                    = ( ! empty( $featured_image_setting ) ) ? 'style="background-image: url(' . wp_get_attachment_url( $featured_image_setting, 'landscape-featured' ) . ');"' : false;
+$featured_background_color_setting = get_theme_mod( 'cc_base_featured_content_background_color' );
+$featured_background_color         = ( ! empty( $featured_background_color_setting ) ) ? 'has-background-' . $featured_background_color_setting : '';
+$include_donate_is_enabled         = get_theme_mod( 'cc_base_include_donate' );
 ?>
-<section class="featured-content <?php echo $featured_background_color . $is_announcement_enabled; ?>" <?php echo $featured_image; ?>>
+
+<!-- TODO: determine what the following line intends to achieve and clean up semantics to make more self-documenting -->
+<section class="featured-content <?php echo $featured_background_color . $announcement_is_enabled; ?>" <?php echo $featured_image; ?>>
 	<div class="container">
 		<div class="wrap-content padding-vertical-larger">
 			<div class="columns is-centered">
 				<div class="column is-6 has-text-centered">
-					<?php if ( ! empty( $settings['featured_content'] ) ) : ?>
-						<h3 class="heading-b"><?php echo esc_attr( $settings['featured_content'] ); ?></h3>
+					<!-- TODO: determine whether this whole <section> should be wrapped in the following if statement -->
+					<?php if ( $featured_content_is_enabled ) : ?>
+						<h3 class="heading-b"><?php echo esc_attr( $featured_content ); ?></h3>
+
 						<?php
-						if ( $settings['include_donate'] ) {
+						if ( $include_donate_is_enabled ) {
 							echo Components::button( 'Donate now', 'https://creativecommons.org/donate', 'small', 'donate', true, 'cc-letterheart' );
 						}
 						?>

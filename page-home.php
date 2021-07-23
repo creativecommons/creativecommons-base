@@ -1,17 +1,16 @@
 <?php
 	/* Template name: Home Layout */
 	get_header();
-	global $_set;
-  $settings                  = $_set->settings;
-	$is_feature_enabled      = $settings['enable_featured'];
-	$is_announcement_enabled = $settings['enabled_announcement'];
+	$featured_content_is_enabled = get_theme_mod( 'cc_base_enable_featured_content' );
+	$announcement_is_enabled     = get_theme_mod( 'cc_base_enabled_announcement' );
 ?>
-	<section class="main-content">
+	<section class="main-content another-class">
+		Main content!
 		<?php
-		if ( $is_feature_enabled ) {
+		if ( $featured_content_is_enabled ) {
 			get_template_part( 'inc/partials/home/home', 'featured' );
 		}
-		if ( $is_announcement_enabled ) {
+		if ( $announcement_is_enabled ) {
 			get_template_part( 'inc/partials/home/home', 'notification' );
 		}
 

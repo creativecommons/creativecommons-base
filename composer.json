@@ -13,21 +13,6 @@
       "email": "brylie@creativecommons.org"
     }
   ],
-  "repositories": [
-    {
-      "no-api": true,
-      "type": "vcs",
-      "url": "https://github.com/creativecommons/queulat"
-    },
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    }
-  ],
-  "require": {
-    "composer/installers": "~1.0",
-    "felipelavinz/queulat": "2019.4.2"
-  },
   "require-dev": {
     "php-parallel-lint/php-parallel-lint": "^1.1",
     "phpcompatibility/php-compatibility": "^9.1",
@@ -37,15 +22,8 @@
   },
   "scripts": {
     "compat": "phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.0 -n . --extensions=php --cache",
-    "fix": "phpcbf --standard=WordPress . --extensions=php --ignore=vendor",
+    "fix": "phpcbf --standard=WordPress . --extensions=php --ignore=vendor,development",
     "lint": "parallel-lint . --blame --exclude vendor",
-    "sniff": "phpcs --standard=WordPress . --ignore=vendor --extensions=php"
-  },
-  "extra": {
-    "installer-paths": {
-      "../../mu-plugins/{$name}": [
-        "type:wordpress-muplugin"
-      ]
-    }
+    "sniff": "phpcs --standard=WordPress . --ignore=vendor,development --extensions=php"
   }
 }
