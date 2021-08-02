@@ -33,3 +33,6 @@ If you change the value of the `DATABASE` variable at any time during developmen
     - `docker volume rm <volume-id>`
 3. rebuild the docker image
     - `docker-compose up --build -d`
+
+## Adding hostfile
+ To make use of the container mailhog you need to create a hosts file entry you can do this by editing `/etc/host` make sure that this record matches the variable in `.env`called HOSTNAME

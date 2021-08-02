@@ -3,9 +3,12 @@ version: "3"
 services:
   wp:
     image: wordpress:latest # https://hub.docker.com/_/wordpress/
+    extra_hosts:
+      - "${HOSTNAME}:${IP}"
     container_name: cc-base-wp
     ports:
       - ${IP}:80:80 # change ip if required
+    
     volumes:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
       - ./wp-app:/var/www/html # Full wordpress project
@@ -18,10 +21,8 @@ services:
       WORDPRESS_DB_PASSWORD: "${DB_ROOT_PASSWORD}"
     depends_on:
       - db
-
-    links:
-      - db
-
+    networks:
+      - backend
   wpcli:
     image: wordpress:cli
     container_name: cc-base-wp-cli
@@ -36,9 +37,8 @@ services:
     depends_on:
       - db
       - wp
-    links:
-      - db:db
-
+    networks:
+      - backend
   pma:
     image: phpmyadmin/phpmyadmin
     container_name: cc-base-phpmyadmin
@@ -49,9 +49,8 @@ services:
       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
     ports:
       - ${IP}:8080:80
-    links:
-      - db:db
-
+    networks:
+      - backend
   db:
     build:
       context: ./bin/${DATABASE} #change db if required in .env file
@@ -65,6 +64,21 @@ services:
       MYSQL_DATABASE: "${DB_NAME}"
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+    networks:
+      - backend
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    extra_hosts:
+      - "${HOSTNAME}:${IP}"
+    restart: always
+    logging:
+      driver: 'none' #this is required since mailhog is very chatty to the log files 
+    ports:
+      - 1025:1025 #api port
+      - 8025:8025 #webinterface port
+    
+    
 
   composer:
     image: composer/composer
@@ -79,3 +93,6 @@ services:
 
 volumes:
   db_data:
+
+networks:
+  backend:
