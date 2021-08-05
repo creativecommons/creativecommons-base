@@ -14,7 +14,7 @@ The following projects inherit from the `creativecommons-base` theme:
 
 Additional projects that may inherit from `creativecommons-base`:
 
-- Summit (deployed?)
+- [Summit](https://summit.creativecommons.org/)
 - New Global network (in development)
 
 ## Hooks
