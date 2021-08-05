@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Pivitol WordPress">
-    <description>Pivitol Wordpress Coding Standards</description>
+<ruleset name="Creative Commons WordPress">
+    <description>Creative Commons Wordpress/PHP Coding Standards</description>
 
     <!-- Scan all files in directory -->
     <file>.</file>
@@ -14,8 +14,8 @@
     <!-- Show sniff codes in all reports -->
     <arg value="ns"/>
 
-    <!-- Include the WordPress-Extra standard. -->
-    <rule ref="WordPress-Extra">
+    <!-- Include the WordPress standard. -->
+    <rule ref="WordPress">
         <!-- Exclude any rules here -->
     </rule>
 
@@ -26,5 +26,5 @@
     <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
     <rule ref="Generic.Commenting.Todo"/>
 
-    <config name="minimum_supported_wp_version" value="4.9"/>
+    <config name="minimum_supported_wp_version" value="5.0"/>
 </ruleset>
