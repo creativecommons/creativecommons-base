@@ -84,6 +84,14 @@ Action inside <footer> element but after the footer content
 # Contribute
 Contributions are highly appreciated. Please see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
+## 📣 Let's chat
+Do you want to ask or chat to one of our contributers just click the slack link and let's have a chat.
+
+Just click the button bellow and follow the onscreen instructions.
+
+[![slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://slack-signup.creativecommons.org/)
+
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
