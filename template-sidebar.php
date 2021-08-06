@@ -1,4 +1,5 @@
 <?php
+	/* Template name: Sidebar */
 	get_header();
 	the_post();
 ?>
