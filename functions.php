@@ -7,6 +7,9 @@
  */
 require get_theme_file_path( 'inc/theme-customizer.php' );
 
+/* Allow full-width Gutenberg widget alignment */
+add_theme_support( 'align-wide' );
+
 /* Theme Constants (to speed up some common things) ------*/
 define( 'HOME_URI', get_bloginfo( 'url' ) );
 define( 'PRE_HOME_URI', get_bloginfo( 'url' ) . '/wp-content/themes' );
