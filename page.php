@@ -20,10 +20,10 @@
 		<div class="text-format body-big">
 			<?php the_content(); ?>
 		</div>
+		<footer class="entry-footer">
+			<?php get_template_part( 'inc/partials/entry/page', 'footer' ); ?>
+		</footer>
 	</section>
 
-	<footer class="entry-footer">
-		<?php get_template_part( 'inc/partials/entry/page', 'footer' ); ?>
-	</footer>
 </section>
 <?php get_footer(); ?>
