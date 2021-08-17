@@ -5,6 +5,41 @@
 
 This is a blank CC theme for Wordpress. Please use it with a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/) 
 
+# Contribute
+Contributions are highly appreciated. Please see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+## 📣 Let's chat
+Do you want to connect with our contributors?
+
+Just click the button below and follow the instructions.
+
+[![slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://slack-signup.creativecommons.org/)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://www.epacking.be"><img src="https://avatars.githubusercontent.com/u/19891785?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alain Seys</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=alainseys" title="Code">💻</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=alainseys" title="Documentation">📖</a> <a href="#infra-alainseys" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://zack.cat"><img src="https://avatars.githubusercontent.com/u/6351754?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zack Krida</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=zackkrida" title="Code">💻</a></td>
+    <td align="center"><a href="http://kritigodey.com"><img src="https://avatars.githubusercontent.com/u/287034?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kriti Godey</b></sub></a><br /><a href="#projectManagement-kgodey" title="Project Management">📆</a></td>
+    <td align="center"><a href="http://jackiebinya.github.io"><img src="https://avatars.githubusercontent.com/u/50267279?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JackieBinya</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=JackieBinya" title="Code">💻</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=JackieBinya" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Cronus1007"><img src="https://avatars.githubusercontent.com/u/56436023?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cronus </b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=Cronus1007" title="Code">💻</a></td>
+    <td align="center"><a href="http://hugo.solar"><img src="https://avatars.githubusercontent.com/u/894708?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hugo Solar</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=hugosolar" title="Code">💻</a> <a href="#mentoring-hugosolar" title="Mentoring">🧑‍🏫</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=hugosolar" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
 ## Theme usage
 
 The following projects inherit from the `creativecommons-base` theme:
@@ -80,39 +115,3 @@ Action after the footer element
 
 #### cc_theme_after_footer_content
 Action inside <footer> element but after the footer content
-
-# Contribute
-Contributions are highly appreciated. Please see [`CONTRIBUTING.md`](CONTRIBUTING.md).
-
-## 📣 Let's chat
-Do you want to connect with our contributors?
-
-Just click the button below and follow the instructions.
-
-[![slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://slack-signup.creativecommons.org/)
-
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="http://www.epacking.be"><img src="https://avatars.githubusercontent.com/u/19891785?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alain Seys</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=alainseys" title="Code">💻</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=alainseys" title="Documentation">📖</a> <a href="#infra-alainseys" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-    <td align="center"><a href="https://zack.cat"><img src="https://avatars.githubusercontent.com/u/6351754?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zack Krida</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=zackkrida" title="Code">💻</a></td>
-    <td align="center"><a href="http://kritigodey.com"><img src="https://avatars.githubusercontent.com/u/287034?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kriti Godey</b></sub></a><br /><a href="#projectManagement-kgodey" title="Project Management">📆</a></td>
-    <td align="center"><a href="http://jackiebinya.github.io"><img src="https://avatars.githubusercontent.com/u/50267279?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JackieBinya</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=JackieBinya" title="Code">💻</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=JackieBinya" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/Cronus1007"><img src="https://avatars.githubusercontent.com/u/56436023?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cronus </b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=Cronus1007" title="Code">💻</a></td>
-    <td align="center"><a href="http://hugo.solar"><img src="https://avatars.githubusercontent.com/u/894708?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hugo Solar</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=hugosolar" title="Code">💻</a> <a href="#mentoring-hugosolar" title="Mentoring">🧑‍🏫</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=hugosolar" title="Documentation">📖</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
