@@ -87,7 +87,7 @@ Contributions are highly appreciated. Please see [`CONTRIBUTING.md`](CONTRIBUTIN
 ## 📣 Let's chat
 Do you want to connect with our contributors?
 
-Just click the button bellow and follow the onscreen instructions.
+Just click the button below and follow the instructions.
 
 [![slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://slack-signup.creativecommons.org/)
 
