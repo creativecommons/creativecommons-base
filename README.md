@@ -85,7 +85,7 @@ Action inside <footer> element but after the footer content
 Contributions are highly appreciated. Please see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## 📣 Let's chat
-Do you want to ask or chat to one of our contributers just click the slack link and let's have a chat.
+Do you want to connect with our contributors?
 
 Just click the button bellow and follow the onscreen instructions.
 
