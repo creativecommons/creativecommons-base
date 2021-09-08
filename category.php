@@ -14,7 +14,7 @@
 			</div>
 		</div>
 	</header>
-	<?php get_template_part( 'inc/partials/archive/category', 'highlight' ); ?>
+
 	<div class="container">
 		<div class="columns padding-vertical-larger">
 			<div class="column is-8">
