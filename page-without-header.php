@@ -1,5 +1,5 @@
 <?php
-	/** Template name:  page without header */
+	/** Template name: page without header */
 
 	get_header();
 	the_post();
