@@ -7,7 +7,7 @@
 
 <section class="main-content">
 	<section class="entry-page-content">
-		<div class="text-format body-big">
+		<div>
 			<?php the_content(); ?>
 		</div>
 		<footer class="entry-footer">
