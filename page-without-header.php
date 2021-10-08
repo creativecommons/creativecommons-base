@@ -1,21 +1,11 @@
 <?php
-	/** Template name:  page */
+	/** Template name: page without header */
 
 	get_header();
 	the_post();
 ?>
 
 <section class="main-content">
-	<header class="single-header">
-		<div class="container">
-			<div class="columns is-centered">
-				<div class="column">
-					<?php get_template_part( 'inc/partials/entry/page', 'header' ); ?>
-				</div>
-			</div>
-		</div>
-	</header>
-
 	<section class="entry-page-content">
 		<div>
 			<?php the_content(); ?>
