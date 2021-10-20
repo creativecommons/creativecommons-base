@@ -230,3 +230,6 @@ class Site {
  * */
 
 $_s = Site::get_instance();
+
+//this line disables the default color picker
+add_theme_support('disable-custom-colors');
