@@ -233,3 +233,98 @@ $_s = Site::get_instance();
 
 //this line disables the default color picker
 add_theme_support('disable-custom-colors');
+
+add_theme_support( 'editor-color-palette', array(
+    //Brand
+    array(
+        'name'  => esc_attr__( 'Tomato', 'themeCreativeCommons' ),
+        'slug'  => 'tomato',
+        'color' => '#c74200',
+    ),
+    array(
+        'name'  => esc_attr__( 'Dark Slate Gray', 'themeCreativeCommons' ),
+        'slug'  => 'dark-slate-gray',
+        'color' => '#333333',
+    ),
+    array(
+        'name'  => esc_attr__( 'Gold', 'themeCreativeCommons' ),
+        'slug'  => 'gold',
+        'color' => '#fbd43c',
+    ),
+    array(
+        'name'  => esc_attr__( 'Forest Green', 'themeCreativeCommons' ),
+        'slug'  => 'forest-green',
+        'color' => '#008000',
+    ),
+    array(
+        'name'  => esc_attr__( 'Dark Turqoise', 'themeCreativeCommons' ),
+        'slug'  => 'dark-turquoise',
+        'color' => '#05b5da',
+    ),
+    array(
+        'name'  => esc_attr__( 'Dark Slate Blue', 'themeCreativeCommons' ),
+        'slug'  => 'dark-slate-blue',
+        'color' => '#1547a8',
+    ),
+
+    //Soft Brand
+    array(
+        'name'  => esc_attr__( 'Soft Tomato', 'themeCreativeCommons' ),
+        'slug'  => 'soft-tomato',
+        'color' => '#feede9',
+    ),
+    array(
+        'name'  => esc_attr__( 'Soft Gold', 'themeCreativeCommons' ),
+        'slug'  => 'soft-gold',
+        'color' => '#fef6d8',
+    ),
+    array(
+        'name'  => esc_attr__( 'Soft Green', 'themeCreativeCommons' ),
+        'slug'  => 'soft-green',
+        'color' => '#e0f5e0',
+    ),
+    array(
+        'name'  => esc_attr__( 'Soft Turquoise', 'themeCreativeCommons' ),
+        'slug'  => 'soft-turquoise',
+        'color' => '#dff6fc',
+    ),
+    array(
+        'name'  => esc_attr__( 'Soft Blue', 'themeCreativeCommons' ),
+        'slug'  => 'soft-blue',
+        'color' => '#e3ebfd',
+    ),
+
+    //Neutral
+    array(
+        'name'  => esc_attr__( 'Dark Gray', 'themeCreativeCommons' ),
+        'slug'  => 'dark-gray',
+        'color' => '#767676',
+    ),
+    array(
+        'name'  => esc_attr__( 'Gray', 'themeCreativeCommons' ),
+        'slug'  => 'gray',
+        'color' => '#b0b0b0',
+    ),
+    array(
+        'name'  => esc_attr__( 'Light Gray', 'themeCreativeCommons' ),
+        'slug'  => 'light-gray',
+        'color' => '#d8d8d8',
+    ),
+    array(
+        'name'  => esc_attr__( 'Lighter Gray', 'themeCreativeCommons' ),
+        'slug'  => 'lighter-gray',
+        'color' => '#f5f5f5',
+    ),
+
+    //Binary
+    array(
+        'name'  => esc_attr__( 'White', 'themeCreativeCommons' ),
+        'slug'  => 'white',
+        'color' => '#ffffff',
+    ),
+    array(
+        'name'  => esc_attr__( 'Black', 'themeCreativeCommons' ),
+        'slug'  => 'black',
+        'color' => '#000000',
+    ),
+) );
