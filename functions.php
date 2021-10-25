@@ -233,8 +233,7 @@ $_s = Site::get_instance();
 
 //this line disables the default color picker
 add_theme_support('disable-custom-colors');
-
-add_theme_support( 'editor-color-palette', array(
+$cc_colors = array(
     //Brand
     array(
         'name'  => esc_attr__( 'Tomato', 'themeCreativeCommons' ),
@@ -327,4 +326,24 @@ add_theme_support( 'editor-color-palette', array(
         'slug'  => 'black',
         'color' => '#000000',
     ),
-) );
+);
+add_theme_support( 'editor-color-palette', $cc_colors);
+
+
+add_action( 'wp_head', function() {
+    $palette = get_theme_support( 'editor-color-palette' );
+	if( !$palette ) { return; } // abort if no palette
+		
+	// format styless
+	$styles = ":root .has-background { background-color: var(--bgColor); }
+	:root .has-text-color { color: var(--textColor); } ";
+	foreach( $palette[0] as $name => $value ) {
+		$slug = $value['slug'];
+		$color = $value['color'];
+	
+		$styles .= ".has-{$slug}-background-color { --bgColor: {$color}; } ";
+		$styles .= ".has-{$slug}-color { --textColor: {$color}; } ";
+	}
+	
+	echo "<style> $styles </style>";
+} );
