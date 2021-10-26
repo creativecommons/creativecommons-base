@@ -353,7 +353,7 @@ add_theme_support( 'editor-color-palette', $cc_colors);
  */
 add_action( 'wp_head', function() {
     $palette = get_theme_support( 'editor-color-palette' );
-	if( !$palette ) { return; } // If our color
+	if( !$palette ) { return; } // If our color pallete has not been define don't run this function.
 		
 	// format styles
 	$styles = ":root .has-background { background-color: var(--bgColor); }
