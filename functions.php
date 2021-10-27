@@ -225,147 +225,9 @@ class Site {
 	}
 
 	/**
-	 * The colors on the brand guide of Creative Commons Figma design are defined below
-	 * for use by WordPress.
-	 * @var array $colors
-	 * */
-	function cc_colors()
-	{
-		$cc_colors = array(
-			//Brand
-			array(
-				'name'  => esc_attr__( 'Tomato', 'themeCreativeCommons' ),
-				'slug'  => 'tomato',
-				'color' => '#c74200',
-			),
-			array(
-				'name'  => esc_attr__( 'Dark Slate Gray', 'themeCreativeCommons' ),
-				'slug'  => 'dark-slate-gray',
-				'color' => '#333333',
-			),
-			array(
-				'name'  => esc_attr__( 'Gold', 'themeCreativeCommons' ),
-				'slug'  => 'gold',
-				'color' => '#fbd43c',
-			),
-			array(
-				'name'  => esc_attr__( 'Forest Green', 'themeCreativeCommons' ),
-				'slug'  => 'forest-green',
-				'color' => '#008000',
-			),
-			array(
-				'name'  => esc_attr__( 'Dark Turqoise', 'themeCreativeCommons' ),
-				'slug'  => 'dark-turquoise',
-				'color' => '#05b5da',
-			),
-			array(
-				'name'  => esc_attr__( 'Dark Slate Blue', 'themeCreativeCommons' ),
-				'slug'  => 'dark-slate-blue',
-				'color' => '#1547a8',
-			),
-		
-			//Soft Brand
-			array(
-				'name'  => esc_attr__( 'Soft Tomato', 'themeCreativeCommons' ),
-				'slug'  => 'soft-tomato',
-				'color' => '#feede9',
-			),
-			array(
-				'name'  => esc_attr__( 'Soft Gold', 'themeCreativeCommons' ),
-				'slug'  => 'soft-gold',
-				'color' => '#fef6d8',
-			),
-			array(
-				'name'  => esc_attr__( 'Soft Green', 'themeCreativeCommons' ),
-				'slug'  => 'soft-green',
-				'color' => '#e0f5e0',
-			),
-			array(
-				'name'  => esc_attr__( 'Soft Turquoise', 'themeCreativeCommons' ),
-				'slug'  => 'soft-turquoise',
-				'color' => '#dff6fc',
-			),
-			array(
-				'name'  => esc_attr__( 'Soft Blue', 'themeCreativeCommons' ),
-				'slug'  => 'soft-blue',
-				'color' => '#e3ebfd',
-			),
-		
-			//Neutral
-			array(
-				'name'  => esc_attr__( 'Dark Gray', 'themeCreativeCommons' ),
-				'slug'  => 'dark-gray',
-				'color' => '#767676',
-			),
-			array(
-				'name'  => esc_attr__( 'Gray', 'themeCreativeCommons' ),
-				'slug'  => 'gray',
-				'color' => '#b0b0b0',
-			),
-			array(
-				'name'  => esc_attr__( 'Light Gray', 'themeCreativeCommons' ),
-				'slug'  => 'light-gray',
-				'color' => '#d8d8d8',
-			),
-			array(
-				'name'  => esc_attr__( 'Lighter Gray', 'themeCreativeCommons' ),
-				'slug'  => 'lighter-gray',
-				'color' => '#f5f5f5',
-			),
-		
-			//Binary
-			array(
-				'name'  => esc_attr__( 'White', 'themeCreativeCommons' ),
-				'slug'  => 'white',
-				'color' => '#ffffff',
-			),
-			array(
-				'name'  => esc_attr__( 'Black', 'themeCreativeCommons' ),
-				'slug'  => 'black',
-				'color' => '#000000',
-			),
-		);
-
-		//This line disables the default color picker so users are constrained just to the Createive Commons brand guide.
-		add_theme_support('disable-custom-colors');
-
-		// This line below adds the colors defined above into the color pallete of WordPress
-		add_theme_support( 'editor-color-palette', $cc_colors);
-	}
-
-	/**
-	 * Given than WordPress generates css class names following the convention:
-	 * .has-{slug}-color and .has-{slug}-background-color. 
-	 * When rendering pages on the frontend, these are the css classes applied to the different HTML elements
-	 * which is different from how the Vocabulary package generates it's CSS classes:
-	 * .has-color-{slug} and .has-backgound-{slug}. 
-	 * This function below takes the colors we have added to 
-	 * the color pallete of wordpress and generates WordPress compatible class names. 
-	 * The styles generated are then added to the HTML pages as Internal CSS styles. 
-	 * We do this by using the Wordpress action (wp_head) which lets us run this function when the head is called.
-	 * */
-	function cc_brand()
-	{
-		$palette = get_theme_support( 'editor-color-palette' );
-		if( !$palette ) { return; } // If our color pallete has not been define don't run this function.
-			
-		// format styles
-		$brand = ":root .has-background { background-color: var(--bgColor); }
-		:root .has-text-color { color: var(--textColor); } ";
-		foreach( $palette[0] as $name => $value ) {
-			$slug = $value['slug'];
-			$color = $value['color'];
-		
-			$brand .= ".has-{$slug}-background-color { --bgColor: {$color}; } ";
-			$brand .= ".has-{$slug}-color { --textColor: {$color}; } ";
-		}
-		return $brand;
-	}
-
-	/**
-	 * This function below outlines the css for captions
-	 * as specified on the Figma brand guidelines.
-	 * */
+	 * This function below affects image captions makaing it adhere
+	 * to creative commons brand guide.
+	*/
 	function cc_caption()
 	{
 		$caption = ".wp-block-image figcaption {font-family: Source Sans Pro;font-style: normal;font-weight: normal;font-size: 13px;line-height: 19px;color: #333333;text-align: center;}";
@@ -376,26 +238,154 @@ class Site {
 /**
  * Instantiate the class object
  * */
+
 $_s = Site::get_instance();
 
 /**
- * This action customizes the color pallete to use
- * the colors defined in the cc_colors function above 
- * and also disables the default color picker ensuring
- * that brand guidelines are followed. 
- * */
-add_action( 'after_setup_theme', function() {
-	Site::cc_colors();
+ * This line disables the default color picker so users are constrained just to the
+ * Createive Commons brand guide.
+ */
+add_theme_support('disable-custom-colors');
+
+/**
+ * The colors on the brand guide of Creative Commons Figma design are defined below
+ * for use by WordPress.
+ */
+$cc_colors = array(
+    //Brand
+    array(
+        'name'  => esc_attr__( 'Tomato', 'themeCreativeCommons' ),
+        'slug'  => 'tomato',
+        'color' => '#c74200',
+    ),
+    array(
+        'name'  => esc_attr__( 'Dark Slate Gray', 'themeCreativeCommons' ),
+        'slug'  => 'dark-slate-gray',
+        'color' => '#333333',
+    ),
+    array(
+        'name'  => esc_attr__( 'Gold', 'themeCreativeCommons' ),
+        'slug'  => 'gold',
+        'color' => '#fbd43c',
+    ),
+    array(
+        'name'  => esc_attr__( 'Forest Green', 'themeCreativeCommons' ),
+        'slug'  => 'forest-green',
+        'color' => '#008000',
+    ),
+    array(
+        'name'  => esc_attr__( 'Dark Turqoise', 'themeCreativeCommons' ),
+        'slug'  => 'dark-turquoise',
+        'color' => '#05b5da',
+    ),
+    array(
+        'name'  => esc_attr__( 'Dark Slate Blue', 'themeCreativeCommons' ),
+        'slug'  => 'dark-slate-blue',
+        'color' => '#1547a8',
+    ),
+
+    //Soft Brand
+    array(
+        'name'  => esc_attr__( 'Soft Tomato', 'themeCreativeCommons' ),
+        'slug'  => 'soft-tomato',
+        'color' => '#feede9',
+    ),
+    array(
+        'name'  => esc_attr__( 'Soft Gold', 'themeCreativeCommons' ),
+        'slug'  => 'soft-gold',
+        'color' => '#fef6d8',
+    ),
+    array(
+        'name'  => esc_attr__( 'Soft Green', 'themeCreativeCommons' ),
+        'slug'  => 'soft-green',
+        'color' => '#e0f5e0',
+    ),
+    array(
+        'name'  => esc_attr__( 'Soft Turquoise', 'themeCreativeCommons' ),
+        'slug'  => 'soft-turquoise',
+        'color' => '#dff6fc',
+    ),
+    array(
+        'name'  => esc_attr__( 'Soft Blue', 'themeCreativeCommons' ),
+        'slug'  => 'soft-blue',
+        'color' => '#e3ebfd',
+    ),
+
+    //Neutral
+    array(
+        'name'  => esc_attr__( 'Dark Gray', 'themeCreativeCommons' ),
+        'slug'  => 'dark-gray',
+        'color' => '#767676',
+    ),
+    array(
+        'name'  => esc_attr__( 'Gray', 'themeCreativeCommons' ),
+        'slug'  => 'gray',
+        'color' => '#b0b0b0',
+    ),
+    array(
+        'name'  => esc_attr__( 'Light Gray', 'themeCreativeCommons' ),
+        'slug'  => 'light-gray',
+        'color' => '#d8d8d8',
+    ),
+    array(
+        'name'  => esc_attr__( 'Lighter Gray', 'themeCreativeCommons' ),
+        'slug'  => 'lighter-gray',
+        'color' => '#f5f5f5',
+    ),
+
+    //Binary
+    array(
+        'name'  => esc_attr__( 'White', 'themeCreativeCommons' ),
+        'slug'  => 'white',
+        'color' => '#ffffff',
+    ),
+    array(
+        'name'  => esc_attr__( 'Black', 'themeCreativeCommons' ),
+        'slug'  => 'black',
+        'color' => '#000000',
+    ),
+);
+
+// This line below adds the colors defined above into the color pallete of WordPress
+add_theme_support( 'editor-color-palette', $cc_colors);
+
+
+/**
+ * Given than WordPress generates css class names following the convention:
+ * .has-{slug}-color and .has-{slug}-background-color. 
+ * When rendering pages on the frontend, these are the css classes applied to the different HTML elements
+ * which is different from how the Vocabulary package generates it's CSS classes:
+ * .has-color-{slug} and .has-backgound-{slug}. 
+ * This function below takes the colors we have added to 
+ * the color pallete of wordpress and generates WordPress compatible class names. 
+ * The styles generated are then added to the HTML pages as Internal CSS styles. 
+ * We do this by using the Wordpress action (wp_head) which lets us run this function when the head is called.
+ */
+add_action( 'wp_head', function() {
+    $palette = get_theme_support( 'editor-color-palette' );
+	if( !$palette ) { return; } // If our color pallete has not been define don't run this function.
+		
+	// format styles
+	$styles = ":root .has-background { background-color: var(--bgColor); }
+	:root .has-text-color { color: var(--textColor); } ";
+	foreach( $palette[0] as $name => $value ) {
+		$slug = $value['slug'];
+		$color = $value['color'];
+	
+		$styles .= ".has-{$slug}-background-color { --bgColor: {$color}; } ";
+		$styles .= ".has-{$slug}-color { --textColor: {$color}; } ";
+	}
+	
+	// add styles as internal css to the head of the rendered HTML page.
+	echo "<style> $styles </style>";
 });
 
 /**
- * This action adds the CC brand colors and typography specifications to the 
- * body of the HTML page as internal css.
+ * This action alters the default wp image caption size to the Figma
+ * specified guidelines.
  * */
 add_action( 'cc_theme_before_header', function() {
     
-	$colors = Site::cc_brand(); //get the styles from the cc_brand function above
 	$caption = Site::cc_caption(); //get the css for image captions from the cc_caption function above
-	$styles = $colors." ".$caption; //concacteneate all styles to form one.
-	echo "<style> $styles </style>";
+	echo "<style> $caption </style>";
 });
