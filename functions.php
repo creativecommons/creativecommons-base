@@ -368,17 +368,7 @@ class Site {
 	 * */
 	function cc_caption()
 	{
-		$caption = "
-		.wp-block-image figcaption {
-			font-family: Source Sans Pro;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 13px;
-			line-height: 19px;
-			color: #333333;
-			text-align: center;
-		}
-		";
+		$caption = ".wp-block-image figcaption {font-family: Source Sans Pro;font-style: normal;font-weight: normal;font-size: 13px;line-height: 19px;color: #333333;text-align: center;}";
 		return $caption;
 	}
 }
