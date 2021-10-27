@@ -21,3 +21,11 @@ This theme, like WordPress, is licensed under the GPL.
 	color: #333333;
 	text-align: center;
 }
+
+/* override wp group block to fix overflowing */
+.wp-block-group {
+    /* already using border-box sizing */
+    box-sizing: border-box;
+    /* add overflow rule */
+    overflow: hidden;
+}
