@@ -19,6 +19,7 @@ define( 'THEME_IMG', THEME_URI . '/assets/img' );
 define( 'THEME_CSS', THEME_URI . '/assets/css' );
 define( 'THEME_FONTS', THEME_URI . '/assets/fonts' );
 define( 'THEME_JS', THEME_URI . '/assets/js' );
+define ('CUSTOM_CSS', THEME_URI . '/');
 /**
 * Calling related files
 */
@@ -198,6 +199,7 @@ class Site {
 		wp_enqueue_style( 'gfonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Source+Sans+Pro:400,400i,600' );
 		wp_enqueue_style( 'vocabulary_fonts', 'https://unpkg.com/@creativecommons/fonts@1.0.0-beta.2/css/fonts.css', self::theme_ver );
 		wp_enqueue_style( 'cc_base_style', THEME_CSS . '/styles.css', self::theme_ver );
+		wp_enqueue_style( 'cc_custom_style', CUSTOM_CSS . '/style.css', self::theme_ver );
 		wp_enqueue_style( 'dashicons' );
 	}
 
@@ -222,16 +224,6 @@ class Site {
 			'url' => admin_url( 'admin-ajax.php' ),
 		);
 		wp_localize_script( 'cc_base_script', 'Ajax', $ajax_data );
-	}
-
-	/**
-	 * This function below affects image captions makaing it adhere
-	 * to creative commons brand guide.
-	*/
-	function cc_caption()
-	{
-		$caption = ".wp-block-image figcaption {font-family: Source Sans Pro;font-style: normal;font-weight: normal;font-size: 13px;line-height: 19px;color: #333333;text-align: center;}";
-		return $caption;
 	}
 }
 
@@ -380,12 +372,3 @@ add_action( 'wp_head', function() {
 	echo "<style> $styles </style>";
 });
 
-/**
- * This action alters the default wp image caption size to the Figma
- * specified guidelines.
- * */
-add_action( 'cc_theme_before_header', function() {
-    
-	$caption = Site::cc_caption(); //get the css for image captions from the cc_caption function above
-	echo "<style> $caption </style>";
-});

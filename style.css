@@ -10,3 +10,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This theme, like WordPress, is licensed under the GPL.
 */
+
+/*override wp image caption css */
+.wp-block-image figcaption {font-family: "Source Sans Pro";font-style: normal;font-weight: normal;font-size: 13px;line-height: 19px;color: #333333;text-align: center;}
