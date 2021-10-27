@@ -397,3 +397,15 @@ $_s = Site::get_instance();
 add_action( 'after_setup_theme', function() {
 	Site::cc_colors();
 });
+
+/**
+ * This action adds the CC brand colors and typography specifications to the 
+ * body of the HTML page as internal css.
+ * */
+add_action( 'cc_theme_before_header', function() {
+    
+	$colors = Site::cc_brand(); //get the styles from the cc_brand function above
+	$caption = Site::cc_caption(); //get the css for image captions from the cc_caption function above
+	$styles = $colors." ".$caption; //concacteneate all styles to form one.
+	echo "<style> $styles </style>";
+});
