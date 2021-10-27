@@ -19,6 +19,7 @@ define( 'THEME_IMG', THEME_URI . '/assets/img' );
 define( 'THEME_CSS', THEME_URI . '/assets/css' );
 define( 'THEME_FONTS', THEME_URI . '/assets/fonts' );
 define( 'THEME_JS', THEME_URI . '/assets/js' );
+define ('CUSTOM_CSS', THEME_URI . '/');
 /**
 * Calling related files
 */
@@ -198,6 +199,7 @@ class Site {
 		wp_enqueue_style( 'gfonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Source+Sans+Pro:400,400i,600' );
 		wp_enqueue_style( 'vocabulary_fonts', 'https://unpkg.com/@creativecommons/fonts@1.0.0-beta.2/css/fonts.css', self::theme_ver );
 		wp_enqueue_style( 'cc_base_style', THEME_CSS . '/styles.css', self::theme_ver );
+		wp_enqueue_style( 'cc_custom_style', CUSTOM_CSS . '/style.css', self::theme_ver );
 		wp_enqueue_style( 'dashicons' );
 	}
 
@@ -369,3 +371,4 @@ add_action( 'wp_head', function() {
 	// add styles as internal css to the head of the rendered HTML page.
 	echo "<style> $styles </style>";
 });
+
