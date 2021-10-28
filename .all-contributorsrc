@@ -75,6 +75,7 @@
     }
   ],
   "contributorsPerLine": 7,
+  "contributorsSortAlphabetically": true,
   "projectName": "creativecommons-base",
   "projectOwner": "creativecommons",
   "repoType": "github",
