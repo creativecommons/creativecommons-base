@@ -19,6 +19,7 @@
 		<div class="columns padding-vertical-larger">
 			<div class="column is-8">
 				<?php
+				$linebreak = '<hr>';
 				if ( have_posts() ) :
 					while ( have_posts() ) :
 						the_post();
@@ -31,6 +32,7 @@
 							'next_text'          => '<i class="icon chevron-right"></i>',
 						)
 					);
+					echo $linebreak;
 				endif;
 				?>
 			</div>
