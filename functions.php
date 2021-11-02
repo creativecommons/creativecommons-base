@@ -47,10 +47,6 @@ add_image_size( 'landscape-small', 550, 300, true );
 add_image_size( 'landscape-medium', 740, 416, true );
 add_image_size( 'landscape-featured', 1000, 500, true );
 
-//Media Upload size
-@ini_set( 'upload_max_size' , '64M' );
-@ini_set( 'post_max_size', '64M');
-@ini_set( 'max_execution_time', '300' );
 
 /**
 *  THEME SIDEBARS
