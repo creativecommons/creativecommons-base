@@ -29,3 +29,37 @@ This theme, like WordPress, is licensed under the GPL.
     /* add overflow rule */
     overflow: hidden;
 }
+/*override wp font size css*/
+.has-caption-font-size {
+    font-size: 0.8rem;
+}
+.has-body-normal-font-size {
+	font-size: 1rem;
+}
+.has-body-big-font-size {
+	font-size: 1.12rem;
+}
+.has-body-bigger-font-size {
+	font-size: 1.43rem;
+}
+.has-h6-font-size {
+	font-size: 1.15rem;
+}
+.has-h5-font-size {
+	font-size: 1.25rem;
+}
+.has-h4-font-size {
+	font-size: 1.43rem;
+}
+.has-h3-font-size {
+	font-size: 1.75rem;
+}
+.has-h2-font-size {
+	font-size: 2.25rem;
+}
+.has-h1-font-size {
+	font-size: 3.56rem;
+}
+.has-value-font-size {
+	font-size: 4.37rem;
+}

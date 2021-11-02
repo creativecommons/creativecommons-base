@@ -47,6 +47,11 @@ add_image_size( 'landscape-small', 550, 300, true );
 add_image_size( 'landscape-medium', 740, 416, true );
 add_image_size( 'landscape-featured', 1000, 500, true );
 
+//Media Upload size
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
+
 /**
 *  THEME SIDEBARS
 *  Default sidebars availables
@@ -225,6 +230,72 @@ class Site {
 		);
 		wp_localize_script( 'cc_base_script', 'Ajax', $ajax_data );
 	}
+
+	/**
+	 * This function sets the font sizes
+	 * as given on the Figma guidelines.
+	 */
+	function cc_typography()
+	{
+		$cc_sizes = array(
+			array(
+				'name' => esc_attr__( 'Caption', 'ccTypography' ),
+				'size' => 13,
+				'slug' => 'caption'
+			),
+			array(
+				'name' => esc_attr__( 'Body Normal', 'ccTypography' ),
+				'size' => 16,
+				'slug' => 'body-normal'
+			),
+			array(
+				'name' => esc_attr__( 'Body Big', 'ccTypography' ),
+				'size' => 18,
+				'slug' => 'body-big'
+			),
+			array(
+				'name' => esc_attr__( 'Body Bigger', 'ccTypography' ),
+				'size' => 23,
+				'slug' => 'body-bigger'
+			),
+			array(
+				'name' => esc_attr__( 'H6', 'ccTypography' ),
+				'size' => 18,
+				'slug' => 'h6'
+			),
+			array(
+				'name' => esc_attr__( 'H5', 'ccTypography' ),
+				'size' => 20,
+				'slug' => 'h5'
+			),
+			array(
+				'name' => esc_attr__( 'H4', 'ccTypography' ),
+				'size' => 23,
+				'slug' => 'h4'
+			),
+			array(
+				'name' => esc_attr__( 'H3', 'ccTypography' ),
+				'size' => 28,
+				'slug' => 'h3'
+			),
+			array(
+				'name' => esc_attr__( 'H2', 'ccTypography' ),
+				'size' => 36,
+				'slug' => 'h2'
+			),
+			array(
+				'name' => esc_attr__( 'H1', 'ccTypography' ),
+				'size' => 57,
+				'slug' => 'h1'
+			),
+			array(
+				'name' => esc_attr__( 'Value', 'ccTypography' ),
+				'size' => 70,
+				'slug' => 'value'
+			),
+		);
+		add_theme_support( 'editor-font-sizes', $cc_sizes);	
+	}
 }
 
 /**
@@ -232,6 +303,11 @@ class Site {
  * */
 
 $_s = Site::get_instance();
+
+//This action overrriveds the default wordpress sizes
+add_action( 'after_setup_theme', function() {
+	Site::cc_typography();
+});
 
 /**
  * This line disables the default color picker so users are constrained just to the
@@ -359,7 +435,7 @@ add_action( 'wp_head', function() {
 		
 	// format styles
 	$styles = ":root .has-background { background-color: var(--bgColor); }
-	:root .has-text-color { color: var(--textColor); } ";
+	:root .has-text-color { color: var(--textColor); } :root .has-inline-color { color: var(--textColor); }";
 	foreach( $palette[0] as $name => $value ) {
 		$slug = $value['slug'];
 		$color = $value['color'];
