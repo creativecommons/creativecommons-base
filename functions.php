@@ -235,14 +235,14 @@ class Site {
 	{
 		$cc_sizes = array(
 			array(
-				'name' => esc_attr__( 'Caption', 'ccTypography' ),
+				'name' => esc_attr__( 'Small', 'ccTypography' ),
 				'size' => 13,
-				'slug' => 'caption'
+				'slug' => 'small'
 			),
 			array(
-				'name' => esc_attr__( 'Body Normal', 'ccTypography' ),
+				'name' => esc_attr__( 'Normal', 'ccTypography' ),
 				'size' => 16,
-				'slug' => 'body-normal'
+				'slug' => 'normal'
 			),
 			array(
 				'name' => esc_attr__( 'Body Big', 'ccTypography' ),
@@ -250,39 +250,24 @@ class Site {
 				'slug' => 'body-big'
 			),
 			array(
+				'name' => esc_attr__( 'Medium', 'ccTypography' ),
+				'size' => 20,
+				'slug' => 'medium'
+			),
+			array(
 				'name' => esc_attr__( 'Body Bigger', 'ccTypography' ),
 				'size' => 23,
 				'slug' => 'body-bigger'
 			),
 			array(
-				'name' => esc_attr__( 'H6', 'ccTypography' ),
-				'size' => 18,
-				'slug' => 'h6'
-			),
-			array(
-				'name' => esc_attr__( 'H5', 'ccTypography' ),
-				'size' => 20,
-				'slug' => 'h5'
-			),
-			array(
-				'name' => esc_attr__( 'H4', 'ccTypography' ),
-				'size' => 23,
-				'slug' => 'h4'
-			),
-			array(
-				'name' => esc_attr__( 'H3', 'ccTypography' ),
-				'size' => 28,
-				'slug' => 'h3'
-			),
-			array(
-				'name' => esc_attr__( 'H2', 'ccTypography' ),
+				'name' => esc_attr__( 'Large', 'ccTypography' ),
 				'size' => 36,
-				'slug' => 'h2'
+				'slug' => 'Large'
 			),
 			array(
-				'name' => esc_attr__( 'H1', 'ccTypography' ),
+				'name' => esc_attr__( 'Huge', 'ccTypography' ),
 				'size' => 57,
-				'slug' => 'h1'
+				'slug' => 'huge'
 			),
 			array(
 				'name' => esc_attr__( 'Value', 'ccTypography' ),
