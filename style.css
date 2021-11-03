@@ -28,4 +28,5 @@ This theme, like WordPress, is licensed under the GPL.
     box-sizing: border-box;
     /* add overflow rule */
     overflow: hidden;
+    padding: 1.25em 2.375em;
 }
