@@ -379,6 +379,6 @@ add_action("cc_theme_before_header" , function() {
 });
 
 // Action to add CC inline color css classes to gutenberg editor
-add_action("enqueue_block_editor_assets" , function() {
+add_action("admin_head" , function() {
     echo "<style>".Site::custom_css()."</style>";
 });
