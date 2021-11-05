@@ -92,6 +92,13 @@ foreach ( $mandatory_sidebars as $sidebar => $id_sidebar ) {
 	);
 }
 
+/**unregister pagefooter widget**/ 
+ function remove_widget() {
+    unregister_sidebar( 'page-footer' );
+}
+
+add_action( 'widgets_init', 'remove_widget', 1 );
+
 /**
  * Theme specific stuff
  * --------------------
@@ -183,6 +190,9 @@ class Site {
 		$theme_base_menus = apply_filters( 'cc_theme_base_menus', $theme_base_menus );
 		register_nav_menus( $theme_base_menus );
 	}
+
+
+
 
 	public function get_post_thumbnail_url( $postid = null, $size = 'landscape-medium' ) {
 		if ( is_null( $postid ) ) {
@@ -371,4 +381,4 @@ add_action( 'wp_head', function() {
 	// add styles as internal css to the head of the rendered HTML page.
 	echo "<style> $styles </style>";
 });
-
+ 
