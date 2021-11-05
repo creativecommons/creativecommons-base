@@ -192,8 +192,6 @@ class Site {
 	}
 
 
-
-
 	public function get_post_thumbnail_url( $postid = null, $size = 'landscape-medium' ) {
 		if ( is_null( $postid ) ) {
 			global $post;
