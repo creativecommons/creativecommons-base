@@ -233,15 +233,15 @@ class Site {
 	 * which is different from how the Vocabulary package generates it's CSS classes:
 	 * .has-color-{slug} and .has-backgound-{slug}. 
 	 * This function below takes the colors we have added to 
-	 * the color pallete of wordpress and generates WordPress compatible class names. 
+	 * the color palette of wordpress and generates WordPress compatible class names. 
 	 * The styles generated are then added to the HTML pages as Internal CSS styles. 
 	 * We do this by using the Wordpress action (wp_head) which lets us run this function when the head is called.
-	 * @var editor-color-pallete
+	 * @var editor-color-palette
 	 */
 	function custom_css()
 	{
 	   $palette = get_theme_support( 'editor-color-palette' );
-	   if( !$palette ) { return; } // If our color pallete has not been define don't run this function.
+	   if( !$palette ) { return; } // If our color palette has not been define don't run this function.
 		   
 	   // format styles
 	   $styles = ":root .has-background { background-color: var(--bgColor); }
