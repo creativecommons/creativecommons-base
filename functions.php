@@ -240,22 +240,22 @@ class Site {
 	 */
 	function custom_css()
 	{
-	   $palette = get_theme_support( 'editor-color-palette' );
-	   if( !$palette ) { return; } // If our color palette has not been define don't run this function.
-		   
-	   // format styles
-	   $styles = ":root .has-background { background-color: var(--bgColor); }
-	   :root .has-text-color { color: var(--textColor); } :root .has-inline-color { color: var(--textColor); } ";
-	   foreach( $palette[0] as $name => $value ) {
-		   $slug = $value['slug'];
-		   $color = $value['color'];
-	   
-		   $styles .= ".has-{$slug}-background-color { --bgColor: {$color}; } ";
-		   $styles .= ".has-{$slug}-color { --textColor: {$color}; } ";
-	   }
-	   
-	   // add styles as internal css to the head of the rendered HTML page.
-	   return $styles;
+		$palette = get_theme_support( 'editor-color-palette' );
+		if( !$palette ) { return; } // If our color palette has not been define don't run this function.
+			
+		// format styles
+		$styles = ":root .has-background { background-color: var(--bgColor); }
+		:root .has-text-color { color: var(--textColor); } :root .has-inline-color { color: var(--textColor); } ";
+		foreach( $palette[0] as $name => $value ) {
+			$slug = $value['slug'];
+			$color = $value['color'];
+		
+			$styles .= ".has-{$slug}-background-color { --bgColor: {$color}; } ";
+			$styles .= ".has-{$slug}-color { --textColor: {$color}; } ";
+		}
+		
+		// add styles as internal css to the head of the rendered HTML page.
+		return $styles;
 	}
 }
 
