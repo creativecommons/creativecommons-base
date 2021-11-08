@@ -24,9 +24,122 @@ This theme, like WordPress, is licensed under the GPL.
 
 /* override wp group block to fix overflowing */
 .wp-block-group {
-    /* already using border-box sizing */
-    box-sizing: border-box;
-    /* add overflow rule */
-    overflow: hidden;
-    padding: 1.25em 2.375em;
+	/* already using border-box sizing */
+	box-sizing: border-box;
+	/* add overflow rule */
+	overflow: hidden;
+	padding: 1.25em 2.375em;
+}
+
+/* CSS classes for CC colors used in the custom color palette */
+:root .has-background {
+	background-color: var(--bgColor);
+}
+:root .has-text-color {
+	color: var(--textColor);
+}
+:root .has-inline-color {
+	color: var(--textColor);
+}
+.has-tomato-background-color {
+	--bgColor: #c74200;
+}
+.has-tomato-color {
+	--textColor: #c74200;
+}
+.has-dark-slate-gray-background-color {
+	--bgColor: #333333;
+}
+.has-dark-slate-gray-color {
+	--textColor: #333333;
+}
+.has-gold-background-color {
+	--bgColor: #fbd43c;
+}
+.has-gold-color {
+	--textColor: #fbd43c;
+}
+.has-forest-green-background-color {
+	--bgColor: #008000;
+}
+.has-forest-green-color {
+	--textColor: #008000;
+}
+.has-dark-turquoise-background-color {
+	--bgColor: #05b5da;
+}
+.has-dark-turquoise-color {
+	--textColor: #05b5da;
+}
+.has-dark-slate-blue-background-color {
+	--bgColor: #1547a8;
+}
+.has-dark-slate-blue-color {
+	--textColor: #1547a8;
+}
+.has-soft-tomato-background-color {
+	--bgColor: #feede9;
+}
+.has-soft-tomato-color {
+	--textColor: #feede9;
+}
+.has-soft-gold-background-color {
+	--bgColor: #fef6d8;
+}
+.has-soft-gold-color {
+	--textColor: #fef6d8;
+}
+.has-soft-green-background-color {
+	--bgColor: #e0f5e0;
+}
+.has-soft-green-color {
+	--textColor: #e0f5e0;
+}
+.has-soft-turquoise-background-color {
+	--bgColor: #dff6fc;
+}
+.has-soft-turquoise-color {
+	--textColor: #dff6fc;
+}
+.has-soft-blue-background-color {
+	--bgColor: #e3ebfd;
+}
+.has-soft-blue-color {
+	--textColor: #e3ebfd;
+}
+.has-dark-gray-background-color {
+	--bgColor: #767676;
+}
+.has-dark-gray-color {
+	--textColor: #767676;
+}
+.has-gray-background-color {
+	--bgColor: #b0b0b0;
+}
+.has-gray-color {
+	--textColor: #b0b0b0;
+}
+.has-light-gray-background-color {
+	--bgColor: #d8d8d8;
+}
+.has-light-gray-color {
+	--textColor: #d8d8d8;
+}
+.has-lighter-gray-background-color {
+	--bgColor: #f5f5f5;
+}
+.has-lighter-gray-color {
+	--textColor: #f5f5f5;
+}
+.has-white-background-color {
+	--bgColor: #ffffff;
+}
+.has-white-color {
+	--textColor: #ffffff;
+}
+.has-black-background-color {
+	--bgColor: #000000;
+}
+.has-black-color {
+	--textColor: #000000;
 }

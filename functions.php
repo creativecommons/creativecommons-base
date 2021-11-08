@@ -211,6 +211,8 @@ class Site {
 			wp_enqueue_media();
 			wp_enqueue_script( 'script-admin', THEME_JS . '/admin_scripts.js', array( 'jquery' ), self::theme_ver );
 		}
+		// Add custom stylesheet for admins
+		wp_enqueue_style( 'cc_custom_style', CUSTOM_CSS . '/style.css', self::theme_ver );
 	}
 
 	function enqueue_scripts() {
@@ -224,38 +226,6 @@ class Site {
 			'url' => admin_url( 'admin-ajax.php' ),
 		);
 		wp_localize_script( 'cc_base_script', 'Ajax', $ajax_data );
-	}
-
-	/**
-	 * Given than WordPress generates css class names following the convention:
-	 * .has-{slug}-color and .has-{slug}-background-color. 
-	 * When rendering pages on the frontend, these are the css classes applied to the different HTML elements
-	 * which is different from how the Vocabulary package generates it's CSS classes:
-	 * .has-color-{slug} and .has-backgound-{slug}. 
-	 * This function below takes the colors we have added to 
-	 * the color palette of wordpress and generates WordPress compatible class names. 
-	 * The styles generated are then added to the HTML pages as Internal CSS styles. 
-	 * We do this by using the Wordpress action (wp_head) which lets us run this function when the head is called.
-	 * @var editor-color-palette
-	 */
-	function custom_css()
-	{
-		$palette = get_theme_support( 'editor-color-palette' );
-		if( !$palette ) { return; } // If our color palette has not been define don't run this function.
-			
-		// format styles
-		$styles = ":root .has-background { background-color: var(--bgColor); }
-		:root .has-text-color { color: var(--textColor); } :root .has-inline-color { color: var(--textColor); } ";
-		foreach( $palette[0] as $name => $value ) {
-			$slug = $value['slug'];
-			$color = $value['color'];
-		
-			$styles .= ".has-{$slug}-background-color { --bgColor: {$color}; } ";
-			$styles .= ".has-{$slug}-color { --textColor: {$color}; } ";
-		}
-		
-		// add styles as internal css to the head of the rendered HTML page.
-		return $styles;
 	}
 }
 
@@ -372,13 +342,3 @@ $cc_colors = array(
 
 // This line below adds the colors defined above into the color pallete of WordPress
 add_theme_support( 'editor-color-palette', $cc_colors);
-
-// Action to add CC css colors to Frontend
-add_action("cc_theme_before_header" , function() {
-    echo "<style>".Site::custom_css()."</style>";
-});
-
-// Action to add CC inline color css classes to gutenberg editor
-add_action("admin_head" , function() {
-    echo "<style>".Site::custom_css()."</style>";
-});
