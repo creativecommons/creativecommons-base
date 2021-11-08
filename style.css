@@ -143,3 +143,8 @@ This theme, like WordPress, is licensed under the GPL.
 .has-black-color {
 	--textColor: #000000;
 }
+
+/* CSS for same-height columns in a column group. This class has to be added to each column seperately. */
+.column-same-height {
+	align-self: stretch !important;
+}
