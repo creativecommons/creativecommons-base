@@ -151,9 +151,9 @@ This theme, like WordPress, is licensed under the GPL.
 
 /* CSS styling for license cards on CC-License page */
 .license-card {
-	border: 2px solid #B0B0B0;
-	border-top : 10px solid #1547A8;
-	height: 250px;
+	border: 0.125rem solid #B0B0B0;
+	border-top : 0.625rem solid #1547A8;
+	height: 15.625rem;
 }
 
 .display-inline {
