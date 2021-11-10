@@ -165,3 +165,7 @@ This theme, like WordPress, is licensed under the GPL.
 .display-inline>*{
 	margin: 0;
 }
+
+.default-padding {
+	padding: 1.25em 2.375em;
+}
