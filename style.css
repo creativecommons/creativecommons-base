@@ -174,3 +174,8 @@ This theme, like WordPress, is licensed under the GPL.
 .no-margin {
 	margin: 0;
 }
+
+/* override default strong colour with inherited color from its parent element */
+span.has-inline-color > strong {
+	color: inherit;
+}
