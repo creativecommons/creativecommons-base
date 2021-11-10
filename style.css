@@ -155,3 +155,13 @@ This theme, like WordPress, is licensed under the GPL.
 	border-top : 10px solid #1547A8;
 	height: 250px;
 }
+
+.display-inline {
+	display: flex;
+	gap: 0 0.5em;
+	align-items: center;
+}
+
+.display-inline>*{
+	margin: 0;
+}
