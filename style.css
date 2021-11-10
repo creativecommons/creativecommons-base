@@ -149,11 +149,8 @@ This theme, like WordPress, is licensed under the GPL.
 	align-self: stretch !important;
 }
 
-/* CSS styling for license cards on CC-License page */
-.license-card {
-	border: 0.125rem solid #B0B0B0;
-	border-top : 0.625rem solid #1547A8;
-	height: 15.625rem;
+.default-padding {
+	padding: 1.25em 2.375em;
 }
 
 .display-inline {
@@ -166,6 +163,9 @@ This theme, like WordPress, is licensed under the GPL.
 	margin: 0;
 }
 
-.default-padding {
-	padding: 1.25em 2.375em;
+/* CSS styling for license cards on CC-License page */
+.license-card {
+	border: 0.125rem solid #B0B0B0;
+	border-top : 0.625rem solid #1547A8;
+	height: 15.625rem;
 }
