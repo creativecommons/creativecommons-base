@@ -11,25 +11,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This theme, like WordPress, is licensed under the GPL.
 */
 
-/*override wp image caption css */
-.wp-block-image figcaption {
-	font-family: "Source Sans Pro";
-	font-style: normal;
-	font-weight: normal;
-	font-size: 0.8rem;
-	line-height: 1.1;
-	color: #333333;
-	text-align: center;
-}
-
-/* override wp group block to fix overflowing */
-.wp-block-group {
-	/* already using border-box sizing */
-	box-sizing: border-box;
-	/* add overflow rule */
-	overflow: hidden;
-	padding: 1.25em 2.375em;
-}
 
 /* CSS classes for CC colors used in the custom color palette */
 :root .has-background {
@@ -173,4 +154,32 @@ This theme, like WordPress, is licensed under the GPL.
 /* Remove margin from any block */
 .no-margin {
 	margin: 0;
+}
+
+.team-member-position {
+	line-height:0.9em
+}
+
+.team-member-username {
+	margin-bottom: 0em !important;
+}
+
+/*override wp image caption css */
+.wp-block-image figcaption {
+	font-family: "Source Sans Pro";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 0.8rem;
+	line-height: 1.1;
+	color: #333333;
+	text-align: center;
+}
+
+/* override wp group block to fix overflowing */
+.wp-block-group {
+	/* already using border-box sizing */
+	box-sizing: border-box;
+	/* add overflow rule */
+	overflow: hidden;
+	padding: 1.25em 2.375em;
 }
