@@ -220,7 +220,3 @@ span.has-inline-color > strong {
 	top: 0.1em;
     position: relative;
 }
-
-.wp-block-latest-posts__featured-image {
-	float: left;
-}
