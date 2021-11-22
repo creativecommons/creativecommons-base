@@ -1,12 +1,9 @@
-<?php
-  echo "
-      <script type=\"text/javascript\">
-        function toggleCCExplore() {
-          var element = document.getElementById('cc-explore'); element.classList.toggle('is-active');
-        }
-      </script>
-  ";
-?>
+<script>
+  function toggleCCExplore() {
+    var element = document.getElementById('cc-explore'); 
+    element.classList.toggle('is-active');
+  }
+</script>
 <header id="cc-explore" class="cc-global-header">
   <div class="container">
     <a class="open-tab" onclick="toggleCCExplore()" href="#">Explore CC</a>
