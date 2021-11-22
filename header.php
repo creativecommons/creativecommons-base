@@ -8,6 +8,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php include 'explore-cc.php'; ?>
 <?php do_action( 'cc_theme_before_header' ); ?>
 <!--BEGIN HEADER-->
 <header class="main-header">
