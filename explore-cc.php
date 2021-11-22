@@ -1,7 +1,7 @@
 <?php
   echo "
       <script type=\"text/javascript\">
-        function openCCExplore() {
+        function toggleCCExplore() {
           var element = document.getElementById('cc-explore'); element.classList.toggle('is-active');
         }
       </script>
@@ -9,7 +9,7 @@
 ?>
 <header id="cc-explore" class="cc-global-header">
   <div class="container">
-    <a class="open-tab" onclick="openCCExplore()" href="#">Explore CC</a>
+    <a class="open-tab" onclick="toggleCCExplore()" href="#">Explore CC</a>
     <div class="global-header-content">
       <div class="level">
         <div class="level-left">
