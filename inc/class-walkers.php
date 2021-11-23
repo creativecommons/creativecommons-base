@@ -22,7 +22,7 @@ class Navwalker extends Walker_Nav_Menu {
 		$classes[]    = 'menu-item-' . $item->ID;
 		$class_names  = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
 		$li_classes   = 'navbar-item ' . $item->post_name . ' ' . $class_names;
-		$has_children = $args->walker->has_children;
+		$has_children = empty($args->walker) ? false : $args->walker->has_children;
 		$li_classes  .= $has_children ? ' has-dropdown is-hoverable' : '';
 		if ( $has_children ) {
 			$output .= "<div class='" . $li_classes . "'>";
@@ -36,7 +36,8 @@ class Navwalker extends Walker_Nav_Menu {
 		}
 	}
 	public function end_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-		if ( in_array( 'has_children', $item->classes ) ) {
+		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+		if ( in_array( 'has_children', $classes) ) {
 			$output .= '</div>';
 		}
 		$output .= '</a>';
