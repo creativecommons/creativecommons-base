@@ -18,7 +18,7 @@
 			<div class="is-flex is-3">
 				<a href="<?php echo CC_Site::social_share( 'facebook', get_the_ID() ); ?>" class="share column facebook"><i class="icon facebook colored"></i></a>
 				<a href="<?php echo CC_Site::social_share( 'twitter', get_the_ID() ); ?>" class="share column twitter"><i class="icon twitter colored"></i></a>
-				<a href="<?php echo CC_Site::social_share( 'whatsapp', get_the_ID() ); ?>" class="share column twitter"><i class="icon whatsapp colored"></i></a>
+				<a href="<?php echo CC_Site::social_share( 'whatsapp', get_the_ID() ); ?>" class="share column whatsapp"><i class="icon whatsapp colored"></i></a>
 				<a href="<?php echo CC_Site::social_share( 'linkedin', get_the_ID() ); ?>" class="share column linkedin"><i class="icon linkedin colored"></i></a>
 			</div>
 		</div>
