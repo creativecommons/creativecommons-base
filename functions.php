@@ -17,7 +17,7 @@ define( 'SITE_NAME', get_bloginfo( 'name' ) );
 define( 'THEME_URI', get_template_directory_uri() );
 define( 'THEME_IMG', THEME_URI . '/assets/img' );
 define( 'THEME_JS', THEME_URI . '/assets/js' );
-define ('CUSTOM_CSS', THEME_URI . '/');
+define ('THEME_CSS', THEME_URI . '/');
 /**
 * Calling related files
 */
@@ -195,7 +195,7 @@ class Site {
 	public function enqueue_styles() {
 		// Front-end styles
 		wp_enqueue_style( 'gfonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Source+Sans+Pro:400,400i,600' );
-		wp_enqueue_style( 'cc_custom_style', CUSTOM_CSS . '/style.css', self::theme_ver );
+		wp_enqueue_style( 'cc_base_style', THEME_CSS . '/style.css', self::theme_ver );
 		wp_enqueue_style( 'dashicons' );
 	}
 
@@ -208,7 +208,7 @@ class Site {
 			wp_enqueue_script( 'script-admin', THEME_JS . '/admin_scripts.js', array( 'jquery' ), self::theme_ver );
 		}
 		// Add custom stylesheet for admins
-		wp_enqueue_style( 'cc_custom_style', CUSTOM_CSS . '/style.css', self::theme_ver );
+		wp_enqueue_style( 'cc_base_style', THEME_CSS . '/style.css', self::theme_ver );
 	}
 
 	function enqueue_scripts() {
