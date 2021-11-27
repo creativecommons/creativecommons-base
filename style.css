@@ -13,6 +13,7 @@ This theme, like WordPress, is licensed under the GPL.
 
 @import url(https://unpkg.com/@creativecommons/fonts@2020.9.3/css/fonts.css);
 @import url(https://unpkg.com/@creativecommons/vocabulary@2020.11.3/css/vocabulary.css);
+@import url(https://unpkg.com/browse/bulma@0.9.3/);
 
 /* CSS classes for CC colors used in the custom color palette */
 :root .has-background {
