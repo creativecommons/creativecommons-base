@@ -26,16 +26,6 @@ function register_display_settings( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'cc_base_enabled_announcement',
-		array(
-			'type'       => 'theme_mod',
-			'default'    => true,
-			'transport'  => 'refresh',
-			'capability' => 'manage_options',
-		)
-	);
-
-	$wp_customize->add_setting(
 		'cc_base_show_authors',
 		array(
 			'type'       => 'theme_mod',
@@ -52,16 +42,6 @@ function register_display_settings( $wp_customize ) {
 			'section'     => 'cc_base_display_settings_section',
 			'label'       => __( 'Include donate', 'cc_base_theme_settings' ),
 			'description' => __( 'Include donate button in footer', 'cc_base_theme_settings' ),
-		)
-	);
-
-	$wp_customize->add_control(
-		'cc_base_enabled_announcement',
-		array(
-			'type'        => 'checkbox',
-			'section'     => 'cc_base_display_settings_section',
-			'label'       => __( 'Enable announcement', 'cc_base_theme_settings' ),
-			'description' => __( 'Enable announcement area', 'cc_base_theme_settings' ),
 		)
 	);
 
@@ -83,16 +63,6 @@ function register_featured_content_settings( $wp_customize ) {
 			'title'      => __( 'Featured Content', 'cc_base_theme_settings' ),
 			'priority'   => 500,
 			'capability' => 'edit_theme_options',
-		)
-	);
-
-	$wp_customize->add_setting(
-		'cc_base_enable_featured_content',
-		array(
-			'type'       => 'theme_mod',
-			'default'    => true,
-			'transport'  => 'refresh',
-			'capability' => 'manage_options',
 		)
 	);
 
@@ -123,16 +93,6 @@ function register_featured_content_settings( $wp_customize ) {
 			'default'    => null,
 			'transport'  => 'refresh',
 			'capability' => 'manage_options',
-		)
-	);
-
-	$wp_customize->add_control(
-		'cc_base_enable_featured_content',
-		array(
-			'type'        => 'checkbox',
-			'section'     => 'cc_base_featured_content_section',
-			'label'       => __( 'Enable featured content', 'cc_base_theme_settings' ),
-			'description' => __( 'Enable featured content on homepage', 'cc_base_theme_settings' ),
 		)
 	);
 
