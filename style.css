@@ -147,6 +147,21 @@ This theme, like WordPress, is licensed under the GPL.
 	margin: 0;
 }
 
+/* Css classes for image caption overlays */
+figure.image-caption-overlay {
+    position: relative;
+}
+
+figure.image-caption-overlay figcaption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    padding: 1rem;
+    margin-top: 0;
+    background-color: #000000;
+}
+
 /* CSS styling for license cards on CC-License page */
 .license-card {
 	border: 0.125rem solid #B0B0B0;
