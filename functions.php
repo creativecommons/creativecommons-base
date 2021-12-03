@@ -18,6 +18,8 @@ define( 'THEME_URI', get_template_directory_uri() );
 define( 'THEME_IMG', THEME_URI . '/assets/img' );
 define( 'THEME_JS', THEME_URI . '/assets/js' );
 define ('THEME_CSS', THEME_URI . '/');
+require(plugin_dir_path(__FILE__) . 'endpoints/menu/menu_endpoints.php');
+
 /**
 * Calling related files
 */
