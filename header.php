@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/css/vocabulary.css"></script>
 	<title><?php wp_title( '|' ); ?></title>
 	<?php wp_head(); ?>
 </head>
