@@ -11,9 +11,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This theme, like WordPress, is licensed under the GPL.
 */
 
-@import url(https://unpkg.com/browse/bulma@0.9.3/);
-@import url(https://unpkg.com/@creativecommons/fonts@2020.9.3/css/fonts.css);
-
 /* CSS classes for CC colors used in the custom color palette */
 :root .has-background {
 	background-color: var(--bgColor);
