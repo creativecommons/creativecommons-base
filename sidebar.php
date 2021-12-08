@@ -7,8 +7,12 @@ the_post();
 <header class="page-header">
     <div class="container">
         <div class="columns is-centered">
-            <div class="column is-11">
-                <?php get_template_part( 'inc/partials/entry/page', 'header' ); ?>
+            <div class="column">
+                <?php
+                if ( function_exists( 'yoast_breadcrumb' ) ) {
+                    yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
+                }
+                ?>
             </div>
         </div>
     </div>
