@@ -1,6 +1,4 @@
 <?php
-	/** Template name: page */
-
 	get_header();
 	the_post();
 ?>
