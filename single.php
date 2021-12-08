@@ -23,7 +23,7 @@
 		<div class="columns is-centered">
 			<div class="column is-8">
 				<section class="entry-page-content">
-					<div class="text-format body-big">
+					<div class="text-format body-big content">
 						<?php the_content(); ?>
 					</div>
 					<footer class="entry-footer">

@@ -16,7 +16,7 @@
 		</div>
 	</header>
 
-	<section class="entry-page-content">
+	<section class="entry-page-content content">
 		<div>
 			<?php the_content(); ?>
 		</div>
