@@ -24,7 +24,7 @@
 <section class="main-content">
 	<div class="container">
 		<div class="columns padding-vertical-larger">
-			<div class="column is-8">
+			<div class="column is-8 content">
 				<?php
 				if ( have_posts() ) :
 					while ( have_posts() ) :
