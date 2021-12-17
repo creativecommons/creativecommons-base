@@ -5,7 +5,7 @@ services:
     image: wordpress:latest # https://hub.docker.com/_/wordpress/
     container_name: cc-base-wp
     ports:
-      - ${IP}:80:80 # change ip if required
+      - ${IP}:8000:80 # change ip if required
     volumes:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
       - ./wp-app:/var/www/html # Full wordpress project
