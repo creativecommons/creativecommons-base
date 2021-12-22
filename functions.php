@@ -62,8 +62,11 @@ $mandatory_sidebars = array(
 	'Page'                  => array(
 		'name' => 'page',
 	),
-	'Page Footer'           => array(
-		'name' => 'page-footer',
+	'Before Footer'           => array(
+		'name' => 'before-footer',
+	),
+	'After Navigation' => array(
+		'name' => 'after-navigation',
 	),
 );
 /**
