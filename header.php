@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://unpkg.com/@creativecommons/fonts@2020.9.3/css/fonts.css">
 	<link rel="stylesheet" href="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/css/vocabulary.css">
 	<script src="https://unpkg.com/vue@next"></script>
-	<script src="https://unpkg.com/@creativecommons/cc-global-components@0.2.1/dist/cc-globals.min.js"></script>
+	<script src="https://unpkg.com/@creativecommons/cc-global-components@0.x.x/dist/cc-globals.min.js"></script>
 	<title><?php wp_title('|'); ?></title>
 	<?php wp_head(); ?>
 </head>
