@@ -56,6 +56,12 @@
 		</div>
 	</div>
 	<?php do_action( 'cc_theme_after_footer_content' ); ?>
+	<!-- Script to initialize CC Global Components -->
+	<script>
+		const cc_explore = Vue.createApp({});
+		cc_explore.use(CcGlobals);
+		cc_explore.mount("#explore-cc");
+	</script>
 </footer>
 <!--END FOOTER-->
 <?php do_action( 'cc_theme_after_footer' ); ?>

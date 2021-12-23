@@ -7,12 +7,19 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/@creativecommons/fonts@2020.9.3/css/fonts.css">
 	<link rel="stylesheet" href="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/css/vocabulary.css">
+	<script src="https://unpkg.com/vue@next"></script>
+	<script src="https://unpkg.com/@creativecommons/cc-global-components@0.x.x/dist/cc-globals.min.js"></script>
 	<title><?php wp_title('|'); ?></title>
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	<?php include 'explore-cc.php'; ?>
+	<!-- Div element for CC Explore Banner -->
+	<div class="container">
+		<div id="explore-cc">
+			<cc-explore donation-url="https://classy.org/give/313412/#!/donation/checkout?c_src=website&amp;c_src2=top-of-page-banner" />
+		</div>
+	</div>
 	<?php do_action('cc_theme_before_header'); ?>
 	<!--BEGIN HEADER-->
 	<header class="main-header">
