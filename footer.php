@@ -59,7 +59,7 @@
 	<!-- Script to initialize CC Global Components -->
 	<script>
 		const cc_explore = Vue.createApp({});
-		cc_explore.use(CcGlobal);
+		cc_explore.use(CcGlobals);
 		cc_explore.mount("#explore-cc");
 	</script>
 </footer>
