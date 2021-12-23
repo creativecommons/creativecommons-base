@@ -14,7 +14,12 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php include 'explore-cc.php'; ?>
+	<!-- Div element for CC Explore Banner -->
+	<div class="container">
+		<div id="explore-cc">
+			<cc-explore donation-url="https://classy.org/give/313412/#!/donation/checkout?c_src=website&amp;c_src2=top-of-page-banner" />
+		</div>
+	</div>
 	<?php do_action('cc_theme_before_header'); ?>
 	<!--BEGIN HEADER-->
 	<header class="main-header">
