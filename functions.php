@@ -7,8 +7,10 @@
  */
 require get_theme_file_path( 'inc/theme-customizer.php' );
 
-/* Allow full-width Gutenberg widget alignment */
-add_theme_support( 'align-wide' );
+function my_theme_setup() {
+	/* Allow full-width Gutenberg widget alignment */
+	add_theme_support( 'align-wide' );
+}
 
 /* Theme Constants (to speed up some common things) ------*/
 define( 'HOME_URI', get_bloginfo( 'url' ) );
@@ -341,3 +343,4 @@ $cc_colors = array(
 
 // This line below adds the colors defined above into the color pallete of WordPress
 add_theme_support( 'editor-color-palette', $cc_colors);
+add_action( 'after_setup_theme', 'my_theme_setup' );
