@@ -4,6 +4,12 @@
     element.classList.toggle('is-active');
   }
 </script>
+<style>
+	.cc-global-header .open-tab {
+		display: block;
+		bottom: -2rem;
+	}
+</style>
 <header id="cc-explore" class="cc-global-header">
   <div class="container">
     <a class="open-tab" onclick="toggleCCExplore()" href="#">Explore CC</a>
