@@ -1,6 +1,6 @@
 # CC blank WordPress theme
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This is a blank CC theme for Wordpress. Please use it with a [child theme](https://developer.wordpress.org/themes/advanced-topics/child-themes/) 
@@ -24,13 +24,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://github.com/Akpjunior94"><img src="https://avatars.githubusercontent.com/u/56775903?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Akpan Abraham</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=Akpjunior94" title="Code">💻</a></td>
     <td align="center"><a href="http://www.epacking.be"><img src="https://avatars.githubusercontent.com/u/19891785?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alain Seys</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=alainseys" title="Code">💻</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=alainseys" title="Documentation">📖</a> <a href="#infra-alainseys" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-    <td align="center"><a href="https://zack.cat"><img src="https://avatars.githubusercontent.com/u/6351754?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zack Krida</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=zackkrida" title="Code">💻</a></td>
-    <td align="center"><a href="http://kritigodey.com"><img src="https://avatars.githubusercontent.com/u/287034?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kriti Godey</b></sub></a><br /><a href="#projectManagement-kgodey" title="Project Management">📆</a></td>
-    <td align="center"><a href="http://jackiebinya.github.io"><img src="https://avatars.githubusercontent.com/u/50267279?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JackieBinya</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=JackieBinya" title="Code">💻</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=JackieBinya" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Cronus1007"><img src="https://avatars.githubusercontent.com/u/56436023?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cronus </b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=Cronus1007" title="Code">💻</a></td>
     <td align="center"><a href="http://hugo.solar"><img src="https://avatars.githubusercontent.com/u/894708?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hugo Solar</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=hugosolar" title="Code">💻</a> <a href="#mentoring-hugosolar" title="Mentoring">🧑‍🏫</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=hugosolar" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/Akpjunior94"><img src="https://avatars.githubusercontent.com/u/56775903?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Akpan Abraham</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=Akpjunior94" title="Code">💻</a></td>
+    <td align="center"><a href="http://jackiebinya.github.io"><img src="https://avatars.githubusercontent.com/u/50267279?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JackieBinya</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=JackieBinya" title="Code">💻</a> <a href="https://github.com/creativecommons/creativecommons-base/commits?author=JackieBinya" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://kritigodey.com"><img src="https://avatars.githubusercontent.com/u/287034?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kriti Godey</b></sub></a><br /><a href="#projectManagement-kgodey" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://github.com/MuluhGodson"><img src="https://avatars.githubusercontent.com/u/40151808?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Muluh MG Godson</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=MuluhGodson" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://zack.cat"><img src="https://avatars.githubusercontent.com/u/6351754?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zack Krida</b></sub></a><br /><a href="https://github.com/creativecommons/creativecommons-base/commits?author=zackkrida" title="Code">💻</a></td>
   </tr>
 </table>
 
