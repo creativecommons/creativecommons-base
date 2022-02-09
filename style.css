@@ -261,6 +261,16 @@ span.has-inline-color > strong {
 .color-black {
 	color: #000000;
 }
+/* Styles for Nav items */
+.navbar-link , .navbar-item {
+	cursor: pointer;
+	color: #767676;
+	background: transparent;
+	border: none;
+	font-family: "Roboto Condensed", sans-serif;
+	text-transform: uppercase;
+	line-height: 1.5;
+}
 @media (min-width: 750px) {
 
 	.alignfull {
