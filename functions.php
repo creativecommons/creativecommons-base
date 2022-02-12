@@ -159,8 +159,6 @@ class Site {
 	 * @param array $array : Array with enabled post formats
 	 * @return array list of filtered enabled post formats
 	 */
-		$available_post_formats = apply_filters( 'cc_theme_base_post_formats', array( 'gallery', 'image', 'video' ) );
-		add_theme_support( 'post-formats', $available_post_formats );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
 		add_theme_support( 'responsive-embeds' );

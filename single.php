@@ -1,7 +1,6 @@
 <?php
 	get_header();
 	the_post();
-	$post_format = get_post_format();
 ?>
 <section class="main-content">
 	<header class="single-header">
@@ -9,11 +8,8 @@
 			<div class="columns is-centered">
 				<div class="column is-8">
 					<?php
-					if ( ! empty( $post_format ) ) {
-						get_template_part( 'inc/partials/post_formats/content', $post_format );
-					} else {
-						get_template_part( 'inc/partials/post_formats/content', 'default' );
-					}
+					get_template_part( 'inc/partials/post_formats/content', 'default' );
+
 					?>
 				</div>
 			</div>
