@@ -11,11 +11,6 @@ $first_name = $author_meta["first_name"]['0'];
 
 ?>
 <header class="page-header  bg-grey">
-	<?php
-	if (function_exists('yoast_breadcrumb')) {
-		yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
-	}
-	?>
 	<div class="container">
 		<div class="columns m-0 is-centered">
 			<?php if (!empty($author_image_url)) : ?>
