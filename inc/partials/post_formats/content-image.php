@@ -16,8 +16,4 @@ if ( $show_authors_is_enabled ) {
 	echo '<span class="entry-date">' . get_the_date( CC_Site::get_date_format() ) . '</span>';
 }
 ?>
-<?php
-if ( function_exists( 'yoast_breadcrumb' ) ) {
-	yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
-}
-?>
+
