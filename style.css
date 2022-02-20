@@ -128,11 +128,6 @@ This theme, like WordPress, is licensed under the GPL.
 	padding: 1.25em 2.375em;
 }
 
-/* Override list style rendering for content ul for query loop blocks */
-ul.wp-block-post-template {
-	list-style: none;
-}
-
 /* CSS for same-height columns in a column group. This class has to be added to each column seperately. */
 .column-same-height {
 	align-self: stretch !important;
@@ -280,6 +275,12 @@ span.has-inline-color > strong {
 	text-transform: uppercase;
 	line-height: 1.5;
 }
+
+/* Override list style rendering for content ul for query loop blocks */
+ul.wp-block-post-template {
+	list-style: none;
+}
+
 @media (min-width: 750px) {
 
 	.alignfull {
