@@ -129,7 +129,7 @@ This theme, like WordPress, is licensed under the GPL.
 }
 
 /* Override list style rendering for content ul for query loop blocks */
-.wp-block-query > .content ul {
+ul.wp-block-post-template {
 	list-style: none;
 }
 
