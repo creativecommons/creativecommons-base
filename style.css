@@ -275,6 +275,12 @@ span.has-inline-color > strong {
 	text-transform: uppercase;
 	line-height: 1.5;
 }
+
+/* Override list style rendering for content ul for query loop blocks */
+ul.wp-block-post-template {
+	list-style: none;
+}
+
 @media (min-width: 750px) {
 
 	.alignfull {
