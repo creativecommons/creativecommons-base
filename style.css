@@ -143,30 +143,53 @@ This theme, like WordPress, is licensed under the GPL.
 	align-items: center;
 }
 
-.display-inline>*{
+.display-inline > * {
 	margin: 0;
 }
 
 /* Css classes for image caption overlays */
 figure.image-caption-overlay {
-    position: relative;
+	position: relative;
 }
 
 figure.image-caption-overlay figcaption {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #ffffff;
-    padding: 1rem;
-    margin-top: 0;
-    background-color: #000000;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #ffffff;
+	padding: 1rem;
+	margin-top: 0;
+	background-color: #000000;
 }
 
 /* CSS styling for license cards on CC-License page */
 .license-card {
-	border: 0.125rem solid #B0B0B0;
-	border-top : 0.625rem solid #1547A8;
+	border: 0.125rem solid #b0b0b0;
+	border-top: 0.625rem solid #1547a8;
 	height: 15.625rem;
+}
+
+div.license-card figure,
+div.license-card + div figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+div.license-card figure:not(:last-child),
+div.license-card + div figure:not(:last-child) {
+	margin-bottom: 0;
+}
+
+div.license-card figure:not(:first-child),
+div.license-card + div figure:not(:first-child) {
+	margin-top: 0;
+}
+
+div.license-card .wp-block-buttons {
+	max-width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+	width: auto;
 }
 
 /* Remove margin from any block */
@@ -180,7 +203,7 @@ span.has-inline-color > strong {
 }
 
 .team-member-position {
-	line-height:0.9em
+	line-height: 0.9em;
 }
 
 .team-member-username {
@@ -230,13 +253,13 @@ span.has-inline-color > strong {
 	margin-left: 0.4rem;
 }
 .wp-block-latest-posts__post-date::before {
-	content: '\2022';
+	content: "\2022";
 	font-size: 2rem;
-	color: #B0B0B0;
+	color: #b0b0b0;
 	margin-right: 0.4rem;
 	margin-top: 0.5rem;
 	top: 0.1em;
-    position: relative;
+	position: relative;
 }
 
 .full-height {
@@ -252,21 +275,22 @@ span.has-inline-color > strong {
 	background-color: #ffffff;
 }
 
-.tile{
+.tile {
 	display: inline !important;
-  }
+}
 .tile a {
 	text-decoration: none;
 }
 .divider {
-	border-top: thin solid #B0B0B0;
-	border-bottom: thin solid #B0B0B0;
+	border-top: thin solid #b0b0b0;
+	border-bottom: thin solid #b0b0b0;
 }
 .color-black {
 	color: #000000;
 }
 /* Styles for Nav items */
-.navbar-link , .navbar-item {
+.navbar-link,
+.navbar-item {
 	cursor: pointer;
 	color: #767676;
 	background: transparent;
@@ -282,7 +306,6 @@ ul.wp-block-post-template {
 }
 
 @media (min-width: 750px) {
-
 	.alignfull {
 		max-width: 1000%;
 		margin-right: calc(50% - 50vw);
@@ -299,6 +322,6 @@ ul.wp-block-post-template {
 
 	.wp-block-group__inner-container {
 		max-width: 85.7143rem;
-                margin: auto;
+		margin: auto;
 	}
 }
