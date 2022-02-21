@@ -169,6 +169,26 @@ figure.image-caption-overlay figcaption {
 	height: 15.625rem;
 }
 
+div.license-card figure, div.license-card + div figure {
+	margin-left: 0;
+    margin-right: 0;
+}
+
+div.license-card figure:not(:last-child), div.license-card + div figure:not(:last-child){
+    margin-bottom: 0;
+}
+
+div.license-card figure:not(:first-child), div.license-card + div figure:not(:first-child) {
+    margin-top: 0;
+}
+
+div.license-card .wp-block-buttons {
+	max-width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+	width: auto;
+}
+
 /* Remove margin from any block */
 .no-margin {
 	margin: 0;
