@@ -305,4 +305,24 @@ ul.wp-block-post-template {
 	list-style: none;
 }
 
+.page-template-full-width-no-title .site-content > .container {
+	max-width: none;
+	padding-right: 0;
+	padding-left: 0;
+}
 
+@media (min-width: 750px) {
+	.alignfull {
+		max-width: 1000%;
+		margin-right: calc(50% - 50vw);
+		margin-left: calc(50% - 50vw);
+		width: auto;
+	}
+
+	.alignwide {
+		max-width: 100%;
+		margin-right: calc(25% - 25vw);
+		margin-left: calc(25% - 25vw);
+		width: auto;
+	}
+}
