@@ -320,9 +320,9 @@ ul.wp-block-post-template {
 	}
 
 	.alignwide {
-		max-width: 100%;
-		margin-right: calc(25% - 25vw);
-		margin-left: calc(25% - 25vw);
+		max-width: 1000%;
+		margin-right: calc(25% - 15vw);
+		margin-left: calc(25% - 15vw);
 		width: auto;
 	}
 
