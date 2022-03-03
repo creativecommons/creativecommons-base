@@ -3,9 +3,9 @@
 	the_post();
 ?>
 
-<section class="main-content">
+<section class="main-content content">
 	<section class="entry-page-content">
-		<div class="content">
+		<div class="container">
 			<?php the_content(); ?>
 		</div>
 		<footer class="entry-footer">
