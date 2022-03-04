@@ -44,12 +44,13 @@
 				);
 				?>
 			</nav>
+			<?php
+				if (function_exists('yoast_breadcrumb')) {
+					yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
+				}
+			?>
 		</div>
-		<?php
-		if (function_exists('yoast_breadcrumb')) {
-			yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
-		}
-		?>
+		
 		<?php if (is_active_sidebar('after-navigation')) : ?>
 			<div class="container notification-container push-up">
 				<div class="columns is-centered is-gapless">

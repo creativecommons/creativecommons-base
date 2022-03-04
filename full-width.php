@@ -1,11 +1,12 @@
 <?php
+/* Template name: Full Width */
 	get_header();
 	the_post();
 ?>
 
-<section class="main-content content">
+<section class="main-content">
 	<section class="entry-page-content">
-		<div class="container">
+		<div class="content">
 			<?php the_content(); ?>
 		</div>
 		<footer class="entry-footer">
